@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'full = AIで企画・制作→投稿 / no-post = AIで制作のみ / post-eps = 用意済みエピソードを書き出して投稿 / render-only = 書き出しテスト'
+        description: 'full = AIで企画・制作→投稿 / no-post = AIで制作のみ / post-eps = 用意済みエピソードを書き出して投稿 / render-only = 書き出しテスト / ai-check = Claudeのログイン確認'
         default: 'full'
       ep:
         description: 'render-only: エピソード名 / post-eps: カンマ区切り（moshimo-3d/queue/<ep>.json が必要）'
@@ -22,7 +22,22 @@ concurrency: { group: moshimo, cancel-in-progress: false }
 permissions: { contents: write, issues: write, id-token: write }
 
 jobs:
+  ai-check:   # quick diagnosis of the Claude login (no secrets are printed)
+    if: inputs.mode == 'ai-check'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: '1+1は？数字だけ答えて'
+          show_full_output: true
+          claude_args: --model sonnet --max-turns 2
+
   make:
+    if: inputs.mode != 'ai-check'
     runs-on: ubuntu-latest
     timeout-minutes: 240
     env:
@@ -68,7 +83,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: ${{ steps.p.outputs.text }}
           claude_args: >-
-            --model claude-sonnet-5-5 --max-turns 180
+            --model sonnet --max-turns 180
             --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
 
       - name: Publish to Instagram (resumable upload)
@@ -110,7 +125,9 @@ jobs:
         run: |
           git config user.name moshimo-bot
           git config user.email moshimo-bot@users.noreply.github.com
-          git add moshimo-3d/episodes moshimo-3d/engine moshimo-3d/posted.json moshimo-3d/topics.json moshimo-3d/marketing moshimo-3d/queue sfx-library/sfx.json
+          for p in moshimo-3d/episodes moshimo-3d/engine moshimo-3d/posted.json moshimo-3d/topics.json moshimo-3d/marketing moshimo-3d/queue sfx-library/sfx.json; do
+            [ -e "$p" ] && git add -A "$p"
+          done
           git diff --cached --quiet && exit 0
           git commit -qm "episode $(date +%F_%H%M) [$MODE slot $SLOT]"
           for i in 1 2 3; do
