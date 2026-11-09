@@ -89,6 +89,16 @@
    "arm": "B",
    "hypothesis": "「AIの水消費を逆手に取る」意外な発想は、シェア・保存が伸びる。防災メッセージで締めても再生は落ちないか",
    "slot": "manual"
+  },
+  {
+   "date": "2026-11-09",
+   "ep": "ep14_ai_renda",
+   "topic": "AIを連打して津波を止めたら（ep11の改良版）",
+   "url": "https://www.instagram.com/reel/DfheuwygM1-/",
+   "via": "cloud",
+   "arm": "B",
+   "hypothesis": "ep11と同じ題材で、冒頭に30mの波を大きく見せる＋到着まで40秒の実時間カウントダウン＋0秒で津波が消える回避オチ（フック回収）にすると、平均視聴時間と再生数がep11より伸びる",
+   "slot": "manual"
   }
  ]
 }
