@@ -1,0 +1,389 @@
+{
+ "_note": "効果音ラボ（商用OK・クレジット不要・素材ファイルの再配布は禁止）。ファイルはリポジトリに入れず、ワークフロー開始時に tools/fetch_sfx.py が url から files/ に取得する。新しい音は url 付きでここに追記する",
+ "sfx": {
+  "countdown_tick": {
+   "file": "files/countdown_tick.mp3",
+   "desc": "カウントダウンのチクタク",
+   "dur": 5.6,
+   "src": "https://soundeffect-lab.info/sound/anime/ (quiz-timer1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/quiz-timer1.mp3"
+  },
+  "countdown_elec": {
+   "file": "files/countdown_elec.mp3",
+   "desc": "電子音カウントダウン",
+   "dur": 5.97,
+   "src": "https://soundeffect-lab.info/sound/anime/ (electronic-countdown1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/electronic-countdown1.mp3"
+  },
+  "vanish_hyun": {
+   "file": "files/vanish_hyun.mp3",
+   "desc": "ヒュン（消える瞬間）",
+   "dur": 2.54,
+   "src": "https://soundeffect-lab.info/sound/anime/ (hyun1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/hyun1.mp3"
+  },
+  "vanish_warp": {
+   "file": "files/vanish_warp.mp3",
+   "desc": "ワープ系の消失音",
+   "dur": 1.35,
+   "src": "https://soundeffect-lab.info/sound/battle/ (magic-worp1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/battle/mp3/magic-worp1.mp3"
+  },
+  "sparkle": {
+   "file": "files/sparkle.mp3",
+   "desc": "キラッ",
+   "dur": 1.99,
+   "src": "https://soundeffect-lab.info/sound/anime/ (kira2.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/kira2.mp3"
+  },
+  "flash": {
+   "file": "files/flash.mp3",
+   "desc": "フラッシュ",
+   "dur": 1.33,
+   "src": "https://soundeffect-lab.info/sound/anime/ (flash1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/flash1.mp3"
+  },
+  "impact_doon": {
+   "file": "files/impact_doon.mp3",
+   "desc": "ドーン（衝撃）",
+   "dur": 2.47,
+   "src": "https://soundeffect-lab.info/sound/anime/ (doon1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/doon1.mp3"
+  },
+  "impact_don": {
+   "file": "files/impact_don.mp3",
+   "desc": "ドン（短い衝撃）",
+   "dur": 3.81,
+   "src": "https://soundeffect-lab.info/sound/anime/ (don-1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/don-1.mp3"
+  },
+  "text_impact": {
+   "file": "files/text_impact.mp3",
+   "desc": "テロップ衝撃",
+   "dur": 1.74,
+   "src": "https://soundeffect-lab.info/sound/anime/ (text-impact1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/text-impact1.mp3"
+  },
+  "shock": {
+   "file": "files/shock.mp3",
+   "desc": "ガーン系",
+   "dur": 2.47,
+   "src": "https://soundeffect-lab.info/sound/anime/ (shock1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/shock1.mp3"
+  },
+  "whoosh_switch1": {
+   "file": "files/whoosh_switch1.mp3",
+   "desc": "場面転換1",
+   "dur": 1.01,
+   "src": "https://soundeffect-lab.info/sound/anime/ (sceneswitch1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/sceneswitch1.mp3"
+  },
+  "whoosh_switch2": {
+   "file": "files/whoosh_switch2.mp3",
+   "desc": "場面転換2",
+   "dur": 1.9,
+   "src": "https://soundeffect-lab.info/sound/anime/ (sceneswitch2.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/sceneswitch2.mp3"
+  },
+  "whoosh_slide": {
+   "file": "files/whoosh_slide.mp3",
+   "desc": "スライド",
+   "dur": 1.01,
+   "src": "https://soundeffect-lab.info/sound/anime/ (slide1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/slide1.mp3"
+  },
+  "whoosh_gust": {
+   "file": "files/whoosh_gust.mp3",
+   "desc": "突風シュッ",
+   "dur": 4.09,
+   "src": "https://soundeffect-lab.info/sound/anime/ (gust1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/gust1.mp3"
+  },
+  "whoosh_swing": {
+   "file": "files/whoosh_swing.mp3",
+   "desc": "風切り",
+   "dur": 1.01,
+   "src": "https://soundeffect-lab.info/sound/battle/ (kick-real-swing1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/battle/mp3/kick-real-swing1.mp3"
+  },
+  "text_tin": {
+   "file": "files/text_tin.mp3",
+   "desc": "ティン（テロップ表示）",
+   "dur": 3.53,
+   "src": "https://soundeffect-lab.info/sound/anime/ (tin1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/tin1.mp3"
+  },
+  "text_touch": {
+   "file": "files/text_touch.mp3",
+   "desc": "タッチ音",
+   "dur": 0.46,
+   "src": "https://soundeffect-lab.info/sound/anime/ (touch1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/touch1.mp3"
+  },
+  "text_pa": {
+   "file": "files/text_pa.mp3",
+   "desc": "パッ",
+   "dur": 1.0,
+   "src": "https://soundeffect-lab.info/sound/anime/ (pa1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/pa1.mp3"
+  },
+  "emo_piano": {
+   "file": "files/emo_piano.mp3",
+   "desc": "ピアノ単音（余韻）",
+   "dur": 1.67,
+   "src": "https://soundeffect-lab.info/sound/anime/ (piano-single1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/piano-single1.mp3"
+  },
+  "emo_recollection": {
+   "file": "files/emo_recollection.mp3",
+   "desc": "回想",
+   "dur": 1.47,
+   "src": "https://soundeffect-lab.info/sound/anime/ (recollection1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/recollection1.mp3"
+  },
+  "emo_shine": {
+   "file": "files/emo_shine.mp3",
+   "desc": "輝き",
+   "dur": 5.03,
+   "src": "https://soundeffect-lab.info/sound/anime/ (shine1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/shine1.mp3"
+  },
+  "end_tirin": {
+   "file": "files/end_tirin.mp3",
+   "desc": "チリン（締め）",
+   "dur": 3.09,
+   "src": "https://soundeffect-lab.info/sound/anime/ (tirin1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/tirin1.mp3"
+  },
+  "end_kira": {
+   "file": "files/end_kira.mp3",
+   "desc": "キラーン（締め）",
+   "dur": 0.99,
+   "src": "https://soundeffect-lab.info/sound/anime/ (kira1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/kira1.mp3"
+  },
+  "tension_anxiety": {
+   "file": "files/tension_anxiety.mp3",
+   "desc": "不安ピアノ",
+   "dur": 1.96,
+   "src": "https://soundeffect-lab.info/sound/anime/ (anxiety-piano1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/anxiety-piano1.mp3"
+  },
+  "tension_fear": {
+   "file": "files/tension_fear.mp3",
+   "desc": "迫る恐怖",
+   "dur": 2.09,
+   "src": "https://soundeffect-lab.info/sound/anime/ (approaching-fear1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/approaching-fear1.mp3"
+  },
+  "question": {
+   "file": "files/question.mp3",
+   "desc": "ハテナ",
+   "dur": 1.65,
+   "src": "https://soundeffect-lab.info/sound/anime/ (question1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/question1.mp3"
+  },
+  "amb_bigcity": {
+   "file": "files/amb_bigcity.mp3",
+   "desc": "都会の環境音",
+   "dur": 62.46,
+   "src": "https://soundeffect-lab.info/sound/environment/ (big-city1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/environment/mp3/big-city1.mp3"
+  },
+  "amb_night": {
+   "file": "files/amb_night.mp3",
+   "desc": "夜の繁華街",
+   "dur": 71.17,
+   "src": "https://soundeffect-lab.info/sound/environment/ (downtown-night1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/environment/mp3/downtown-night1.mp3"
+  },
+  "amb_country": {
+   "file": "files/amb_country.mp3",
+   "desc": "夏の田舎",
+   "dur": 66.62,
+   "src": "https://soundeffect-lab.info/sound/environment/ (summer-countryside1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/environment/mp3/summer-countryside1.mp3"
+  },
+  "amb_wind": {
+   "file": "files/amb_wind.mp3",
+   "desc": "風",
+   "dur": 104.77,
+   "src": "https://soundeffect-lab.info/sound/environment/ (wind1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/environment/mp3/wind1.mp3"
+  },
+  "phone_vibe": {
+   "file": "files/phone_vibe.mp3",
+   "desc": "スマホのバイブ",
+   "dur": 2.12,
+   "src": "https://soundeffect-lab.info/sound/machine/ (mobile-phone-vibration1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/machine/mp3/mobile-phone-vibration1.mp3"
+  },
+  "train_door": {
+   "file": "files/train_door.mp3",
+   "desc": "電車のドア",
+   "dur": 1.79,
+   "src": "https://soundeffect-lab.info/sound/machine/ (train-door1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/machine/mp3/train-door1.mp3"
+  },
+  "comic_boyon": {
+   "file": "files/comic_boyon.mp3",
+   "desc": "ボヨン（テロップのポップ）",
+   "dur": 0.68,
+   "src": "https://soundeffect-lab.info/sound/anime/ (boyon1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/boyon1.mp3"
+  },
+  "comic_tsukkomi": {
+   "file": "files/comic_tsukkomi.mp3",
+   "desc": "ツッコミ（バシッ）",
+   "dur": 0.45,
+   "src": "https://soundeffect-lab.info/sound/anime/ (tsukkomi-1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/tsukkomi-1.mp3"
+  },
+  "comic_stupid": {
+   "file": "files/comic_stupid.mp3",
+   "desc": "間の抜けた音",
+   "dur": 1.01,
+   "src": "https://soundeffect-lab.info/sound/anime/ (stupid3.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/stupid3.mp3"
+  },
+  "comic_pico": {
+   "file": "files/comic_pico.mp3",
+   "desc": "ピコピコハンマー",
+   "dur": 1.0,
+   "src": "https://soundeffect-lab.info/sound/anime/ (pico-pico-hammer1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/pico-pico-hammer1.mp3"
+  },
+  "comic_fall": {
+   "file": "files/comic_fall.mp3",
+   "desc": "ずっこけ",
+   "dur": 2.97,
+   "src": "https://soundeffect-lab.info/sound/anime/ (fall-down1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/fall-down1.mp3"
+  },
+  "comic_surprise": {
+   "file": "files/comic_surprise.mp3",
+   "desc": "びっくり",
+   "dur": 1.0,
+   "src": "https://soundeffect-lab.info/sound/anime/ (surprise1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/surprise1.mp3"
+  },
+  "comic_jajean": {
+   "file": "files/comic_jajean.mp3",
+   "desc": "ジャジャーン（発表）",
+   "dur": 1.85,
+   "src": "https://soundeffect-lab.info/sound/anime/ (jajean1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/jajean1.mp3"
+  },
+  "comic_chanchan": {
+   "file": "files/comic_chanchan.mp3",
+   "desc": "ちゃんちゃん（オチ）",
+   "dur": 1.64,
+   "src": "https://soundeffect-lab.info/sound/anime/ (chan-chan1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/chan-chan1.mp3"
+  },
+  "comic_shock2": {
+   "file": "files/comic_shock2.mp3",
+   "desc": "ガーン2",
+   "dur": 4.22,
+   "src": "https://soundeffect-lab.info/sound/anime/ (shock2.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/shock2.mp3"
+  },
+  "comic_eat": {
+   "file": "files/comic_eat.mp3",
+   "desc": "もぐもぐ",
+   "dur": 3.08,
+   "src": "https://soundeffect-lab.info/sound/anime/ (eat-meat1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/anime/mp3/eat-meat1.mp3"
+  },
+  "giant_step": {
+   "file": "files/giant_step.mp3",
+   "desc": "巨大な足音",
+   "dur": 1.39,
+   "src": "https://soundeffect-lab.info/sound/battle/ (monster-footstep1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/battle/mp3/monster-footstep1.mp3"
+  },
+  "giant_robot_step": {
+   "file": "files/giant_robot_step.mp3",
+   "desc": "ロボの足音",
+   "dur": 1.5,
+   "src": "https://soundeffect-lab.info/sound/machine/ (robot-footstep1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/machine/mp3/robot-footstep1.mp3"
+  },
+  "giant_fall": {
+   "file": "files/giant_fall.mp3",
+   "desc": "巨大なものが倒れる",
+   "dur": 3.31,
+   "src": "https://soundeffect-lab.info/sound/machine/ (giant-robot-down1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/machine/mp3/giant-robot-down1.mp3"
+  },
+  "crack_rock": {
+   "file": "files/crack_rock.mp3",
+   "desc": "地面がひび割れる",
+   "dur": 2.61,
+   "src": "https://soundeffect-lab.info/sound/battle/ (rock-crack1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/battle/mp3/rock-crack1.mp3"
+  },
+  "collapse": {
+   "file": "files/collapse.mp3",
+   "desc": "小さな崩落",
+   "dur": 2.02,
+   "src": "https://soundeffect-lab.info/sound/battle/ (building-collapse-little1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/battle/mp3/building-collapse-little1.mp3"
+  },
+  "quake": {
+   "file": "files/quake.mp3",
+   "desc": "地響き",
+   "dur": 3.96,
+   "src": "https://soundeffect-lab.info/sound/battle/ (magic-quake1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/battle/mp3/magic-quake1.mp3"
+  }
+ }
+}

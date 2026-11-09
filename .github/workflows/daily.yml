@@ -1,8 +1,9 @@
 name: moshimo-daily
 # Secrets never reach the AI step or the logs:
-#  - IG_* only exist in the "Publish" step, SFX_DEPLOY_KEY only in checkout/save steps
-#  - checkouts use persist-credentials: false so no token/key is left on disk for later steps
+#  - IG_ACCESS_TOKEN only exists in the "Publish" step (IG_USER_ID is a non-secret repo variable)
+#  - checkout uses persist-credentials: false; the push token is only used in the last step
 #  - no pull_request triggers (forks can never run this with secrets)
+#  - SFX audio is downloaded from its source each run and never committed (license: no redistribution)
 on:
   schedule:
     - cron: '0 22 * * *'   # 07:00 JST
@@ -32,13 +33,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { persist-credentials: false }
-      - name: Checkout private SFX library
-        uses: actions/checkout@v4
-        with:
-          repository: Yoshiki08182005/moshimo-sfx
-          ssh-key: ${{ secrets.SFX_DEPLOY_KEY }}
-          path: sfx-library
-          persist-credentials: false
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - uses: actions/setup-node@v4
@@ -49,6 +43,8 @@ jobs:
           pip install -q playwright pillow numpy
           python -m playwright install --with-deps chromium
           cd moshimo-3d && npm ci --silent
+      - name: Fetch sound effects from source
+        run: python tools/fetch_sfx.py
 
       - name: Load prompt
         id: p
@@ -87,21 +83,9 @@ jobs:
       - name: Publish to Instagram (resumable upload)
         if: env.MODE == 'full'
         env:
-          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_USER_ID: ${{ vars.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
         run: python tools/publish.py
-
-      - name: Save new sounds to the private SFX repo
-        if: env.MODE != 'render-only'
-        env: { SFX_DEPLOY_KEY: '${{ secrets.SFX_DEPLOY_KEY }}' }
-        run: |
-          cd sfx-library
-          git add -A
-          if git diff --cached --quiet; then exit 0; fi
-          k=$(mktemp); printf '%s\n' "$SFX_DEPLOY_KEY" > "$k"; chmod 600 "$k"
-          git -c user.name=moshimo-bot -c user.email=moshimo-bot@users.noreply.github.com commit -qm "add sounds $(date -u +%F)"
-          GIT_SSH_COMMAND="ssh -i $k -o StrictHostKeyChecking=accept-new" git push -q git@github.com:Yoshiki08182005/moshimo-sfx.git HEAD:main
-          rm -f "$k"
 
       - name: Save episode and logs
         if: env.MODE != 'render-only'
@@ -109,7 +93,7 @@ jobs:
         run: |
           git config user.name moshimo-bot
           git config user.email moshimo-bot@users.noreply.github.com
-          git add moshimo-3d/episodes moshimo-3d/engine moshimo-3d/posted.json moshimo-3d/topics.json
+          git add moshimo-3d/episodes moshimo-3d/engine moshimo-3d/posted.json moshimo-3d/topics.json sfx-library/sfx.json
           git diff --cached --quiet && exit 0
           git commit -qm "episode $(date -u +%F_%H%M)"
           git push -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main

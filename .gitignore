@@ -3,7 +3,7 @@ out/
 stills/
 __pycache__/
 *.wav
-sfx-library/
+sfx-library/files/
 *.pem
 *_deploy
 id_*

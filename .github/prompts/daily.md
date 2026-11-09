@@ -11,7 +11,7 @@
 - moshimo-3d/engine/kit2.js（buildStreet / buildResidential / buildGym / buildShotengai。o.extra で小道具と動きを足す）、kit.js、kit3.js（giantHero / vanisher系 / dustBurst / crater / soundRings / onigiriPile / trashPiles ほか）
 - 見本：moshimo-3d/episodes/ep07_kyojin.js（巨大化）、ep09_hyaku.js（キャラの動き）、ep10_chiisaku.js（縮小・地面目線カメラ）。_common.js（stdCues, beats）
 - moshimo-3d/topics.json（題材候補）、moshimo-3d/posted.json（投稿済み）
-- 効果音: sfx-library/sfx.json（キー名で cues に指定）。足りない音は https://soundeffect-lab.info/ から取得して sfx-library/files/ と sfx.json に追記（商用OK・クレジット不要・素材の再配布は禁止）
+- 効果音: sfx-library/sfx.json（キー名で cues に指定。ファイルは実行開始時に files/ へ取得済み）。足りない音は https://soundeffect-lab.info/ で探し、sfx.json に {file, desc, dur, src, url, license} を追記して `python ../tools/fetch_sfx.py` で取得する（音声ファイル自体はコミットしない＝再配布禁止）
 
 ## 手順（作業ディレクトリは moshimo-3d）
 1. posted.json と topics.json を読み、まだ posted.json にない題材を topics.json の上から1つ選ぶ。
