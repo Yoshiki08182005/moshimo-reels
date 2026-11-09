@@ -18,7 +18,7 @@ on:
         description: 'render-only: エピソード名 / post-eps: カンマ区切り（moshimo-3d/queue/<ep>.json が必要）'
         default: 'ep10_chiisaku'
 
-concurrency: { group: moshimo, cancel-in-progress: false }
+concurrency: { group: "moshimo-${{ inputs.mode == 'post-eps' && 'eps' || 'main' }}", cancel-in-progress: false }
 permissions: { contents: write, issues: write, id-token: write }
 
 jobs:
