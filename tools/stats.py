@@ -55,6 +55,11 @@ def main():
     if not (UID and TOK):
         errors.append("IG_USER_ID / IG_ACCESS_TOKEN not set")
     else:
+        try:  # granted scopes of the token (names only) - helps diagnose permission errors
+            res["scopes"] = [p["permission"] for p in get("me/permissions").get("data", []) if p.get("status") == "granted"]
+        except RuntimeError as e:
+            res["scopes"] = ["? " + str(e)[:120]]
+        print("scopes:", ", ".join(res["scopes"]))
         try:
             res["account"] = get(UID, fields="username,name,biography,followers_count,follows_count,media_count")
         except RuntimeError as e:
