@@ -1,6 +1,6 @@
 name: moshimo-daily
 # Secrets never reach the AI step or the logs:
-#  - IG_* / MEDIA_DEPLOY_KEY only exist in the "Publish" step, SFX_DEPLOY_KEY only in checkout/save steps
+#  - IG_* only exist in the "Publish" step, SFX_DEPLOY_KEY only in checkout/save steps
 #  - checkouts use persist-credentials: false so no token/key is left on disk for later steps
 #  - no pull_request triggers (forks can never run this with secrets)
 on:
@@ -84,11 +84,9 @@ jobs:
             moshimo-3d/out/*/sheet.jpg
           if-no-files-found: ignore
 
-      - name: Publish (media repo + Instagram)
+      - name: Publish to Instagram (resumable upload)
         if: env.MODE == 'full'
         env:
-          MEDIA_REPO: Yoshiki08182005/moshimo-media
-          MEDIA_DEPLOY_KEY: ${{ secrets.MEDIA_DEPLOY_KEY }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
         run: python tools/publish.py
