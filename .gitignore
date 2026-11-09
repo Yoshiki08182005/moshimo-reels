@@ -1,0 +1,10 @@
+node_modules/
+out/
+stills/
+__pycache__/
+*.wav
+sfx-library/
+*.pem
+*_deploy
+id_*
+.env*

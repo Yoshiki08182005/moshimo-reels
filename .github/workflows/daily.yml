@@ -1,0 +1,117 @@
+name: moshimo-daily
+# Secrets never reach the AI step or the logs:
+#  - IG_* / MEDIA_DEPLOY_KEY only exist in the "Publish" step, SFX_DEPLOY_KEY only in checkout/save steps
+#  - checkouts use persist-credentials: false so no token/key is left on disk for later steps
+#  - no pull_request triggers (forks can never run this with secrets)
+on:
+  schedule:
+    - cron: '0 22 * * *'   # 07:00 JST
+    - cron: '0 3 * * *'    # 12:00 JST
+    - cron: '0 11 * * *'   # 20:00 JST
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'full = AIで制作→投稿 / no-post = AIで制作のみ / render-only = 既存エピソードを書き出すだけ'
+        default: 'full'
+      ep:
+        description: 'render-only で使う既存エピソード'
+        default: 'ep10_chiisaku'
+
+concurrency: { group: moshimo, cancel-in-progress: false }
+permissions: { contents: write, id-token: write }
+
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      MODE: ${{ github.event_name == 'schedule' && 'full' || inputs.mode }}
+      MOSHIMO_SS: '1'
+      MOSHIMO_MAX_MB: '45'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - name: Checkout private SFX library
+        uses: actions/checkout@v4
+        with:
+          repository: Yoshiki08182005/moshimo-sfx
+          ssh-key: ${{ secrets.SFX_DEPLOY_KEY }}
+          path: sfx-library
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Install render deps
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q ffmpeg fonts-noto-cjk fonts-noto-cjk-extra
+          pip install -q playwright pillow numpy
+          python -m playwright install --with-deps chromium
+          cd moshimo-3d && npm ci --silent
+
+      - name: Load prompt
+        id: p
+        if: env.MODE != 'render-only'
+        run: |
+          { echo 'text<<__PROMPT_EOF__'; cat .github/prompts/daily.md; echo '__PROMPT_EOF__'; } >> "$GITHUB_OUTPUT"
+      - name: Create episode with Claude
+        if: env.MODE != 'render-only'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: ${{ steps.p.outputs.text }}
+          claude_args: >-
+            --model claude-sonnet-5-5 --max-turns 150
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Render existing episode (test)
+        if: env.MODE == 'render-only'
+        working-directory: moshimo-3d
+        run: |
+          time python render.py "${{ inputs.ep }}" full
+          python render.py "${{ inputs.ep }}" clean 6.5 && python cover.py "${{ inputs.ep }}" "もしも|テスト|の" "書き出し" "OK！"
+
+      - name: Upload video artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video
+          path: |
+            moshimo-3d/out/*/final.mp4
+            moshimo-3d/out/*/cover.jpg
+            moshimo-3d/out/*/sheet.jpg
+          if-no-files-found: ignore
+
+      - name: Publish (media repo + Instagram)
+        if: env.MODE == 'full'
+        env:
+          MEDIA_REPO: Yoshiki08182005/moshimo-media
+          MEDIA_DEPLOY_KEY: ${{ secrets.MEDIA_DEPLOY_KEY }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python tools/publish.py
+
+      - name: Save new sounds to the private SFX repo
+        if: env.MODE != 'render-only'
+        env: { SFX_DEPLOY_KEY: '${{ secrets.SFX_DEPLOY_KEY }}' }
+        run: |
+          cd sfx-library
+          git add -A
+          if git diff --cached --quiet; then exit 0; fi
+          k=$(mktemp); printf '%s\n' "$SFX_DEPLOY_KEY" > "$k"; chmod 600 "$k"
+          git -c user.name=moshimo-bot -c user.email=moshimo-bot@users.noreply.github.com commit -qm "add sounds $(date -u +%F)"
+          GIT_SSH_COMMAND="ssh -i $k -o StrictHostKeyChecking=accept-new" git push -q git@github.com:Yoshiki08182005/moshimo-sfx.git HEAD:main
+          rm -f "$k"
+
+      - name: Save episode and logs
+        if: env.MODE != 'render-only'
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          git config user.name moshimo-bot
+          git config user.email moshimo-bot@users.noreply.github.com
+          git add moshimo-3d/episodes moshimo-3d/engine moshimo-3d/posted.json moshimo-3d/topics.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "episode $(date -u +%F_%H%M)"
+          git push -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main

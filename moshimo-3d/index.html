@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><title>moshimo-3d</title>
+<style>html,body{margin:0;background:#000}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+</head><body>
+<canvas id="out" width="1080" height="1920" style="width:405px;height:720px"></canvas>
+<script type="module">
+const ep = new URLSearchParams(location.search).get('ep') || 'ep03_konbini';
+import('./episodes/' + ep + '.js').catch(e => { window.ERR = String(e.stack || e); });
+</script>
+</body></html>
