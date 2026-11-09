@@ -43,8 +43,23 @@ jobs:
           show_full_output: true
           claude_args: --model sonnet --max-turns 2
 
+  stats-check:   # fetch view stats only (no secrets are printed)
+    if: inputs.mode == 'stats'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - name: Collect view stats
+        env:
+          IG_USER_ID: ${{ vars.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          PYTHONUTF8: '1'
+        run: |
+          python tools/stats.py
+          python -c "import json;d=json.load(open('moshimo-3d/marketing/stats.json',encoding='utf-8'));[print(p['hours'],'h',p.get('views'),'views',p['title'][:30]) for p in d['posts'][:8]];print('bench',[(b['username'],b['followers']) for b in d['benchmarks']])"
+
   make:
-    if: inputs.mode != 'ai-check'
+    if: inputs.mode != 'ai-check' && inputs.mode != 'stats'
     runs-on: ubuntu-latest
     timeout-minutes: 240
     env:
