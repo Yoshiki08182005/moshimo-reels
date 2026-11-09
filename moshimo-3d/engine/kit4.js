@@ -71,7 +71,21 @@ export function buildCoast(o = {}) {
   for (let i = 0; i < 90; i++) ripples.push({ m: box(3 + r() * 6, 0.05, 0.25, '#e8f2fa', (r() - 0.5) * 240, -0.98, -16 - r() * 300, scene, false), ph: r() * 6 });
   // tsunami: wall of water with foam lip and spray
   const wave = new THREE.Group(); scene.add(wave);
-  const wBody = box(1, 1, 1, '#24577f', 0, 0, 0, wave), wFront = box(1, 1, 1, '#3a7cb0', 0, 0, 0, wave), wFoam = box(1, 1, 1, '#f2f6fa', 0, 0, 0, wave);
+  const wBody = box(1, 1, 1, '#24577f', 0, 0, 0, wave), wFront = box(1, 1, 1, '#3a7cb0', 0, 0, 0, wave), wFoam = box(1, 1, 1, basic('#f4f8fb'), 0, 0, 0, wave, false);
+  const wCurl = box(1, 1, 1, '#4a92c8', 0, 0, 0, wave), wStreaks = [0.22, 0.45, 0.66].map(() => box(1, 1, 1, basic('#a9cfe8'), 0, 0, 0, wave, false));
+  const wWash = box(1, 1, 1, basic('#eef4f8'), 0, 0, 0, wave, false);
+  // spray cubes on the crest and at the foot (own rng so the town layout stays the same)
+  const sr = rng(77), SP = Array.from({ length: 320 }, () => ({ x: (sr() - 0.5) * 240, o: sr(), s: 0.4 + sr() * 1.2, foot: sr() < 0.35 }));
+  const spray = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), basic('#f4f8fb'), SP.length); scene.add(spray);
+  const sm = new THREE.Matrix4(), sq = new THREE.Quaternion(), se = new THREE.Euler();
+  // seabed step under the beach edge (seen when the sea drains)
+  box(700, 8.6, 1, '#a99260', 0, -5.4, -14.4, scene);
+  // fishing boat: floats on the sea, sits tilted on the seabed when drained (shot.opt.boat)
+  const boat = new THREE.Group(); scene.add(boat);
+  box(9, 1.6, 3.2, '#f2f2f2', 0, 0, 0, boat); box(9.1, 0.35, 3.3, '#c0392b', 0, -0.55, 0, boat);
+  box(3.2, 2.0, 2.4, '#e6e6e6', -1.2, 1.8, 0, boat); box(3.3, 0.5, 2.5, '#2f4f7a', -1.2, 2.9, 0, boat);
+  box(0.15, 4.5, 0.15, '#cfcfcf', 2.2, 3.0, 0, boat);
+  boat.rotation.y = 0.5;
   // town
   const houses = [];
   for (let gx = -6; gx <= 6; gx++) for (let gz = 0; gz < 5; gz++) {
@@ -115,7 +129,7 @@ export function buildCoast(o = {}) {
     update(lt, gt, shot) {
       const op = shot.opt || {};
       // sea level (drain) and ripples
-      const dr = op.seaFrom !== undefined ? lerp(op.seaFrom, op.sea ?? op.seaFrom, ease(lt / (op.drainDur || 4))) : (op.sea || 0);
+      const dr = op.seaFrom !== undefined ? lerp(op.seaFrom, op.sea ?? op.seaFrom, ease((lt - (op.drainAt || 0)) / (op.drainDur || 4))) : (op.sea || 0);
       sea.position.y = -1.2 - dr * 8.6;
       ripples.forEach(q => { q.m.visible = dr < 0.6; q.m.position.y = sea.position.y + 0.22; q.m.position.x += 0; q.m.scale.x = 3 + Math.sin(gt * 1.3 + q.ph) * 2; });
       fish.forEach((f, i) => { f.visible = dr > 0.85; f.position.y = -9.3 + Math.abs(Math.sin(gt * 7 + i)) * 0.5; f.rotation.z = Math.sin(gt * 9 + i) * 0.8; });
@@ -124,10 +138,29 @@ export function buildCoast(o = {}) {
       wave.visible = wv !== undefined;
       if (wave.visible) {
         const a = op.waveTo !== undefined ? lerp(wv, op.waveTo, clamp(lt / (shot.e - shot.s))) : wv;
-        const H = (op.waveH ?? 10) * (op.shrink ? lerp(1, op.shrink, ease(lt / 3)) : 1), z = lerp(-420, -18, a), y0 = sea.position.y;
-        wBody.scale.set(900, H, 40); wBody.position.set(0, y0 + H / 2, z - 20);
+        const H = (op.waveH ?? 10) * (op.shrink !== undefined ? lerp(1, op.shrink, ease((lt - (op.shrinkAt || 0)) / (op.shrinkDur || 3))) : 1), z = lerp(-420, -18, a), y0 = sea.position.y;
+        wave.visible = H > 0.15;
+        const bob = Math.sin(gt * 2.1) * H * 0.008;
+        wBody.scale.set(900, H, 40); wBody.position.set(0, y0 + H / 2 + bob, z - 20);
         wFront.scale.set(900, H * 0.75, 8); wFront.position.set(0, y0 + H * 0.37, z + 3);
-        wFoam.scale.set(900, 1.0, 7); wFoam.position.set(0, y0 + H + 0.2, z + 1);
+        wCurl.scale.set(900, H * 0.16, 9); wCurl.position.set(0, y0 + H * 0.9 + bob, z + 4);
+        wStreaks.forEach((s, i) => { const f = [0.22, 0.45, 0.66][i]; s.scale.set(900, Math.max(0.05, H * 0.035), 0.3); s.position.set(0, y0 + H * f + Math.sin(gt * 1.7 + i) * H * 0.02, z + 7.2); });
+        wFoam.scale.set(900, Math.max(0.3, H * 0.07), 12); wFoam.position.set(0, y0 + H * 0.98 + bob, z + 4);
+        wWash.scale.set(900, Math.max(0.3, H * 0.07), 7); wWash.position.set(0, y0 + H * 0.03, z + 10);
+        SP.forEach((p, i) => {
+          const k = (p.o + gt * 0.45) % 1, s = p.s * (H / 30 + 0.12) * (1 - k * 0.7);
+          const y = p.foot ? y0 + k * H * 0.18 : y0 + H * (0.95 + k * 0.22), zz = z + (p.foot ? 11 + k * 5 : 7 + k * 7);
+          se.set(i + gt, i * 0.3, 0); sq.setFromEuler(se); sm.compose(V(p.x + Math.sin(gt + i) * 0.6, y, zz), sq, V(s, s, s)); spray.setMatrixAt(i, sm);
+        });
+        spray.instanceMatrix.needsUpdate = true;
+      }
+      spray.visible = wave.visible;
+      // boat: rides the sea surface, grounds on the seabed (top y=-9.5) with a tilt
+      boat.visible = !!op.boat;
+      if (boat.visible) {
+        const floatY = sea.position.y + 0.55 + Math.sin(gt * 1.4) * 0.12, groundY = -8.75, g = clamp((groundY - floatY) / 0.8 + 1);
+        boat.position.set(-12, Math.max(groundY, floatY), -36);
+        boat.rotation.z = g * 0.26; boat.rotation.x = Math.sin(gt * 1.1) * 0.04 * (1 - g);
       }
       // racks (assemble at T_B when op.racks === 'assemble')
       if (op.racks === 'assemble') { const p = (gt - 5.0) / 1.2; rackAsm(p < 0 ? 99 : p >= 1 ? -1 : 1.6 * (1 - p)); }

@@ -200,6 +200,7 @@ export function sit(p, floorY = 0) {
 export const TIMES = {
   morning: { bg: [[0, '#79b3ea'], [0.6, '#b9daf3'], [1, '#f2e5cd']], fog: 0xd6e3ee, hemi: 2.1, sky: 0xd2e5ff, ground: 0x8a8576, sun: 3.3, sunColor: 0xfff0d6, sunPos: [-40, 55, 35], em: 0.08, lamps: false },
   noon: { bg: [[0, '#5ea3e6'], [0.7, '#a9d2f2'], [1, '#e2eef7']], fog: 0xcfe0ee, hemi: 2.2, sky: 0xd8e8ff, ground: 0x8a8576, sun: 3.6, sunColor: 0xffffff, sunPos: [-20, 80, 25], em: 0.06, lamps: false },
+  storm: { bg: [[0, '#454f5c'], [0.6, '#8a949f'], [1, '#c2c7cc']], fog: 0x9aa3ad, hemi: 2.0, sky: 0xc9d2dc, ground: 0x7a7468, sun: 2.3, sunColor: 0xe8eef5, sunPos: [-20, 80, 25], em: 0.12, lamps: false },
   evening: { bg: [[0, '#3b4f8a'], [0.55, '#d98a6a'], [1, '#f5c27a']], fog: 0xd9a487, hemi: 1.7, sky: 0xffd2b0, ground: 0x5a4a44, sun: 2.9, sunColor: 0xffb070, sunPos: [-60, 20, 10], em: 0.4, lamps: false },
   night: { bg: [[0, '#03060f'], [0.6, '#0a1430'], [1, '#16244a']], fog: 0x0b1530, hemi: 1.7, sky: 0x6a7ab8, ground: 0x14141c, sun: 1.7, sunColor: 0xaabbf0, sunPos: [-30, 60, 25], em: 1.0, lamps: true },
 };
@@ -358,6 +359,8 @@ export function run(EP) {
   const DURATION = EP.shots[EP.shots.length - 1].e;
   const outroStars = (() => { const r = rng(99); return Array.from({ length: 420 }, () => [r() * W, r() * H, 0.6 + r() * 1.8, 0.2 + r() * 0.8]); })();
   let SC = null;
+  // EP.clock(gt) -> seconds left: one live countdown from the hook to the end (shots without num use it)
+  const clk = (gt) => Math.max(0, EP.clock(gt)).toFixed(2);
   function overlay(shot, lt, gt) {
     const T_B = EP.T_B;
     if (shot.hook) {
@@ -370,12 +373,12 @@ export function run(EP) {
         rich([[EP.hookTail2, '#ffffff']], W / 2, LAY.hook2, fit(EP.hookTail2, 980, 136, SERIF), ia, 8);
         ctx.restore();
         txt(EP.hookSub, W / 2, LAY.hookSub, GOTH(36), '#ffffff', 'center', ia, 5);
-        counter(EP.countdownLabel, Math.max(0, T_B - gt).toFixed(2), '秒', null, ia, LAY.hookLabel - LAY.labelY, 124);
+        counter(EP.countdownLabel, EP.clock ? clk(gt) : Math.max(0, T_B - gt).toFixed(2), '秒', null, ia, LAY.hookLabel - LAY.labelY, 124);
       }
       const ma = clamp((gt - T_B - 0.3) / 0.45);
       if (ma > 0) {
         rich(TITLE, W / 2, LAY.titleY, fit(TITLE.map(p => p[0]).join(''), 960, 58, SERIF), ma, 4);
-        counter(EP.label, (gt - T_B).toFixed(2), '秒', shot.loc, ma);
+        counter(EP.label, EP.clock ? clk(gt) : (gt - T_B).toFixed(2), '秒', shot.loc, ma);
         caption(shot, lt);
       }
       focusLines(shot, lt); stamps(shot, lt);
@@ -385,7 +388,10 @@ export function run(EP) {
     if (shot.dark) { ctx.fillStyle = `rgba(0,0,0,${clamp((lt - shot.dark[0]) / 0.5) * shot.dark[1]})`; ctx.fillRect(0, 0, W, H); }
     shade(false);
     rich(TITLE, W / 2, LAY.titleY, fit(TITLE.map(p => p[0]).join(''), 960, 58, SERIF), 1, 4);
-    if (!shot.noCounter) counter(EP.label, shot.num, shot.unit, shot.loc, 1);
+    if (!shot.noCounter) {
+      if (EP.clock && shot.num === undefined) counter(EP.label, clk(gt), '秒', shot.loc, 1);
+      else counter(EP.label, shot.num, shot.unit, shot.loc, 1);
+    }
     focusLines(shot, lt); caption(shot, lt); stamps(shot, lt);
   }
   // protagonist's-eye overlay: eyelids open at shot start, vignette, small "〇〇の目線" tag under the counter
