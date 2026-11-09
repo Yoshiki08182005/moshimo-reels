@@ -79,6 +79,16 @@
    "arm": "C",
    "hypothesis": "今週の科学ニュース（理研のエントロピー増大則の証明）を「部屋の片付け」という身近な話にすると、初速と共感コメントが伸びる",
    "slot": "manual"
+  },
+  {
+   "date": "2026-11-09",
+   "ep": "ep11_ai_tsunami",
+   "topic": "AIで津波を干上がらせたら",
+   "url": "https://www.instagram.com/reel/DfhXdaNAF_W/",
+   "via": "cloud",
+   "arm": "B",
+   "hypothesis": "「AIの水消費を逆手に取る」意外な発想は、シェア・保存が伸びる。防災メッセージで締めても再生は落ちないか",
+   "slot": "manual"
   }
  ]
 }
