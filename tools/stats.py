@@ -11,7 +11,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MK = os.path.join(ROOT, "moshimo-3d", "marketing")
 VER = os.environ.get("IG_API_VERSION", "v25.0")
 API = f"https://graph.facebook.com/{VER}"
-UID, TOK = os.environ.get("IG_USER_ID", ""), os.environ.get("IG_ACCESS_TOKEN", "")
+UID, TOK = os.environ.get("IG_USER_ID", ""), "".join(os.environ.get("IG_ACCESS_TOKEN", "").split())
 errors = []
 
 

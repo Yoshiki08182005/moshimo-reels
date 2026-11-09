@@ -33,7 +33,7 @@ def with_cover(video, cover, out):
 
 def post_reel(video, caption):
     ver = os.environ.get("IG_API_VERSION", "v25.0")
-    api, uid, tok = f"https://graph.facebook.com/{ver}", os.environ["IG_USER_ID"], os.environ["IG_ACCESS_TOKEN"]
+    api, uid, tok = f"https://graph.facebook.com/{ver}", os.environ["IG_USER_ID"], "".join(os.environ["IG_ACCESS_TOKEN"].split())
     auth = {"Authorization": f"OAuth {tok}"}
     c = http("POST", f"{api}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": caption,
                                             "share_to_feed": "true", "thumb_offset": "100"}, headers=auth)
