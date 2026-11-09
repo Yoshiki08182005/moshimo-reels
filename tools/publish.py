@@ -68,8 +68,11 @@ def main():
     print("posted:", url)
     pj = os.path.join(M3D, "posted.json")
     p = json.load(open(pj, encoding="utf-8"))
-    p["posts"].append({"date": datetime.date.today().isoformat(), "ep": ep, "topic": nxt.get("topic", ""), "url": url, "via": "cloud"})
+    p["posts"].append({"date": datetime.date.today().isoformat(), "ep": ep, "topic": nxt.get("topic", ""), "url": url, "via": "cloud",
+                       "arm": nxt.get("arm", ""), "hypothesis": nxt.get("hypothesis", ""), "slot": os.environ.get("SLOT", "")})
     json.dump(p, open(pj, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    with open(os.path.join(M3D, "out", "posted_urls.txt"), "a", encoding="utf-8") as f:
+        print(f"{nxt.get('topic', ep)}（アーム{nxt.get('arm', '-')}）: {url}", file=f)
 
 
 if __name__ == "__main__":

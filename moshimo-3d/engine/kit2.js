@@ -155,8 +155,8 @@ export function buildStreet(o = {}) {
     if (k.ns) { k.c.position.set(k.lane, 0, k.lane > 0 ? -s : s); k.c.rotation.y = k.lane > 0 ? Math.PI : 0; }
     else { k.c.position.set(k.lane > 0 ? s : -s, 0, k.lane); k.c.rotation.y = k.lane > 0 ? Math.PI / 2 : -Math.PI / 2; }
   };
-  const ex = o.extra ? o.extra({ scene, r, cars, ped, placeCar, night }) : null;
   const camera = cam(50);
+  const ex = o.extra ? o.extra({ scene, r, cars, ped, placeCar, night, camera }) : null;
   return {
     scene, camera,
     update(lt, gt, shot) {
@@ -208,8 +208,8 @@ export function buildResidential(o = {}) {
   const kid = person(r, { cap: '#f2d23a', shirt: '#e8e8e8', pants: '#2b3a5a' });
   box(0.5, 0.58, 0.28, '#b3262a', 0, 1.2, -0.3, kid);
   kid.scale.setScalar(0.72); kid.rotation.y = Math.PI; scene.add(kid);
-  const ex = o.extra ? o.extra({ scene, r, kid }) : null;
   const camera = cam(50);
+  const ex = o.extra ? o.extra({ scene, r, kid, camera }) : null;
   return {
     scene, camera, kid,
     update(lt, gt, shot) {
@@ -289,6 +289,6 @@ export function buildShotengai(o = {}) {
   roof.castShadow = false;
   const ped = walkers(scene, r, [{ a: [-1.4, 0, -20], d: [0, 0, 1], len: 80, w: 1.4 }, { a: [1.4, 0, -20], d: [0, 0, 1], len: 80, w: 1.4 }], o.walkers ?? 34);
   const camera = cam(52);
-  const ex = o.extra ? o.extra({ scene, r, ped }) : null;
+  const ex = o.extra ? o.extra({ scene, r, ped, camera }) : null;
   return { scene, camera, update(lt, gt, shot) { ped(gt); ex?.(lt, gt, shot); } };
 }

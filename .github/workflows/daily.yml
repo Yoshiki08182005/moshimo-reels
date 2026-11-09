@@ -1,35 +1,37 @@
 name: moshimo-daily
 # Secrets never reach the AI step or the logs:
-#  - IG_ACCESS_TOKEN only exists in the "Publish" step (IG_USER_ID is a non-secret repo variable)
-#  - checkout uses persist-credentials: false; the push token is only used in the last step
+#  - IG_ACCESS_TOKEN only exists in the "stats" and "Publish" steps (IG_USER_ID is a non-secret repo variable)
+#  - checkout uses persist-credentials: false; the push token is only used in the save / notify steps
 #  - no pull_request triggers (forks can never run this with secrets)
 #  - SFX audio is downloaded from its source each run and never committed (license: no redistribution)
 on:
   schedule:
-    - cron: '0 22 * * *'   # 07:00 JST
-    - cron: '0 3 * * *'    # 12:00 JST
-    - cron: '0 11 * * *'   # 20:00 JST
+    - cron: '0 22 * * *'   # 07:00 JST (slot 0)
+    - cron: '0 3 * * *'    # 12:00 JST (slot 1)
+    - cron: '0 11 * * *'   # 20:00 JST (slot 2)
   workflow_dispatch:
     inputs:
       mode:
-        description: 'full = AIで制作→投稿 / no-post = AIで制作のみ / render-only = 既存エピソードを書き出すだけ'
+        description: 'full = AIで企画・制作→投稿 / no-post = AIで制作のみ / post-eps = 用意済みエピソードを書き出して投稿 / render-only = 書き出しテスト'
         default: 'full'
       ep:
-        description: 'render-only で使う既存エピソード'
+        description: 'render-only: エピソード名 / post-eps: カンマ区切り（moshimo-3d/queue/<ep>.json が必要）'
         default: 'ep10_chiisaku'
 
 concurrency: { group: moshimo, cancel-in-progress: false }
-permissions: { contents: write, id-token: write }
+permissions: { contents: write, issues: write, id-token: write }
 
 jobs:
   make:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 240
     env:
       MODE: ${{ github.event_name == 'schedule' && 'full' || inputs.mode }}
+      SLOT: ${{ github.event.schedule == '0 22 * * *' && '7時' || github.event.schedule == '0 3 * * *' && '12時' || github.event.schedule == '0 11 * * *' && '20時' || 'manual' }}
       MOSHIMO_SS: '1'
       MOSHIMO_MAX_MB: '45'
       PYTHONUTF8: '1'
+      TZ: Asia/Tokyo
     steps:
       - uses: actions/checkout@v4
         with: { persist-credentials: false }
@@ -46,21 +48,43 @@ jobs:
       - name: Fetch sound effects from source
         run: python tools/fetch_sfx.py
 
+      - name: Collect view stats (for the marketing role)
+        if: env.MODE == 'full' || env.MODE == 'no-post'
+        env:
+          IG_USER_ID: ${{ vars.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python tools/stats.py || true
+
       - name: Load prompt
         id: p
-        if: env.MODE != 'render-only'
+        if: env.MODE == 'full' || env.MODE == 'no-post'
         run: |
           { echo 'text<<__PROMPT_EOF__'; cat .github/prompts/daily.md; echo '__PROMPT_EOF__'; } >> "$GITHUB_OUTPUT"
-      - name: Create episode with Claude
-        if: env.MODE != 'render-only'
+      - name: Plan and create episode with Claude
+        if: env.MODE == 'full' || env.MODE == 'no-post'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: ${{ steps.p.outputs.text }}
           claude_args: >-
-            --model claude-sonnet-5-5 --max-turns 150
+            --model claude-sonnet-5-5 --max-turns 180
             --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Publish to Instagram (resumable upload)
+        if: env.MODE == 'full'
+        env:
+          IG_USER_ID: ${{ vars.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python tools/publish.py
+
+      - name: Render and post prepared episodes
+        if: env.MODE == 'post-eps'
+        env:
+          IG_USER_ID: ${{ vars.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          EPS: ${{ inputs.ep }}
+        run: python tools/post_eps.py
 
       - name: Render existing episode (test)
         if: env.MODE == 'render-only'
@@ -80,20 +104,34 @@ jobs:
             moshimo-3d/out/*/sheet.jpg
           if-no-files-found: ignore
 
-      - name: Publish to Instagram (resumable upload)
-        if: env.MODE == 'full'
-        env:
-          IG_USER_ID: ${{ vars.IG_USER_ID }}
-          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-        run: python tools/publish.py
-
       - name: Save episode and logs
-        if: env.MODE != 'render-only'
+        if: always() && env.MODE != 'render-only'
         env: { GH_TOKEN: '${{ github.token }}' }
         run: |
           git config user.name moshimo-bot
           git config user.email moshimo-bot@users.noreply.github.com
-          git add moshimo-3d/episodes moshimo-3d/engine moshimo-3d/posted.json moshimo-3d/topics.json sfx-library/sfx.json
+          git add moshimo-3d/episodes moshimo-3d/engine moshimo-3d/posted.json moshimo-3d/topics.json moshimo-3d/marketing moshimo-3d/queue sfx-library/sfx.json
           git diff --cached --quiet && exit 0
-          git commit -qm "episode $(date -u +%F_%H%M)"
-          git push -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
+          git commit -qm "episode $(date +%F_%H%M) [$MODE slot $SLOT]"
+          for i in 1 2 3; do
+            git pull -q --rebase "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" main && \
+            git push -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main && break
+            sleep 5
+          done
+
+      - name: Notify the owner (GitHub notification on the progress issue)
+        if: always() && env.MODE != 'render-only' && vars.NOTIFY_ISSUE != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          OWNER: ${{ github.repository_owner }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          {
+            if [ "$JOB_STATUS" = "success" ]; then echo "@$OWNER ✅ $(date '+%m/%d %H:%M') の回が完了"; else echo "@$OWNER ⚠️ $(date '+%m/%d %H:%M') の回で問題が発生（$JOB_STATUS）。次の回は自動で続きます"; fi
+            echo
+            [ -f moshimo-3d/out/posted_urls.txt ] && { echo "**投稿:**"; sed 's/^/- /' moshimo-3d/out/posted_urls.txt; echo; }
+            [ -f moshimo-3d/out/report.md ] && cat moshimo-3d/out/report.md
+            echo; echo "<sub>実行ログ: $RUN_URL</sub>"
+          } > /tmp/notify.md
+          gh issue comment "${{ vars.NOTIFY_ISSUE }}" -R "${{ github.repository }}" --body-file /tmp/notify.md

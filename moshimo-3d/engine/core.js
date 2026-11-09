@@ -212,10 +212,24 @@ export function sceneFor(timeKey, shadow = 45) {
   return { scene, T, L };
 }
 // camera keyframes: {p0,p1,l0,l1,hold,dur}
+// c.pov = true | {walk: steps/s (0 = standing), bob, fov, label, blink} -> protagonist's-eye view:
+//   p0/p1 = eye position (about 1.55 for an adult), head bob + breathing, wider fov; core draws blink/vignette/label
 export function applyCam(camera, c, lt, dur) {
   const k = ease((lt - (c.hold || 0)) / ((c.dur || dur) - (c.hold || 0)));
   camera.position.copy(vlerp(V(...c.p0), V(...(c.p1 || c.p0)), k));
-  camera.lookAt(vlerp(V(...c.l0), V(...(c.l1 || c.l0)), k));
+  const look = vlerp(V(...c.l0), V(...(c.l1 || c.l0)), k);
+  if (camera.userData.fov0 === undefined) camera.userData.fov0 = camera.fov;
+  let fov = camera.userData.fov0;
+  if (c.pov) {
+    const pv = c.pov === true ? {} : c.pov, f = pv.walk ?? 1.8, b = pv.bob ?? 0.055;
+    const ph = lt * f * Math.PI;
+    camera.position.y += f ? (Math.abs(Math.sin(ph)) - 0.6) * b * 2 : Math.sin(lt * 1.6) * 0.012;
+    camera.position.x += f ? Math.sin(ph / 2) * b * 0.7 : 0;
+    look.y += Math.sin(lt * 1.3) * 0.05;
+    fov = pv.fov ?? 68;
+  }
+  if (camera.fov !== fov) { camera.fov = fov; camera.updateProjectionMatrix(); }
+  camera.lookAt(look);
 }
 // object bursts into cubes at dt=0
 export function vanisher(scene, obj, colors, n = 280, seed = 5, k = 1) {
@@ -374,6 +388,21 @@ export function run(EP) {
     if (!shot.noCounter) counter(EP.label, shot.num, shot.unit, shot.loc, 1);
     focusLines(shot, lt); caption(shot, lt); stamps(shot, lt);
   }
+  // protagonist's-eye overlay: eyelids open at shot start, vignette, small "〇〇の目線" tag under the counter
+  function povFx(pv, lt) {
+    const g = ctx.createRadialGradient(W / 2, H * 0.45, H * 0.28, W / 2, H * 0.45, H * 0.72);
+    g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,0.55)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    if (pv.blink !== false) {
+      const o = ease(lt / 0.45), lid = (1 - o) * H * 0.52;
+      if (lid > 1) {
+        ctx.fillStyle = '#000';
+        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(W, 0); ctx.lineTo(W, lid * 0.8); ctx.quadraticCurveTo(W / 2, lid * 1.25, 0, lid * 0.8); ctx.fill();
+        ctx.beginPath(); ctx.moveTo(0, H); ctx.lineTo(W, H); ctx.lineTo(W, H - lid * 0.8); ctx.quadraticCurveTo(W / 2, H - lid * 1.25, 0, H - lid * 0.8); ctx.fill();
+      }
+    }
+    txt('◉ ' + (pv.label || '主人公の目線'), 70, LAY.locY + 58, GOTH(30), '#ffffff', 'left', clamp((lt - 0.3) / 0.4), 5);
+  }
   function drawOutro(lt) {
     ctx.fillStyle = '#0a0f1d'; ctx.fillRect(0, 0, W, H);
     for (const [x, y, s, a] of outroStars) { ctx.globalAlpha = a * (0.7 + 0.3 * Math.sin(lt * 2 + x)); ctx.fillStyle = '#dfe6ff'; ctx.fillRect(x, y, s, s); }
@@ -398,6 +427,7 @@ export function run(EP) {
       renderer.render(S.scene, S.camera);
       ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
       ctx.drawImage(renderer.domElement, 0, 0, W, H);
+      if (!clean && shot.cam && shot.cam.pov) povFx(shot.cam.pov === true ? {} : shot.cam.pov, lt);
       if (!clean) overlay(shot, lt, gt);
     }
     let fade = 0;

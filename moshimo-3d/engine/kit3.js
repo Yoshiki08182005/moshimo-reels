@@ -153,3 +153,26 @@ export function onigiriPile(scene, x, z, n = 140, seed = 3) {
   }
   return (level) => items.forEach(it => { it.g.visible = it.k < level; });
 }
+
+// first-person arms for POV shots (parented to the camera, so they follow the eye).
+// const hands = povHands(scene, camera, {skin, sleeve});  in update: hands(shot.cam?.pov ? 1 : 0, lt, reach 0..1, walk)
+export function povHands(scene, camera, o = {}) {
+  if (!camera.parent) scene.add(camera);
+  const skin = o.skin || '#e9b995', sleeve = o.sleeve || '#3a5a8a';
+  const g = new THREE.Group(); camera.add(g); g.visible = false;
+  const arms = [-1, 1].map(sx => {
+    const a = new THREE.Group(); g.add(a);
+    box(0.08, 0.08, 0.42, sleeve, 0, 0, 0.12, a, false);
+    box(0.075, 0.04, 0.1, skin, 0, 0.004, -0.13, a, false);
+    box(0.02, 0.03, 0.06, skin, sx * -0.045, 0.008, -0.11, a, false);
+    a.rotation.set(0.28, -sx * 0.22, sx * 0.12);
+    return a;
+  });
+  return (on, lt = 0, reach = 0, walk = 1.8) => {
+    g.visible = !!on; if (!on) return;
+    arms.forEach((a, i) => {
+      const sx = i ? 1 : -1, sw = walk ? Math.sin(lt * walk * Math.PI + i * Math.PI) * 0.025 : 0;
+      a.position.set(sx * (0.3 - reach * 0.1), -0.4 + reach * 0.14 + sw, -0.72 - reach * 0.2 + sw);
+    });
+  };
+}
