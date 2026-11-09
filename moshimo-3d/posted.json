@@ -69,6 +69,16 @@
    "arm": "A",
    "hypothesis": "身近なAI→電気→停電と連鎖が広がる「原因の拡大」は、続きが気になって最後まで見られる（平均視聴時間が伸びる）",
    "slot": "manual"
+  },
+  {
+   "date": "2026-11-09",
+   "ep": "ep12_entropy",
+   "topic": "散らかった部屋が勝手に片付いたら（エントロピー）",
+   "url": "https://www.instagram.com/reel/DfhUvukjXU8/",
+   "via": "cloud",
+   "arm": "C",
+   "hypothesis": "今週の科学ニュース（理研のエントロピー増大則の証明）を「部屋の片付け」という身近な話にすると、初速と共感コメントが伸びる",
+   "slot": "manual"
   }
  ]
 }

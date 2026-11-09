@@ -12,6 +12,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 M3D = os.path.join(ROOT, "moshimo-3d")
 
 
+class ApiError(Exception):
+    pass
+
+
 def http(method, url, data=None, headers=None, raw=None):
     body = raw if raw is not None else (urllib.parse.urlencode(data).encode() if data else None)
     req = urllib.request.Request(url, data=body, method=method, headers=headers or {})
@@ -19,7 +23,7 @@ def http(method, url, data=None, headers=None, raw=None):
         with urllib.request.urlopen(req, timeout=600) as r:
             return json.loads(r.read().decode())
     except urllib.error.HTTPError as e:
-        print("HTTP", e.code, e.read().decode()[:600]); raise SystemExit(1)
+        raise ApiError(f"HTTP {e.code} {e.read().decode()[:600]}")
 
 
 def with_cover(video, cover, out):
@@ -35,23 +39,37 @@ def post_reel(video, caption):
     ver = os.environ.get("IG_API_VERSION", "v25.0")
     api, uid, tok = f"https://graph.facebook.com/{ver}", os.environ["IG_USER_ID"], "".join(os.environ["IG_ACCESS_TOKEN"].split())
     auth = {"Authorization": f"OAuth {tok}"}
-    c = http("POST", f"{api}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": caption,
-                                            "share_to_feed": "true", "thumb_offset": "100"}, headers=auth)
-    cid = c["id"]; print("container", cid)
     size = os.path.getsize(video)
-    up = http("POST", c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{ver}/{cid}",
-              headers={**auth, "offset": "0", "file_size": str(size), "Content-Type": "application/octet-stream"},
-              raw=open(video, "rb").read())
-    print("upload", "ok" if up.get("success") else up)
-    for _ in range(80):
-        st = http("GET", f"{api}/{cid}?fields=status_code,status", headers=auth)
-        print("status", st.get("status_code"), str(st.get("status", ""))[:120])
-        if st.get("status_code") == "FINISHED":
-            break
-        if st.get("status_code") in ("ERROR", "EXPIRED"):
-            raise SystemExit("container failed")
-        time.sleep(15)
-    pub = http("POST", f"{api}/{uid}/media_publish", {"creation_id": cid}, headers=auth)
+    for attempt in range(3):  # upload processing sometimes fails transiently -> new container and retry
+        try:
+            c = http("POST", f"{api}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": caption,
+                                                    "share_to_feed": "true", "thumb_offset": "100"}, headers=auth)
+            cid = c["id"]; print("container", cid)
+            up = http("POST", c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{ver}/{cid}",
+                      headers={**auth, "offset": "0", "file_size": str(size), "Content-Type": "application/octet-stream"},
+                      raw=open(video, "rb").read())
+            print("upload", "ok" if up.get("success") else up)
+            for _ in range(80):
+                st = http("GET", f"{api}/{cid}?fields=status_code,status", headers=auth)
+                print("status", st.get("status_code"), str(st.get("status", ""))[:120])
+                if st.get("status_code") in ("FINISHED", "ERROR", "EXPIRED"):
+                    break
+                time.sleep(15)
+            if st.get("status_code") == "FINISHED":
+                break
+            print("attempt", attempt + 1, "container", st.get("status_code"))
+        except ApiError as e:
+            print("attempt", attempt + 1, "failed:", e)
+        time.sleep(30)
+    else:
+        raise SystemExit("upload failed 3 times")
+    for attempt in range(3):
+        try:
+            pub = http("POST", f"{api}/{uid}/media_publish", {"creation_id": cid}, headers=auth); break
+        except ApiError as e:
+            print("publish attempt", attempt + 1, "failed:", e); time.sleep(20)
+    else:
+        raise SystemExit("media_publish failed 3 times")
     info = http("GET", f"{api}/{pub['id']}?fields=permalink", headers=auth)
     return info.get("permalink", pub["id"])
 

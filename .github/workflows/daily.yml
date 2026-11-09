@@ -145,9 +145,15 @@ jobs:
           done
           git diff --cached --quiet && exit 0
           git commit -qm "episode $(date +%F_%H%M) [$MODE slot $SLOT]"
+          MINE=$(git rev-parse HEAD)
+          REMOTE="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
           for i in 1 2 3; do
-            git pull -q --rebase "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" main && \
-            git push -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main && break
+            git fetch -q "$REMOTE" main
+            if ! git rebase -q FETCH_HEAD; then
+              # another run saved logs at the same time: merge posted.json / history.jsonl instead of failing
+              python tools/merge_logs.py "$MINE" FETCH_HEAD && GIT_EDITOR=true git rebase --continue || { git rebase --abort; sleep 5; continue; }
+            fi
+            git push -q "$REMOTE" HEAD:main && break
             sleep 5
           done
 
