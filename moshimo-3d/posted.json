@@ -59,6 +59,16 @@
    "ep": "ep10_chiisaku",
    "topic": "体が10cm（空想科学#4）",
    "url": "https://www.instagram.com/moshimo.simulation/reel/DfgfBcZOUIQ/"
+  },
+  {
+   "date": "2026-11-09",
+   "ep": "ep13_ai_denki",
+   "topic": "AIの電気が100倍になったら",
+   "url": "https://www.instagram.com/reel/DfhUAZ-AfF2/",
+   "via": "cloud",
+   "arm": "A",
+   "hypothesis": "身近なAI→電気→停電と連鎖が広がる「原因の拡大」は、続きが気になって最後まで見られる（平均視聴時間が伸びる）",
+   "slot": "manual"
   }
  ]
 }
