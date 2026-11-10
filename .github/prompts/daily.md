@@ -35,6 +35,7 @@
    - comic:true、stdCues(..., 'comic_boyon')、各ビートにスタンプ1つと comic_* の効果音、山場に shake と lines。少しオーバーに。
    - cap 20字以内、sub 1行28字以内（最大2行）。
    - box() のメッシュの scale を変えるときは元の大きさを掛ける（口なら 0.03 * 倍率）。カメラを建物・街灯・信号柱・人の通り道（歩道 x=±8.2 と z=±8.4 付近）に重ねない。キャラは交差点の角（x=-9〜-11, z=9〜11 付近）か大通りの中央が安全。
+2.5 **書き終えたらすぐ（stills より前に）out/next.json を書く**（6. の形式に "cover": [T, "もしも|<金色の語>|<続き>", "<2行目>", "<スタンプ>"] を足す）。途中で終わっても、ワークフローが full と表紙を作って投稿できるようにするため。以降で直したら上書きしてよい。
 3. `python render.py epNN_<slug> stills <フックと各ビートの時刻>` → out/epNN_<slug>/sheet.jpg を Read で確認。直す基準：めり込み／主役が映っていない／顔や体に変な棒・影／暗すぎ／テロップが読めない／POVの手が画面をふさぐ。修正は2回まで。
 4. `python render.py epNN_<slug> full`（10〜20分）。
 5. 表紙：主役が映える時刻Tで `python render.py epNN_<slug> clean T` → `python cover.py epNN_<slug> "もしも|<金色の語>|<続き>" "<2行目>" "<スタンプ>"`。

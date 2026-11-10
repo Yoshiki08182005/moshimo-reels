@@ -6,7 +6,7 @@ The cover image is prepended as a 0.2s title card and selected with thumb_offset
 
 env: IG_USER_ID, IG_ACCESS_TOKEN (never printed), IG_API_VERSION (default v25.0), DRY_RUN=1 to skip posting
 """
-import datetime, json, os, subprocess, time, urllib.parse, urllib.request
+import datetime, json, os, re, subprocess, time, urllib.parse, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 M3D = os.path.join(ROOT, "moshimo-3d")
@@ -74,9 +74,36 @@ def post_reel(video, caption):
     return info.get("permalink", pub["id"])
 
 
+def fallback_next():
+    """The AI sometimes ends right after writing the episode file: rebuild next.json from the newest unposted episode."""
+    posted = {p["ep"] for p in json.load(open(os.path.join(M3D, "posted.json"), encoding="utf-8"))["posts"]}
+    eps = [f[:-3] for f in os.listdir(os.path.join(M3D, "episodes")) if re.match(r"ep\d+_.*\.js$", f) and f[:-3] not in posted]
+    if not eps:
+        raise SystemExit("no out/next.json and no unposted episode")
+    ep = max(eps, key=lambda e: int(re.match(r"ep(\d+)", e).group(1)))
+    src = open(os.path.join(M3D, "episodes", ep + ".js"), encoding="utf-8").read()
+    g = lambda k: (re.search(k + r":\s*'([^']*)'", src) or [None, ""])[1]
+    word, tail, t1, t2 = g("word"), g("tail"), g("hookTail1"), g("hookTail2")
+    head = [l[2:].strip() for l in src.splitlines()[1:12] if l.startswith("//")]
+    title = f"もしも{word}{tail}"
+    cap = (title + "\n科学で考えると…どうなると思う？\n\n🧪 試算の前提\n" + "\n".join("・" + h for h in head)
+           + "\n\n※プログラムで作った3DCGの空想科学シミュレーションです\n\n#空想科学 #雑学 #シュミレーション #シミュレーション #もしもシリーズ #もしも #科学 #3DCG")
+    print("fallback next.json for", ep)
+    return {"ep": ep, "topic": title, "arm": (re.search(r"アーム([ABC])", src) or [None, ""])[1], "hypothesis": "",
+            "caption": cap, "cover": [7.0, f"もしも|{word}|{t1}", t2, "本気で試算"]}
+
+
 def main():
-    nxt = json.load(open(os.path.join(M3D, "out", "next.json"), encoding="utf-8"))
+    nj = os.path.join(M3D, "out", "next.json")
+    nxt = json.load(open(nj, encoding="utf-8")) if os.path.exists(nj) else fallback_next()
     ep = nxt["ep"]; out = os.path.join(M3D, "out", ep)
+    # render / cover here when the AI did not get that far
+    if not os.path.exists(os.path.join(out, "final.mp4")):
+        subprocess.run(["python", "render.py", ep, "full"], cwd=M3D, check=True)
+    if not os.path.exists(os.path.join(out, "cover.jpg")):
+        t, l1, l2, stamp = nxt.get("cover") or [7.0, f"もしも|{ep}|", "", ""]
+        subprocess.run(["python", "render.py", ep, "clean", str(t)], cwd=M3D, check=True)
+        subprocess.run(["python", "cover.py", ep, l1, l2, stamp], cwd=M3D, check=True)
     video = os.path.join(out, "upload.mp4")
     with_cover(os.path.join(out, "final.mp4"), os.path.join(out, "cover.jpg"), video)
     print("video", round(os.path.getsize(video) / 1e6, 1), "MB")
