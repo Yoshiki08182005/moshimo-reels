@@ -17,9 +17,12 @@ on:
       ep:
         description: 'render-only: エピソード名 / post-eps: カンマ区切り（moshimo-3d/queue/<ep>.json が必要）'
         default: 'ep10_chiisaku'
+      from_run:
+        description: 'post-eps: 書き出し済みの動画を使う実行ID（失敗した回の video アーティファクト）。空なら書き出す'
+        default: ''
 
 concurrency: { group: "moshimo-${{ inputs.mode == 'post-eps' && 'eps' || 'main' }}", cancel-in-progress: false }
-permissions: { contents: write, issues: write, id-token: write }
+permissions: { contents: write, issues: write, id-token: write, actions: read }
 
 jobs:
   ai-check:   # quick diagnosis of the Claude login (no secrets are printed)
@@ -121,6 +124,7 @@ jobs:
         env:
           IG_USER_ID: ${{ vars.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: python tools/publish.py
 
       - name: Render and post prepared episodes
@@ -129,6 +133,8 @@ jobs:
           IG_USER_ID: ${{ vars.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           EPS: ${{ inputs.ep }}
+          FROM_RUN: ${{ inputs.from_run }}
+          GH_TOKEN: ${{ github.token }}
         run: python tools/post_eps.py
 
       - name: Render existing episode (test)
@@ -147,6 +153,7 @@ jobs:
             moshimo-3d/out/*/final.mp4
             moshimo-3d/out/*/cover.jpg
             moshimo-3d/out/*/sheet.jpg
+            moshimo-3d/out/next.json
           if-no-files-found: ignore
 
       - name: Save episode and logs

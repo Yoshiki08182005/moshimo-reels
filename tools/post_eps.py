@@ -7,11 +7,15 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 M3D = os.path.join(ROOT, "moshimo-3d")
 last_post = 0.0
 failed = []
+if os.environ.get("FROM_RUN"):  # reuse videos rendered by an earlier run (its "video" artifact) instead of rendering again
+    subprocess.run(["gh", "run", "download", os.environ["FROM_RUN"], "-n", "video", "-D", os.path.join(M3D, "out")])
 for ep in [e.strip() for e in os.environ.get("EPS", "").split(",") if e.strip()]:
     try:
         q = json.load(open(os.path.join(M3D, "queue", ep + ".json"), encoding="utf-8"))
         t, l1, l2, stamp = q["cover"]
-        for cmd in (["python", "render.py", ep, "full"], ["python", "render.py", ep, "clean", str(t)], ["python", "cover.py", ep, l1, l2, stamp]):
+        have = lambda f: os.path.exists(os.path.join(M3D, "out", ep, f))
+        cmds = ([] if have("final.mp4") else [["python", "render.py", ep, "full"]]) +                ([] if have("cover.jpg") else [["python", "render.py", ep, "clean", str(t)], ["python", "cover.py", ep, l1, l2, stamp]])
+        for cmd in cmds:
             subprocess.run(cmd, cwd=M3D, check=True)
         json.dump({k: q[k] for k in ("ep", "topic", "arm", "hypothesis", "caption") if k in q},
                   open(os.path.join(M3D, "out", "next.json"), "w", encoding="utf-8"), ensure_ascii=False)

@@ -35,11 +35,56 @@ def with_cover(video, cover, out):
                     "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out], check=True)
 
 
+HOSTED = []  # temporary release assets to delete after posting
+
+
+def wait_ready(api, cid, auth):
+    for _ in range(80):
+        st = http("GET", f"{api}/{cid}?fields=status_code,status", headers=auth)
+        print("status", st.get("status_code"), str(st.get("status", ""))[:120])
+        if st.get("status_code") in ("FINISHED", "ERROR", "EXPIRED"):
+            return st.get("status_code")
+        time.sleep(15)
+    return "TIMEOUT"
+
+
+def post_by_url(api, uid, auth, video, caption):
+    """fallback: host the file as a temporary GitHub release asset and let Instagram fetch it (video_url)"""
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if not (repo and os.environ.get("GH_TOKEN")):
+        raise SystemExit("upload failed 3 times (no GH_TOKEN for the video_url fallback)")
+    tag = "ig-upload-" + datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    subprocess.run(["gh", "release", "create", tag, video, "-R", repo, "--prerelease", "--title", tag,
+                    "--notes", "temporary file for an Instagram upload (deleted after posting)"], check=True)
+    HOSTED.append((repo, tag))
+    url = f"https://github.com/{repo}/releases/download/{tag}/{os.path.basename(video)}"
+    for attempt in range(2):
+        try:
+            c = http("POST", f"{api}/{uid}/media", {"media_type": "REELS", "video_url": url, "caption": caption,
+                                                    "share_to_feed": "true", "thumb_offset": "100"}, headers=auth)
+            print("url container", c["id"])
+            if wait_ready(api, c["id"], auth) == "FINISHED":
+                return c["id"]
+        except ApiError as e:
+            print("url attempt", attempt + 1, "failed:", e)
+        time.sleep(30)
+    raise SystemExit("upload failed (resumable x3 and video_url x2)")
+
+
+def cleanup_hosted():
+    for repo, tag in HOSTED:
+        subprocess.run(["gh", "release", "delete", tag, "-R", repo, "--yes", "--cleanup-tag"])
+
+
 def post_reel(video, caption):
     ver = os.environ.get("IG_API_VERSION", "v25.0")
     api, uid, tok = f"https://graph.facebook.com/{ver}", os.environ["IG_USER_ID"], "".join(os.environ["IG_ACCESS_TOKEN"].split())
     auth = {"Authorization": f"OAuth {tok}"}
     size = os.path.getsize(video)
+    try:
+        print("publishing limit", http("GET", f"{api}/{uid}/content_publishing_limit?fields=config,quota_usage", headers=auth))
+    except ApiError as e:
+        print("publishing limit: n/a", e)
     for attempt in range(3):  # upload processing sometimes fails transiently -> new container and retry
         try:
             c = http("POST", f"{api}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": caption,
@@ -62,7 +107,7 @@ def post_reel(video, caption):
             print("attempt", attempt + 1, "failed:", e)
         time.sleep(30)
     else:
-        raise SystemExit("upload failed 3 times")
+        cid = post_by_url(api, uid, auth, video, caption)  # rupload kept refusing (ProcessingFailedError): let Instagram fetch it
     for attempt in range(3):
         try:
             pub = http("POST", f"{api}/{uid}/media_publish", {"creation_id": cid}, headers=auth); break
@@ -109,7 +154,10 @@ def main():
     print("video", round(os.path.getsize(video) / 1e6, 1), "MB")
     if os.environ.get("DRY_RUN") == "1":
         print("DRY_RUN: skip posting"); return
-    url = post_reel(video, nxt["caption"])
+    try:
+        url = post_reel(video, nxt["caption"])
+    finally:
+        cleanup_hosted()
     print("posted:", url)
     pj = os.path.join(M3D, "posted.json")
     p = json.load(open(pj, encoding="utf-8"))
