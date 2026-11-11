@@ -126,16 +126,24 @@ def fallback_next():
     if not eps:
         raise SystemExit("no out/next.json and no unposted episode")
     ep = max(eps, key=lambda e: int(re.match(r"ep(\d+)", e).group(1)))
+    qj = os.path.join(M3D, "queue", ep + ".json")
+    if os.path.exists(qj):  # a hand-written caption / cover is waiting for this episode
+        print("fallback: queue json for", ep)
+        return json.load(open(qj, encoding="utf-8"))
     src = open(os.path.join(M3D, "episodes", ep + ".js"), encoding="utf-8").read()
     g = lambda k: (re.search(k + r":\s*'([^']*)'", src) or [None, ""])[1]
     word, tail, t1, t2 = g("word"), g("tail"), g("hookTail1"), g("hookTail2")
     head = [l[2:].strip() for l in src.splitlines()[1:12] if l.startswith("//")]
-    title = f"もしも{word}{tail}"
+    title = f"もしも{word}{tail}"; cover = [7.0, f"もしも|{word}|{t1}", t2, "本気で試算"]
+    pop = re.search(r"title:\s*\[\s*'([^']*)'\s*,\s*'([^']*)'", src)
+    if pop:  # narrated "pop" style: title: ['line1', '[accent]line2']
+        l1, l2 = (re.sub(r"[\[\]]", "", x) for x in pop.groups())
+        title = l1 + l2; cover = [1.5, l1 + "||", l2, ""]
     cap = (title + "\n科学で考えると…どうなると思う？\n\n🧪 試算の前提\n" + "\n".join("・" + h for h in head)
            + "\n\n※プログラムで作った3DCGの空想科学シミュレーションです\n\n#空想科学 #雑学 #シュミレーション #シミュレーション #もしもシリーズ #もしも #科学 #3DCG")
     print("fallback next.json for", ep)
     return {"ep": ep, "topic": title, "arm": (re.search(r"アーム([ABC])", src) or [None, ""])[1], "hypothesis": "",
-            "caption": cap, "cover": [7.0, f"もしも|{word}|{t1}", t2, "本気で試算"]}
+            "caption": cap, "cover": cover}
 
 
 def main():

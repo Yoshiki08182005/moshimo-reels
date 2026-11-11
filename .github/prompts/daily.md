@@ -20,21 +20,37 @@
   - 著作権のあるキャラ（ドラえもん、ポケモン、ウルトラマン等）、似せたデザイン、作品名・固有の道具名は使わない。書籍『空想科学読本』の書名・内容・結論も使わない。昔話の人物の自作デザインと、オリジナルの「ギガもしも」（kit3.js の giantHero）はOK。
 - 題材は moshimo-3d/topics.json（arm が合う未使用のものを上から）か、調べたニュースから作る。
 
-## 3. 制作（作業ディレクトリは moshimo-3d）
+## 3. 制作（作業ディレクトリは moshimo-3d）— 「ポップ型」（2026-11-12 からの標準スタイル）
+最初に見本を読む：episodes/ep20_hannou10.js と episodes/ep20_hannou10.script.json（もしも反応速度が10倍になったら？）。
+伸びている海外の3D解説リールを分析して作った型。strategy.md の「全動画に共通する型」よりこの章を優先する（カウントダウン・POVカメラ・「ちゃんちゃん♪」は使わない）。
+
+型（全部守る）：
+- **冒頭**：0秒から大きなタイトル「もしも〇〇が△△になったら？」（title は2行、強調語を [ ] で囲むと水色）。主人公のアップと、いちばん驚く具体例を3秒以内に見せる。
+- **上部ピル（hud）**：タイトルが消えたあと [題材][倍率や数値] を出し続ける。後半で話が変わったら hud と hudColor を変える（例：['体感時間', '×10']、赤）。
+- **小ネタ連打**：1カット2〜5秒で12〜16カット。各カットは「身近な場面1つ＋数字1つ」。背景色 pal をカットごとに変える。「ふつう／あなた」の比較、数字のピル（tags）、カード（cards）を使う。
+- **ひっくり返し**：全体の6〜7割で「でも、落とし穴がある」（暗い配色・驚き顔）。そこから代償・困ることを3〜5個。「いいニュース／悪いニュース」を1組入れてよい。
+- **終わり**：冒頭と同じ配色に戻し、問いかけ「それでも、〇〇ほしい？」＋二択のピル＋「コメントで教えて」。結論テロップは出さない。
+- **ナレーション**：全カットに日本語ナレーション（voice.py）。1行6〜28字、体言止め中心でテンポよく。読み上げ合計50〜58秒、動画は55〜65秒。
+- **キャラ**：主人公は「もしもくん」（kit6 の hero。黄色いパーカー・くるんとした髪）、相手役は hero2。毎カット、表情（face）と腕（reach で物に手を届かせる／arm）を変える。他作品のキャラや似せたデザインは作らない。
+- 参考にした動画・他人の動画の台本、ネタの並び、キャラをそのまま写さない。使うのは構成の型だけ。例と数字は自分で作り、検算する。
+- 画面全体を点滅させない（光が点滅する表現は小さな物だけ）。
+
 場所：
-- engine/core.js（runner。EP.comic=true。shot.stamps / shake / lines / dark / noCounter / cam.pov が使える。原則いじらない）
-- engine/kit2.js（buildStreet / buildResidential / buildGym / buildShotengai。o.extra({scene, r, camera, …}) で小道具と動きを足す）、kit.js、kit3.js（giantHero / povHands / vanisher系 / dustBurst / crater / soundRings / onigiriPile / trashPiles ほか）
-- 見本：episodes/ep11 以降（新しい型）、ep07_kyojin.js（巨大化）、ep10_chiisaku.js（地面目線カメラ）。_common.js（stdCues, beats）
-- 効果音：sfx-library/sfx.json のキーを cues に書く。足りない音は https://soundeffect-lab.info/ で探し、sfx.json に {file, desc, dur, src, url, license} を足して `python ../tools/fetch_sfx.py`（音声ファイルはコミットしない）
+- engine/kit6.js：buildToyStage。小道具 counter, rulerA/B, gripA/B, thumb, egg, ka, ball, bat, cup, clock, desk, board, lamp, onigiri, books, sun, sunf1/2。足りない小道具は kit6.js に reg('名前', …) で足す（丸い形は sph / caps / rbox / cyl）。冒頭のコメントに API がある。
+- engine/core.js の pop 表示（run({ pop: true, title, titleEnd, hud, … })）：shot.tags / cards / note / hud / hudColor / stamps / lines / shake。tags と cards は関数にすると動かせる（this.lt.<行id> でその行の開始時刻）。原則いじらない。
+- episodes/_common.js の narrate：ナレーションの長さからカットの時間を作る。
+- voice.py（台本→音声）、bgm_pop.py（BGM。music: { style: 'pop', twist, cta }）。
+- 効果音：sfx-library/sfx.json のキーを各カットの sfx: [[カット内の秒, キー, 音量dB]] に書く（ナレーションの邪魔をしないよう -9〜-16dB）。足りない音は https://soundeffect-lab.info/ で探し、sfx.json に {file, desc, dur, src, url, license} を足して `python ../tools/fetch_sfx.py`（音声ファイルはコミットしない）。
 
 手順：
-1. 試算を5〜7個作る（python）。
-2. 見本をコピーして episodes/epNN_<slug>.js を作る（NN = episodes/ と posted.json の最大番号+1）。
-   - フック 0〜10.5秒（hook:true、T_B=5.0 の5秒カウントダウン→変化の瞬間＋最初の試算）→ 約5.2〜6.2秒ずつ5〜6ビート → 「結論」（noCounter、gold、最後に「ちゃんちゃん♪」スタンプ）→ outro 4秒。合計45〜52秒。
-   - **主人公の目線（POV）を1ビート以上**（山場かフックの変化の瞬間がおすすめ）：cam に `pov: { label: '〇〇の目線', walk: 1.8 }` を付け、p0/p1 は目の高さ（大人1.55前後）。立ち止まるなら walk: 0。手を出すなら extra で `povHands(scene, camera)` を使い、update で `hands(shot.cam?.pov ? 1 : 0, lt, 手を伸ばす量0〜1)`。
-   - comic:true、stdCues(..., 'comic_boyon')、各ビートにスタンプ1つと comic_* の効果音、山場に shake と lines。少しオーバーに。
-   - cap 20字以内、sub 1行28字以内（最大2行）。
-   - box() のメッシュの scale を変えるときは元の大きさを掛ける（口なら 0.03 * 倍率）。カメラを建物・街灯・信号柱・人の通り道（歩道 x=±8.2 と z=±8.4 付近）に重ねない。キャラは交差点の角（x=-9〜-11, z=9〜11 付近）か大通りの中央が安全。
+A. 試算を8〜12個作る（python で検算）。前半用（すごい例）5〜7個、後半用（困る例）3〜5個。
+B. 台本 episodes/epNN_<slug>.script.json を書く（NN = episodes/ と posted.json の最大番号+1）。行は {"id", "text"}。text は「|」で字幕の区切り（1区切り4〜9字）、「[ ]」で強調。読み間違えそうな語は "say" にひらがなで読みを書く。voice と rate は見本と同じ。
+C. `python voice.py epNN_<slug>` → 音声（episodes/epNN_<slug>_voice/）と epNN_<slug>.voice.json ができる。合計秒数を見て、長すぎ・短すぎなら台本を直してやり直す（2回まで）。
+D. 見本をコピーして episodes/epNN_<slug>.js を作る。plan の1行＝1カット：say（行id）、pal、show（小道具）、cam、act(lt, s)（ポーズと小道具の動き）、tags / cards / note / stamps / sfx。
+   - 文字は x 60〜940、y 250〜1500 の中。カードは y=480 付近、タグは h 64〜124。note は前提・出典を1行（28字以内）。
+   - 主人公の頭をタイトルやカードで隠さない（カメラ距離 3.4〜4.8、注視点の高さ 1.2〜1.5）。2人並べるときは x=±0.62 以上離す。
+   - キャプションの注記に「ナレーションは合成音声です」を足す。
+続けて下の 2.5 以降を行う（stills の時刻は各カットの中ほど。直す基準に「顔が隠れている／小道具が手から離れている／文字が小さすぎる」を加える）。
 2.5 **書き終えたらすぐ（stills より前に）out/next.json を書く**（6. の形式に "cover": [T, "もしも|<金色の語>|<続き>", "<2行目>", "<スタンプ>"] を足す）。途中で終わっても、ワークフローが full と表紙を作って投稿できるようにするため。以降で直したら上書きしてよい。
 3. `python render.py epNN_<slug> stills <フックと各ビートの時刻>` → out/epNN_<slug>/sheet.jpg を Read で確認。直す基準：めり込み／主役が映っていない／顔や体に変な棒・影／暗すぎ／テロップが読めない／POVの手が画面をふさぐ。修正は2回まで。
 4. `python render.py epNN_<slug> full`（10〜20分）。

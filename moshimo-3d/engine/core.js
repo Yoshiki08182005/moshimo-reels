@@ -361,7 +361,76 @@ export function run(EP) {
   let SC = null;
   // EP.clock(gt) -> seconds left: one live countdown from the hook to the end (shots without num use it)
   const clk = (gt) => Math.max(0, EP.clock(gt)).toFixed(2);
+  // ---------- "pop" style overlay (EP.pop): big title -> HUD pills, tags, cards, narration captions (see episodes/ep20) ----------
+  const CY = '#35d0ff', INK = '#14161c';
+  const fnOr = (v, shot, lt, gt) => typeof v === 'function' ? v.call(shot, lt, gt) : v;
+  const markup = (s, base = '#ffffff') => s.split(/(\[[^\]]*\])/).filter(Boolean).map(p => p[0] === '[' ? [p.slice(1, -1), CY] : [p, base]);
+  const partsW = (parts) => parts.reduce((s, p) => s + ctx.measureText(p[0]).width, 0);
+  function outlined(parts, cx, y, size, a = 1, sc = 1, maxW = 940) {
+    if (a <= 0) return;
+    ctx.save(); ctx.font = GOTH(size);
+    let tw = partsW(parts);
+    if (tw > maxW) { size = Math.floor(size * maxW / tw); ctx.font = GOTH(size); tw = partsW(parts); }
+    ctx.globalAlpha = a; ctx.translate(cx, y); ctx.scale(sc, sc); ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.lineJoin = 'round';
+    ctx.lineWidth = size * 0.24; ctx.strokeStyle = INK;
+    let x = -tw / 2; for (const p of parts) { ctx.strokeText(p[0], x, 0); x += ctx.measureText(p[0]).width; }
+    x = -tw / 2; for (const p of parts) { ctx.fillStyle = p[1]; ctx.fillText(p[0], x, 0); x += ctx.measureText(p[0]).width; }
+    ctx.restore();
+  }
+  const pillW = (text, h) => { ctx.font = GOTH(Math.round(h * 0.54)); return ctx.measureText(text).width + h * 0.9; };
+  function pill(text, x, y, h, bg, fg, a = 1, align = 'center') {
+    const w = pillW(text, h), x0 = align === 'center' ? x - w / 2 : x;
+    ctx.save(); ctx.globalAlpha = a; ctx.shadowColor = 'rgba(0,0,0,0.35)'; ctx.shadowBlur = 10; ctx.shadowOffsetY = 3;
+    ctx.fillStyle = bg; ctx.beginPath(); ctx.roundRect(x0, y - h / 2, w, h, h / 2); ctx.fill();
+    ctx.shadowColor = 'transparent'; ctx.fillStyle = fg; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, x0 + w / 2, y + h * 0.04);
+    ctx.restore();
+  }
+  function popCard(c, lt) {
+    const t = lt - (c.t ?? 0); if (t < 0 || (c.end !== undefined && lt > c.end)) return;
+    const sc = t < 0.22 ? 0.5 + 0.5 * outBack(t / 0.22) : 1, size = c.size ?? 76, parts = markup(c.text);
+    ctx.save(); ctx.font = GOTH(size);
+    const tw = partsW(parts), w = tw + 84, h = size * 1.42 + (c.sub ? 50 : 0);
+    ctx.translate(c.x ?? W / 2, c.y); ctx.scale(sc, sc);
+    ctx.fillStyle = 'rgba(20,22,28,0.94)'; ctx.beginPath(); ctx.roundRect(-w / 2, -h / 2, w, h, 26); ctx.fill();
+    ctx.lineWidth = 6; ctx.strokeStyle = c.border ?? '#ff5a4f'; ctx.stroke();
+    ctx.textBaseline = 'middle'; ctx.textAlign = 'left'; let x = -tw / 2;
+    for (const p of parts) { ctx.fillStyle = p[1]; ctx.fillText(p[0], x, -h / 2 + size * 0.74); x += ctx.measureText(p[0]).width; }
+    if (c.sub) { ctx.font = GOTH(30); ctx.textAlign = 'center'; ctx.fillStyle = c.subColor ?? '#ffd23a'; ctx.fillText(c.sub, 0, h / 2 - 34); }
+    ctx.restore();
+  }
+  function popOverlay(shot, lt, gt) {
+    const g = ctx.createLinearGradient(0, 0, 0, 520); g.addColorStop(0, 'rgba(0,0,0,0.38)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, 520);
+    const tEnd = EP.titleEnd ?? 2.8;
+    if (gt < tEnd + 0.2) {
+      const a = 1 - clamp((gt - tEnd) / 0.2), sc = gt < 0.3 ? 0.55 + 0.45 * outBack(gt / 0.3) : 1;
+      EP.title.forEach((ln, i) => outlined(markup(ln), W / 2, 372 + i * 118, EP.titleSize ?? 100, a, sc));
+    }
+    if (gt >= tEnd) {
+      const a = clamp((gt - tEnd) / 0.25), hud = fnOr(shot.hud, shot, lt, gt) || EP.hud, h = 74, w0 = pillW(hud[0], h), w1 = pillW(hud[1], h), x = (W - w0 - w1 - 12) / 2;
+      pill(hud[0], x, 300, h, 'rgba(24,26,32,0.92)', '#ffffff', a, 'left'); pill(hud[1], x + w0 + 12, 300, h, shot.hudColor ?? CY, INK, a, 'left');
+    }
+    for (const t of fnOr(shot.tags, shot, lt, gt) || []) {
+      const a = clamp((lt - (t.t ?? 0)) / 0.15) * (t.end !== undefined ? clamp((t.end - lt) / 0.12) : 1);
+      if (a > 0) pill(t.text, t.x, t.y, t.h ?? 64, t.bg ?? '#ffffff', t.fg ?? INK, a);
+    }
+    for (const c of fnOr(shot.cards, shot, lt, gt) || []) popCard(c, lt);
+    if (shot.note) {
+      const a = clamp((lt - 0.2) / 0.3), f = fit(shot.note, 840, 27, GOTH);
+      ctx.save(); ctx.globalAlpha = a; ctx.font = f; const w = ctx.measureText(shot.note).width + 36;
+      ctx.fillStyle = 'rgba(20,22,28,0.82)'; ctx.beginPath(); ctx.roundRect(500 - w / 2, 1420, w, 46, 10); ctx.fill();
+      ctx.fillStyle = '#ffffff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(shot.note, 500, 1444); ctx.restore();
+    }
+    const n = (EP.narr || []).find(k => gt >= k.t0 - 0.03 && gt < k.t1 + 0.18);
+    if (n) {
+      let c = n.chunks[0]; for (const k of n.chunks) if (gt >= k.t - 0.03) c = k;
+      const t = gt - c.t;
+      outlined(markup(c.text), 500, 1338, 88, 1, t < 0.14 ? 0.82 + 0.18 * outBack(clamp(t / 0.14)) : 1, 880);
+    }
+    focusLines(shot, lt); stamps(shot, lt);
+  }
   function overlay(shot, lt, gt) {
+    if (EP.pop) return popOverlay(shot, lt, gt);
     const T_B = EP.T_B;
     if (shot.hook) {
       const ia = 1 - clamp((gt - T_B) / 0.45);
@@ -437,19 +506,21 @@ export function run(EP) {
       if (!clean) overlay(shot, lt, gt);
     }
     let fade = 0;
-    if (shot.s > 0) fade = Math.max(fade, 1 - clamp(lt / 0.22));
-    if (shot.e < DURATION) fade = Math.max(fade, 1 - clamp((shot.e - gt) / 0.22));
-    fade = Math.max(fade, 1 - clamp((DURATION - gt) / 0.8));
+    if (!EP.pop) { // pop style uses hard cuts between shots
+      if (shot.s > 0) fade = Math.max(fade, 1 - clamp(lt / 0.22));
+      if (shot.e < DURATION) fade = Math.max(fade, 1 - clamp((shot.e - gt) / 0.22));
+    }
+    fade = Math.max(fade, 1 - clamp((DURATION - gt) / (EP.pop ? 0.35 : 0.8)));
     if (fade > 0) { ctx.fillStyle = `rgba(0,0,0,${fade})`; ctx.fillRect(0, 0, W, H); }
   }
   (async () => {
-    await Promise.all([document.fonts.load(SERIF(60), 'もしも' + EP.word), document.fonts.load(GOTH(60), EP.word)]);
+    await Promise.all([document.fonts.load(SERIF(60), 'もしも' + (EP.word || '')), document.fonts.load(GOTH(60), EP.word || 'もしも')]);
     SC = {};
     for (const [k, fn] of Object.entries(EP.scenes)) SC[k] = fn();
     for (const s of EP.shots) if (s.sc !== 'outro') renderAt(s.s + 0.5);
     const gl = renderer.getContext(); const ext = gl.getExtension('WEBGL_debug_renderer_info');
     window.GPU = ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : 'unknown';
-    window.META = { duration: DURATION, cues: EP.cues || [], T_B: EP.T_B, music: EP.music || {} };
+    window.META = { duration: DURATION, cues: EP.cues || [], T_B: EP.T_B ?? 0, music: EP.music || {}, voice: EP.voice || [] };
     window.frameAt = (t, q = 0.95, clean = false) => { renderAt(t, clean); return out.toDataURL('image/jpeg', q); };
     window.READY = true;
     const qs = new URLSearchParams(location.search);

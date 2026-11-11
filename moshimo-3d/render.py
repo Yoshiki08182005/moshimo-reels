@@ -53,10 +53,19 @@ def run(cmd):
 def mix_audio(meta, outdir):
     dur = meta["duration"]; mus = meta.get("music", {})
     bgm = os.path.join(outdir, "bgm.wav")
-    run([sys.executable, os.path.join(ROOT, "bgm.py"), bgm, str(dur), str(meta["T_B"]), str(mus.get("restore", dur - 10)), str(mus.get("outro", dur - 4))])
+    pop = mus.get("style") == "pop"  # narrated style: light bouncy music kept under the voice
+    if pop:
+        run([sys.executable, os.path.join(ROOT, "bgm_pop.py"), bgm, str(dur), str(mus.get("twist", dur * 0.55)), str(mus.get("cta", dur - 4))])
+    else:
+        run([sys.executable, os.path.join(ROOT, "bgm.py"), bgm, str(dur), str(meta["T_B"]), str(mus.get("restore", dur - 10)), str(mus.get("outro", dur - 4))])
     lib = json.load(open(os.path.join(SFX, "sfx.json"), encoding="utf-8"))["sfx"]
-    inputs, filt, labels = ["-i", bgm], ["[0:a]volume=-2dB[b0]"], ["[b0]"]
-    for i, c in enumerate(meta["cues"], 1):
+    inputs, filt, labels = ["-i", bgm], [f"[0:a]volume={'-15dB' if pop else '-2dB'}[b0]"], ["[b0]"]
+    for j, (t, rel) in enumerate(meta.get("voice", [])):  # narration lines: [time, path under episodes/]
+        inputs += ["-i", os.path.join(ROOT, "episodes", rel)]; ms = int(t * 1000)
+        filt.append(f"[{j + 1}:a]aformat=sample_rates=44100:channel_layouts=stereo,volume=4dB,adelay={ms}|{ms}[v{j}]")
+        labels.append(f"[v{j}]")
+    nv = len(meta.get("voice", []))
+    for i, c in enumerate(meta["cues"], 1 + nv):
         t, key, gain = c[0], c[1], c[2]
         inputs += ["-i", os.path.join(SFX, lib[key]["file"])]
         trim = f"atrim=0:{c[3]},afade=t=out:st={max(0, c[3] - 0.4)}:d=0.4," if len(c) > 3 else ""
