@@ -129,6 +129,16 @@
    "arm": "B",
    "hypothesis": "「全部使えたら」という極端な逆転を、人類の消費量との比較（何倍・何年分）にすると分かりやすく、保存が伸びる",
    "slot": "manual"
+  },
+  {
+   "date": "2026-11-11",
+   "ep": "ep18_ame_x10",
+   "topic": "雨の量が10倍になったら",
+   "url": "https://www.instagram.com/reel/DflJ-scRDa-/",
+   "via": "cloud",
+   "arm": "A",
+   "hypothesis": "身近な雨→道路が川→車が浮くと、原因が少し大きくなるだけで街が変わっていく連鎖は、続きが気になって最後まで見られる",
+   "slot": "manual"
   }
  ]
 }
