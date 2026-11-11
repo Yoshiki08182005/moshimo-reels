@@ -81,7 +81,11 @@ jobs:
         with: { node-version: '22' }
       - name: Install render deps
         run: |
-          sudo apt-get update -q && sudo apt-get install -y -q ffmpeg fonts-noto-cjk fonts-noto-cjk-extra
+          # the runner's DNS sometimes fails for a minute: retry the apt step
+          for i in 1 2 3 4; do
+            sudo apt-get update -q -o Acquire::Retries=3 && sudo apt-get install -y -q -o Acquire::Retries=3 ffmpeg fonts-noto-cjk fonts-noto-cjk-extra && break
+            [ $i = 4 ] && exit 1; echo "apt failed, retry $i"; sleep 45
+          done
           pip install -q playwright pillow numpy edge-tts
           python -m playwright install --with-deps chromium
           cd moshimo-3d && npm ci --silent
