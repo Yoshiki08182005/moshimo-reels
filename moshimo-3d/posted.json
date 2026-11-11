@@ -119,6 +119,16 @@
    "arm": "A",
    "hypothesis": "Aアームを「体重が軽くなる」身体感覚に落とすと、AI系（約1.2千）より再生・保存が伸びるか",
    "slot": "7時"
+  },
+  {
+   "date": "2026-11-11",
+   "ep": "ep17_taiyou_zenbu",
+   "topic": "太陽のエネルギーを全部使えたら",
+   "url": "https://www.instagram.com/reel/DflJbhbCpCd/",
+   "via": "cloud",
+   "arm": "B",
+   "hypothesis": "「全部使えたら」という極端な逆転を、人類の消費量との比較（何倍・何年分）にすると分かりやすく、保存が伸びる",
+   "slot": "manual"
   }
  ]
 }
