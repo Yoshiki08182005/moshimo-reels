@@ -160,6 +160,42 @@ export function buildToyStage() {
     const h = G(); h.position.set(0, 1.18, 0.02); f.add(h); const d = cyl(0.16, 0.16, 0.05, '#7a4a21', 0, 0, 0, h); d.rotation.x = Math.PI / 2;
     for (let i = 0; i < 12; i++) { const a = i / 12 * Math.PI * 2; const p = sph(0.085, '#ffcf2e', Math.cos(a) * 0.23, Math.sin(a) * 0.23, -0.01, h, 1, 0.5, 0.3); p.rotation.z = a; } reg(n, f); }
 
+  // ep21 props: phone (battery fill: userData.fill.scale.y 0..1), heat (rising waves, items), bolts (items), mw (microwave, userData.glow),
+  // kettle, bed, thermoA/B (userData.fill.scale.y 0..1), crowd (items), train (car wall + straps), towers (12 cooling towers, items), snow (items)
+  { const p = G(); rbox(0.16, 0.3, 0.025, 0.02, '#22252d', 0, 0, 0, p); rbox(0.136, 0.262, 0.006, 0.012, M('#e6f6ff', 0.4), 0, 0, 0.012, p);
+    rbox(0.07, 0.13, 0.006, 0.01, '#2c3b6b', 0, -0.005, 0.016, p); rbox(0.03, 0.015, 0.006, 0.004, '#2c3b6b', 0, 0.068, 0.016, p);
+    const f = G(); f.position.set(0, -0.06, 0.02); p.add(f); const fb = rbox(0.054, 0.114, 0.004, 0.006, basic('#3fd16b'), 0, 0.057, 0, f);
+    p.userData.fill = f; p.userData.fillMesh = fb; reg('phone', p); }
+  { const h = G(); h.userData.items = []; const hm = basic('#ff8a3d');
+    for (let i = 0; i < 3; i++) { const pts = []; for (let j = 0; j <= 16; j++) pts.push(V(Math.sin(j / 16 * Math.PI * 2) * 0.05, j / 16 * 0.36, 0));
+      const m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 24, 0.016, 6), hm); m.position.x = (i - 1) * 0.22; h.add(m); h.userData.items.push(m); } reg('heat', h); }
+  { const b = G(); b.userData.items = []; const sh = new THREE.Shape(); [[0.02, 0.12], [-0.05, 0.0], [0.0, 0.0], [-0.03, -0.12], [0.06, 0.03], [0.01, 0.03], [0.05, 0.12]].forEach(([x, y], i) => i ? sh.lineTo(x, y) : sh.moveTo(x, y));
+    const bg = new THREE.ExtrudeGeometry(sh, { depth: 0.02, bevelEnabled: false }); for (let i = 0; i < 4; i++) { const m = new THREE.Mesh(bg, basic('#ffe14a')); b.add(m); b.userData.items.push(m); } reg('bolts', b); }
+  { const w = G(); rbox(0.62, 0.38, 0.42, 0.04, '#f4f4f4', 0, 0.19, 0, w); rbox(0.38, 0.26, 0.012, 0.03, '#2b3340', -0.08, 0.19, 0.21, w);
+    w.userData.glow = rbox(0.33, 0.21, 0.01, 0.03, basic('#ffcf6b'), -0.08, 0.19, 0.218, w); for (const y of [0.27, 0.19, 0.11]) sph(0.022, '#9aa3ad', 0.2, y, 0.215, w); reg('mw', w); }
+  { const k = G(); cyl(0.1, 0.13, 0.24, '#e2463c', 0, 0.12, 0, k); sph(0.06, '#2c3b6b', 0, 0.25, 0, k, 1, 0.5, 1); const sp = caps(0.025, 0.12, '#e2463c', 0.14, 0.15, 0, k); sp.rotation.z = -0.9;
+    const hd = new THREE.Mesh(new THREE.TorusGeometry(0.08, 0.02, 8, 20, Math.PI), M('#2c3b6b')); hd.position.set(-0.12, 0.14, 0); hd.rotation.z = Math.PI / 2; k.add(hd); reg('kettle', k); }
+  { const b = G(); rbox(1.5, 0.3, 0.8, 0.05, '#c98f4a', 0, 0.15, 0, b); rbox(1.46, 0.14, 0.76, 0.05, '#ffffff', 0, 0.37, 0, b); rbox(0.34, 0.1, 0.5, 0.05, '#bfe3ff', -0.55, 0.48, 0, b);
+    rbox(0.08, 0.7, 0.8, 0.03, '#c98f4a', -0.75, 0.35, 0, b); reg('bed', b); }
+  for (const n of ['thermoA', 'thermoB']) { const t = G(); cyl(0.06, 0.06, 0.9, M('#ffffff', 0.3), 0, 0.6, 0, t); sph(0.11, '#e2463c', 0, 0.12, 0, t);
+    for (let i = 0; i < 7; i++) rbox(0.05, 0.01, 0.01, 0.003, '#2c3b6b', 0.06, 0.3 + i * 0.1, 0.03, t);
+    const f = G(); f.position.y = 0.15; t.add(f); cyl(0.034, 0.034, 1, '#e2463c', 0, 0.5, 0.012, f); f.scale.y = 0.5; t.userData.fill = f; reg(n, t); }
+  { const c = G(); c.userData.items = []; const cols = ['#5aa9ff', '#7bd88f', '#c79bff', '#ff7a6b', '#9aa3ad', '#2c3b6b', '#ffffff'];
+    for (let i = 0; i < 16; i++) { const p = G(), r = Math.floor(i / 6); caps(0.15, 0.32, cols[i % cols.length], 0, 0.42, 0, p); sph(0.16, '#ffd3ad', 0, 0.86, 0, p); sph(0.165, i % 3 ? '#3b2a20' : '#23262f', 0, 0.9, -0.03, p, 1, 0.8, 1);
+      p.position.set(((i % 6) - 2.5) * 0.42 + (r % 2) * 0.2, 0, -0.35 - r * 0.42); p.scale.setScalar(1 + r * 0.06); c.add(p); c.userData.items.push(p); } reg('crowd', c); }
+  { const t = G(); rbox(7, 2.2, 0.2, 0.08, '#e8eef3', 0, 1.1, -1.9, t); rbox(7, 0.14, 0.02, 0.01, '#3fae5b', 0, 0.85, -1.79, t);
+    for (let i = -3; i <= 3; i++) rbox(0.8, 0.62, 0.02, 0.06, '#9fd4ff', i * 1.05, 1.5, -1.79, t);
+    const bar = cyl(0.02, 0.02, 7, '#9aa3ad', 0, 2.3, -0.2, t); bar.rotation.z = Math.PI / 2;
+    for (let i = -4; i <= 4; i++) { cyl(0.008, 0.008, 0.16, '#ffffff', i * 0.38, 2.22, -0.2, t); const r = new THREE.Mesh(new THREE.TorusGeometry(0.05, 0.012, 6, 16), M('#ffffff')); r.position.set(i * 0.38, 2.1, -0.2); t.add(r); }
+    reg('train', t); }
+  { const w = G(); w.userData.items = [];
+    for (let i = 0; i < 12; i++) { const t = G(); cyl(0.17, 0.24, 0.62, '#d9dde3', 0, 0.31, 0, t); cyl(0.18, 0.17, 0.06, '#b9c0c9', 0, 0.63, 0, t); sph(0.13, M('#ffffff', 1), 0, 0.78, 0, t, 1.2, 0.8, 1);
+      t.position.set(((i % 6) - 2.5) * 0.52 + Math.floor(i / 6) * 0.26, 0, -1.25 - Math.floor(i / 6) * 0.55); w.add(t); w.userData.items.push(t); } reg('towers', w); }
+  { const c = G(); rbox(1.5, 0.34, 0.72, 0.12, '#35d0ff', 0, 0.36, 0, c); rbox(0.8, 0.3, 0.64, 0.12, '#35d0ff', -0.1, 0.64, 0, c); rbox(0.7, 0.22, 0.66, 0.08, '#cfeeff', -0.1, 0.66, 0, c);
+    for (const [x, z] of [[-0.48, 0.34], [0.48, 0.34], [-0.48, -0.34], [0.48, -0.34]]) { const w = cyl(0.15, 0.15, 0.1, '#23262f', x, 0.17, z, c); w.rotation.x = Math.PI / 2; }
+    sph(0.06, basic('#fff3a8'), 0.74, 0.42, 0.22, c); sph(0.06, basic('#fff3a8'), 0.74, 0.42, -0.22, c); reg('car', c); }
+  { const s = G(); s.userData.items = []; for (let i = 0; i < 40; i++) s.userData.items.push(sph(0.025, M('#ffffff', 0.9), 0, 0, 0, s)); reg('snow', s); }
+
   const hero = toyGuy({ seed: 0.2 }), hero2 = toyGuy({ top: '#ff6b5a', hair: '#23262f', pocket: '#ffe1dc', bun: true, seed: 0.55 });
   scene.add(hero, hero2);
   const camera = cam(38), pv = new THREE.Vector3();
