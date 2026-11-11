@@ -139,6 +139,16 @@
    "arm": "A",
    "hypothesis": "身近な雨→道路が川→車が浮くと、原因が少し大きくなるだけで街が変わっていく連鎖は、続きが気になって最後まで見られる",
    "slot": "manual"
+  },
+  {
+   "date": "2026-11-11",
+   "ep": "ep19_kaminari",
+   "topic": "雷をためて使えたら",
+   "url": "https://www.instagram.com/reel/DflYKWSBgfr/",
+   "via": "cloud",
+   "arm": "B",
+   "hypothesis": "「雷を発電に使う」という逆転の発想を、スマホ・EV・日本の1日分など身近な単位に換算すると、意外性でシェア・保存と平均視聴時間が伸びる（B枠、身近なPOV）",
+   "slot": "7時"
   }
  ]
 }
