@@ -85,7 +85,7 @@ def post_reel(video, caption):
         print("publishing limit", http("GET", f"{api}/{uid}/content_publishing_limit?fields=config,quota_usage", headers=auth))
     except ApiError as e:
         print("publishing limit: n/a", e)
-    for attempt in range(3):  # upload processing sometimes fails transiently -> new container and retry
+    for attempt in range(6):  # rupload sometimes refuses (ProcessingFailedError) for a while -> new container, back off, retry
         try:
             c = http("POST", f"{api}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": caption,
                                                     "share_to_feed": "true", "thumb_offset": "100"}, headers=auth)
@@ -105,7 +105,7 @@ def post_reel(video, caption):
             print("attempt", attempt + 1, "container", st.get("status_code"))
         except ApiError as e:
             print("attempt", attempt + 1, "failed:", e)
-        time.sleep(30)
+        time.sleep([30, 60, 120, 240, 300, 0][attempt])
     else:
         cid = post_by_url(api, uid, auth, video, caption)  # rupload kept refusing (ProcessingFailedError): let Instagram fetch it
     for attempt in range(3):
