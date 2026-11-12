@@ -14,7 +14,7 @@ for ep in [e.strip() for e in os.environ.get("EPS", "").split(",") if e.strip()]
         q = json.load(open(os.path.join(M3D, "queue", ep + ".json"), encoding="utf-8"))
         t, l1, l2, stamp = q["cover"]
         have = lambda f: os.path.exists(os.path.join(M3D, "out", ep, f))
-        cmds = ([] if have("final.mp4") else [["python", "render.py", ep, "full"]]) +                ([] if have("cover.jpg") else [["python", "render.py", ep, "clean", str(t)], ["python", "cover.py", ep, l1, l2, stamp]])
+        cmds = ([] if have("final.mp4") else [["python", "render.py", ep, "full"]]) +                [["python", "render.py", ep, "clean", str(t)], ["python", "cover.py", ep, l1, l2, stamp]]  # always: a reused artifact may carry a test cover
         for cmd in cmds:
             subprocess.run(cmd, cwd=M3D, check=True)
         json.dump({k: q[k] for k in ("ep", "topic", "arm", "hypothesis", "caption") if k in q},
