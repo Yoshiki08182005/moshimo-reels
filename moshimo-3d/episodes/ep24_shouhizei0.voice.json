@@ -1,0 +1,292 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep24_shouhizei0_voice/hook.mp3",
+   "dur": 3.109,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.666,
+     "text": "消費税が"
+    },
+    {
+     "t": 1.554,
+     "text": "[0%]になったら？"
+    }
+   ]
+  },
+  "shop": {
+   "file": "ep24_shouhizei0_voice/shop.mp3",
+   "dur": 2.69,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "110円ショップが、"
+    },
+    {
+     "t": 1.345,
+     "text": "ほんとの"
+    },
+    {
+     "t": 1.943,
+     "text": "[100円]に。"
+    }
+   ]
+  },
+  "rate": {
+   "file": "ep24_shouhizei0_voice/rate.mp3",
+   "dur": 4.878,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "今は"
+    },
+    {
+     "t": 0.65,
+     "text": "食べ物[8%]、"
+    },
+    {
+     "t": 2.276,
+     "text": "それ以外は[10%]。"
+    }
+   ]
+  },
+  "lunch": {
+   "file": "ep24_shouhizei0_voice/lunch.mp3",
+   "dur": 2.032,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1100円の"
+    },
+    {
+     "t": 0.813,
+     "text": "ランチが、"
+    },
+    {
+     "t": 1.355,
+     "text": "[1000円]。"
+    }
+   ]
+  },
+  "month": {
+   "file": "ep24_shouhizei0_voice/month.mp3",
+   "dur": 4.334,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "月20万円の"
+    },
+    {
+     "t": 1.529,
+     "text": "買い物で、"
+    },
+    {
+     "t": 2.549,
+     "text": "[約1.7万円]"
+    },
+    {
+     "t": 3.824,
+     "text": "浮く。"
+    }
+   ]
+  },
+  "year": {
+   "file": "ep24_shouhizei0_voice/year.mp3",
+   "dur": 4.156,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1年で"
+    },
+    {
+     "t": 0.733,
+     "text": "[約20万円]。"
+    },
+    {
+     "t": 1.956,
+     "text": "スマホが"
+    },
+    {
+     "t": 2.933,
+     "text": "1台買える。"
+    }
+   ]
+  },
+  "car": {
+   "file": "ep24_shouhizei0_voice/car.mp3",
+   "dur": 3.83,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "330万円の"
+    },
+    {
+     "t": 1.352,
+     "text": "車なら、"
+    },
+    {
+     "t": 2.027,
+     "text": "[30万円]"
+    },
+    {
+     "t": 2.928,
+     "text": "安くなる。"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep24_shouhizei0_voice/news.mp3",
+   "dur": 4.134,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "実は今、"
+    },
+    {
+     "t": 0.73,
+     "text": "食べ物を"
+    },
+    {
+     "t": 1.702,
+     "text": "[1%]にする"
+    },
+    {
+     "t": 2.918,
+     "text": "法案が話題。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep24_shouhizei0_voice/but.mp3",
+   "dur": 1.453,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.456,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "total": {
+   "file": "ep24_shouhizei0_voice/total.mp3",
+   "dur": 3.366,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "消費税は"
+    },
+    {
+     "t": 1.122,
+     "text": "1年で"
+    },
+    {
+     "t": 1.963,
+     "text": "[約26兆円]。"
+    }
+   ]
+  },
+  "day": {
+   "file": "ep24_shouhizei0_voice/day.mp3",
+   "dur": 4.936,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1日に"
+    },
+    {
+     "t": 0.925,
+     "text": "[約700億円]。"
+    },
+    {
+     "t": 2.776,
+     "text": "1秒で"
+    },
+    {
+     "t": 3.702,
+     "text": "[82万円]。"
+    }
+   ]
+  },
+  "use": {
+   "file": "ep24_shouhizei0_voice/use.mp3",
+   "dur": 3.608,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "使い道は、"
+    },
+    {
+     "t": 1.11,
+     "text": "年金、医療、"
+    },
+    {
+     "t": 2.22,
+     "text": "介護、子育て。"
+    }
+   ]
+  },
+  "good": {
+   "file": "ep24_shouhizei0_voice/good.mp3",
+   "dur": 4.501,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース。"
+    },
+    {
+     "t": 1.324,
+     "text": "毎日の買い物が"
+    },
+    {
+     "t": 3.177,
+     "text": "[約1割]安い。"
+    }
+   ]
+  },
+  "bad": {
+   "file": "ep24_shouhizei0_voice/bad.mp3",
+   "dur": 4.411,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "悪いニュース。"
+    },
+    {
+     "t": 1.161,
+     "text": "[26兆円]の穴を"
+    },
+    {
+     "t": 2.786,
+     "text": "どこかで埋める。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep24_shouhizei0_voice/cta.mp3",
+   "dur": 2.945,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.982,
+     "text": "消費税0%、"
+    },
+    {
+     "t": 2.209,
+     "text": "[ほしい？]"
+    }
+   ]
+  }
+ }
+}
