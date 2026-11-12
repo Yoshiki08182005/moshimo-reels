@@ -1,0 +1,290 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep23_juuryoku2_voice/hook.mp3",
+   "dur": 2.319,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.738,
+     "text": "重力が"
+    },
+    {
+     "t": 1.279,
+     "text": "[2倍]になったら？"
+    }
+   ]
+  },
+  "jump": {
+   "file": "ep23_juuryoku2_voice/jump.mp3",
+   "dur": 3.186,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "全力ジャンプ。"
+    },
+    {
+     "t": 1.76,
+     "text": "なのに高さは"
+    },
+    {
+     "t": 2.615,
+     "text": "[半分]。"
+    }
+   ]
+  },
+  "drop": {
+   "file": "ep23_juuryoku2_voice/drop.mp3",
+   "dur": 4.293,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "落ちたコップは、"
+    },
+    {
+     "t": 1.582,
+     "text": "床まで"
+    },
+    {
+     "t": 2.26,
+     "text": "[0.45秒]が"
+    },
+    {
+     "t": 3.389,
+     "text": "[0.32秒]。"
+    }
+   ]
+  },
+  "catch": {
+   "file": "ep23_juuryoku2_voice/catch.mp3",
+   "dur": 2.402,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "キャッチできる時間が、"
+    },
+    {
+     "t": 1.519,
+     "text": "[3割]消える。"
+    }
+   ]
+  },
+  "homerun": {
+   "file": "ep23_juuryoku2_voice/homerun.mp3",
+   "dur": 4.974,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "ホームランの打球は、"
+    },
+    {
+     "t": 1.474,
+     "text": "飛ぶ距離が[半分]。"
+    },
+    {
+     "t": 2.763,
+     "text": "100メートルが"
+    },
+    {
+     "t": 4.053,
+     "text": "[50メートル]。"
+    }
+   ]
+  },
+  "slide": {
+   "file": "ep23_juuryoku2_voice/slide.mp3",
+   "dur": 3.658,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "すべり台は、"
+    },
+    {
+     "t": 1.076,
+     "text": "時速[23キロ]が"
+    },
+    {
+     "t": 2.582,
+     "text": "[32キロ]に。"
+    }
+   ]
+  },
+  "clock": {
+   "file": "ep23_juuryoku2_voice/clock.mp3",
+   "dur": 3.252,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "振り子時計は、"
+    },
+    {
+     "t": 1.22,
+     "text": "1日に[10時間]も"
+    },
+    {
+     "t": 2.846,
+     "text": "進む。"
+    }
+   ]
+  },
+  "rain": {
+   "file": "ep23_juuryoku2_voice/rain.mp3",
+   "dur": 4.292,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "雨粒の速さも"
+    },
+    {
+     "t": 1.717,
+     "text": "[1.4倍]。"
+    },
+    {
+     "t": 2.575,
+     "text": "傘がバチバチ。"
+    }
+   ]
+  },
+  "boil": {
+   "file": "ep23_juuryoku2_voice/boil.mp3",
+   "dur": 4.905,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "空気も重くなって"
+    },
+    {
+     "t": 1.706,
+     "text": "気圧は[2倍]。"
+    },
+    {
+     "t": 2.772,
+     "text": "お湯は[120度]で沸く。"
+    }
+   ]
+  },
+  "nabe": {
+   "file": "ep23_juuryoku2_voice/nabe.mp3",
+   "dur": 1.645,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "家じゅうが、"
+    },
+    {
+     "t": 1.028,
+     "text": "[圧力鍋]。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep23_juuryoku2_voice/but.mp3",
+   "dur": 1.454,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.456,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "weight": {
+   "file": "ep23_juuryoku2_voice/weight.mp3",
+   "dur": 3.722,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "体重50キロなら、"
+    },
+    {
+     "t": 1.295,
+     "text": "いつも[50キロ]を"
+    },
+    {
+     "t": 2.589,
+     "text": "背負ってる感じ。"
+    }
+   ]
+  },
+  "bottle": {
+   "file": "ep23_juuryoku2_voice/bottle.mp3",
+   "dur": 2.303,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "2リットルのペットボトルは、"
+    },
+    {
+     "t": 1.871,
+     "text": "[4キロ]。"
+    }
+   ]
+  },
+  "blood": {
+   "file": "ep23_juuryoku2_voice/blood.mp3",
+   "dur": 4.706,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "頭まで血を上げるのも"
+    },
+    {
+     "t": 1.961,
+     "text": "[2倍]大変。"
+    },
+    {
+     "t": 2.745,
+     "text": "立ちくらみが"
+    },
+    {
+     "t": 3.922,
+     "text": "増えそう。"
+    }
+   ]
+  },
+  "bad": {
+   "file": "ep23_juuryoku2_voice/bad.mp3",
+   "dur": 2.34,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "しかも"
+    },
+    {
+     "t": 0.585,
+     "text": "体重計は"
+    },
+    {
+     "t": 1.365,
+     "text": "[100キロ]。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep23_juuryoku2_voice/cta.mp3",
+   "dur": 2.964,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.741,
+     "text": "重力2倍の世界に"
+    },
+    {
+     "t": 2.223,
+     "text": "[住みたい？]"
+    }
+   ]
+  }
+ }
+}

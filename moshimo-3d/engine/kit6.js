@@ -213,6 +213,32 @@ export function buildToyStage() {
     for (const x of [0.38, 0.56]) cyl(0.06, 0.07, 0.5, '#9aa3ad', x, 0.95, -0.1, f);
     const sm = M('#ffffff', 1); for (let i = 0; i < 4; i++) f.userData.items.push(sph(0.07, sm, 0.47, 1.25, -0.1, f)); reg('factory', f); }
 
+  // ep23 props: glassA/glassB (drinking glass), bottle (2L PET), bag (shopping bag with 3 bottles), scale (bathroom scale, userData.disp),
+  // pclock (pendulum clock, userData.pend: rotate .rotation.z, userData.mh/hh hands)
+  for (const n of ['glassA', 'glassB']) { const c = G(); cyl(0.075, 0.062, 0.2, M('#bfe8ff', 0.15), 0, 0.1, 0, c); cyl(0.068, 0.058, 0.12, '#5aa9ff', 0, 0.065, 0, c); reg(n, c); }
+  const mkBottle = (p, x = 0, z = 0) => { const b = G(); b.position.set(x, 0, z); cyl(0.07, 0.07, 0.3, M('#d8f2ff', 0.2), 0, 0.15, 0, b); cyl(0.071, 0.071, 0.09, '#3fae5b', 0, 0.17, 0, b);
+    cyl(0.07, 0.03, 0.07, M('#d8f2ff', 0.2), 0, 0.335, 0, b); cyl(0.026, 0.026, 0.035, '#e2463c', 0, 0.385, 0, b); p.add(b); return b; };
+  { const b = G(); mkBottle(b); reg('bottle', b); }
+  { const b = G(); rbox(0.42, 0.32, 0.2, 0.03, M('#f2c27a', 0.8), 0, 0.16, 0, b); for (const x of [-0.13, 0, 0.13]) mkBottle(b, x, 0).scale.setScalar(0.8);
+    for (const x of [-0.1, 0.1]) { const h = new THREE.Mesh(new THREE.TorusGeometry(0.07, 0.012, 8, 20, Math.PI), M('#ffffff', 0.8)); h.position.set(x, 0.32, 0); b.add(h); } reg('bag', b); }
+  { const s = G(); rbox(0.46, 0.06, 0.42, 0.04, '#f4f4f4', 0, 0.03, 0, s); rbox(0.36, 0.01, 0.2, 0.01, '#d9dde3', 0, 0.062, -0.05, s);
+    s.userData.disp = rbox(0.14, 0.012, 0.06, 0.01, basic('#9fe3c0'), 0, 0.064, 0.15, s); reg('scale', s); }
+  { const c = G(); rbox(0.52, 1.6, 0.26, 0.05, '#a86b3c', 0, 0.8, 0, c); rbox(0.36, 0.7, 0.02, 0.03, '#2b3340', 0, 0.62, 0.13, c);
+    const f = cyl(0.19, 0.19, 0.03, '#ffffff', 0, 1.3, 0.14, c); f.rotation.x = Math.PI / 2;
+    const rim = new THREE.Mesh(new THREE.TorusGeometry(0.19, 0.018, 8, 32), M('#ffd23a', 0.35)); rim.position.set(0, 1.3, 0.155); c.add(rim);
+    const hand = (len, w, col) => { const p = G(); p.position.set(0, 1.3, 0.165); rbox(w, len, 0.006, 0.003, col, 0, len / 2 - 0.01, 0, p); c.add(p); return p; };
+    c.userData.hh = hand(0.1, 0.02, '#2c3b6b'); c.userData.mh = hand(0.16, 0.014, '#e2463c');
+    const pd = G(); pd.position.set(0, 0.95, 0.15); c.add(pd); rbox(0.016, 0.48, 0.008, 0.004, '#ffd23a', 0, -0.24, 0, pd); const bob = cyl(0.07, 0.07, 0.02, M('#ffd23a', 0.3), 0, -0.5, 0, pd); bob.rotation.x = Math.PI / 2;
+    c.userData.pend = pd; reg('pclock', c); }
+  // slide: top platform at (-0.8, 1.2), slope down to (0.8, 0) in +x. umbrella: origin = handle bottom, canopy at y≈0.85
+  { const s = G(); const sl = rbox(2.0, 0.05, 0.5, 0.02, '#35d0ff', 0, 0.6, 0, s); sl.rotation.z = -0.6435;
+    for (const z of [-0.26, 0.26]) { const r = rbox(2.0, 0.1, 0.04, 0.02, '#ffd23a', 0, 0.66, z, s); r.rotation.z = -0.6435; }
+    rbox(0.5, 0.06, 0.56, 0.02, '#ff6b5a', -0.98, 1.2, 0, s);
+    for (const [x, z] of [[-1.2, -0.25], [-1.2, 0.25], [-0.78, -0.25], [-0.78, 0.25]]) cyl(0.03, 0.03, 1.2, '#ff6b5a', x, 0.6, z, s);
+    for (let i = 1; i < 5; i++) { const r = cyl(0.02, 0.02, 0.5, '#ffffff', -1.2, i * 0.24, 0, s); r.rotation.x = Math.PI / 2; } reg('slide', s); }
+  { const u = G(); cyl(0.012, 0.012, 0.9, '#2c3b6b', 0, 0.45, 0, u); const cn = shd(new THREE.Mesh(new THREE.SphereGeometry(0.62, 32, 12, 0, Math.PI * 2, 0, Math.PI * 0.32), M('#ff6b5a'))); cn.position.y = 0.42; cn.material.side = THREE.DoubleSide; u.add(cn);
+    reg('umbrella', u); }
+
   const hero = toyGuy({ seed: 0.2 }), hero2 = toyGuy({ top: '#ff6b5a', hair: '#23262f', pocket: '#ffe1dc', bun: true, seed: 0.55 });
   scene.add(hero, hero2);
   const camera = cam(38), pv = new THREE.Vector3();
