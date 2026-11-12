@@ -67,7 +67,8 @@ def mix_audio(meta, outdir):
     nv = len(meta.get("voice", []))
     for i, c in enumerate(meta["cues"], 1 + nv):
         t, key, gain = c[0], c[1], c[2]
-        inputs += ["-i", os.path.join(SFX, lib[key]["file"])]
+        # a key that is not in the stock library is a file under episodes/ (episode-specific generated sounds)
+        inputs += ["-i", os.path.join(SFX, lib[key]["file"]) if key in lib else os.path.join(ROOT, "episodes", key)]
         trim = f"atrim=0:{c[3]},afade=t=out:st={max(0, c[3] - 0.4)}:d=0.4," if len(c) > 3 else ""
         ms = int(t * 1000)
         filt.append(f"[{i}:a]aformat=sample_rates=44100:channel_layouts=stereo,{trim}volume={gain}dB,adelay={ms}|{ms}[c{i}]")

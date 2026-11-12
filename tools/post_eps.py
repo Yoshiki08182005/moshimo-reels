@@ -19,6 +19,11 @@ for ep in [e.strip() for e in os.environ.get("EPS", "").split(",") if e.strip()]
             subprocess.run(cmd, cwd=M3D, check=True)
         json.dump({k: q[k] for k in ("ep", "topic", "arm", "hypothesis", "caption") if k in q},
                   open(os.path.join(M3D, "out", "next.json"), "w", encoding="utf-8"), ensure_ascii=False)
+        if q.get("post_at"):  # optional ISO time (e.g. "2026-11-13T12:00:00+09:00"): render first, then hold the post until then
+            from datetime import datetime
+            hold = datetime.fromisoformat(q["post_at"]).timestamp() - time.time()
+            if hold > 0:
+                print(f"holding {ep} for {hold / 60:.0f} min until {q['post_at']}", flush=True); time.sleep(hold)
         wait = 25 * 60 - (time.time() - last_post)  # keep posts at least ~25 min apart
         if last_post and wait > 0:
             time.sleep(wait)

@@ -401,9 +401,9 @@ export function run(EP) {
   function popOverlay(shot, lt, gt) {
     const g = ctx.createLinearGradient(0, 0, 0, 520); g.addColorStop(0, 'rgba(0,0,0,0.38)'); g.addColorStop(1, 'rgba(0,0,0,0)');
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, 520);
-    const tEnd = EP.titleEnd ?? 2.8;
-    if (gt < tEnd + 0.2) {
-      const a = 1 - clamp((gt - tEnd) / 0.2), sc = gt < 0.3 ? 0.55 + 0.45 * outBack(gt / 0.3) : 1;
+    const tEnd = EP.titleEnd ?? 2.8, tS = EP.titleStart ?? 0; // titleStart > 0: a cold open plays before the title
+    if (gt >= tS && gt < tEnd + 0.2) {
+      const u = gt - tS, a = 1 - clamp((gt - tEnd) / 0.2), sc = u < 0.3 ? 0.55 + 0.45 * outBack(u / 0.3) : 1;
       EP.title.forEach((ln, i) => outlined(markup(ln), W / 2, 372 + i * 118, EP.titleSize ?? 100, a, sc));
     }
     if (gt >= tEnd) {

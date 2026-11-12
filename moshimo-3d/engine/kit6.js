@@ -41,10 +41,10 @@ export function toyGuy(o = {}) {
     const e = new THREE.Group(); e.position.set(sx * 0.16, 0.03, 0.345); e.scale.set(1, 1.12, 0.55); head.add(e);
     sph(0.105, M('#ffffff', 0.35), 0, 0, 0, e);
     const pg = new THREE.Group(); e.add(pg);
-    sph(0.052, M('#1b1b1f', 0.3), 0, 0, 0.082, pg, 1, 1, 0.6); sph(0.017, basic('#ffffff'), 0.02, 0.026, 0.12, pg);
+    sph(0.052, M('#1b1b1f', 0.3), 0, 0, 0.082, pg, 1, 1, 0.6); const hl = sph(0.017, basic('#ffffff'), 0.02, 0.026, 0.12, pg);
     const lid = shd(new THREE.Mesh(new THREE.SphereGeometry(0.119, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2), M(skin))); e.add(lid);
     const brow = caps(0.02, 0.1, hair, sx * 0.16, 0.2, 0.385, head);
-    return { pg, lid, brow, sx };
+    return { pg, lid, brow, sx, hl };
   });
   sph(0.045, '#f3b98f', 0, -0.07, 0.4, head);
   for (const sx of [-1, 1]) sph(0.065, '#ff9aa0', sx * 0.27, -0.11, 0.285, head, 1, 0.7, 0.35);
@@ -93,7 +93,7 @@ export function toyGuy(o = {}) {
       const lid = Math.max(st.lid, ((t * 0.31 + (o.seed || 0)) % 1) < 0.035 ? 1 : 0);
       eyes.forEach(e => {
         e.lid.rotation.x = lerp(-Math.PI / 2, Math.PI / 2, lid); e.pg.position.set(st.look[0] * 0.035, st.look[1] * 0.03, 0);
-        e.brow.rotation.z = Math.PI / 2 + e.sx * st.brow * 0.38; e.brow.position.y = 0.2 + st.browY * 0.04;
+        e.brow.rotation.z = Math.PI / 2 + e.sx * st.brow * 0.38; e.brow.position.y = 0.2 + st.browY * 0.04; e.hl.visible = lid < 0.6; // the highlight pokes through a closed lid
       });
       mS.visible = st.mouth === 'smile'; mO.visible = !mS.visible;
       if (st.mouth === 'o') mO.scale.set(0.045, 0.05 * (0.4 + st.open), 0.0175); else mO.scale.set(0.07, 0.013, 0.0175);
