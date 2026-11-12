@@ -196,6 +196,23 @@ export function buildToyStage() {
     sph(0.06, basic('#fff3a8'), 0.74, 0.42, 0.22, c); sph(0.06, basic('#fff3a8'), 0.74, 0.42, -0.22, c); reg('car', c); }
   { const s = G(); s.userData.items = []; for (let i = 0; i < 40; i++) s.userData.items.push(sph(0.025, M('#ffffff', 0.9), 0, 0, 0, s)); reg('snow', s); }
 
+  // ep22 props: coinsA/coinsB (stack of 32 gold coins, items: show i < n), bill (green banknote), suitcase, bowl (ramen + steam), factory (with chimneys + smoke items)
+  for (const n of ['coinsA', 'coinsB']) { const c = G(); c.userData.items = [];
+    for (let i = 0; i < 32; i++) { const it = cyl(0.11, 0.11, 0.026, M('#ffc533', 0.35), Math.sin(i * 2.1) * 0.008, 0.013 + i * 0.028, Math.cos(i * 1.3) * 0.008, c); c.userData.items.push(it); } reg(n, c); }
+  { const b = G(); rbox(0.34, 0.16, 0.008, 0.01, '#5fae6b', 0, 0, 0, b); rbox(0.3, 0.12, 0.004, 0.008, '#cfe9c8', 0, 0, 0.005, b); sph(0.04, '#5fae6b', 0, 0, 0.008, b, 1, 1, 0.15); reg('bill', b); }
+  { const s = G(); rbox(0.42, 0.56, 0.2, 0.05, '#ff7a6b', 0, 0.36, 0, s); rbox(0.44, 0.03, 0.21, 0.01, '#c9523f', 0, 0.36, 0, s);
+    const h = new THREE.Mesh(new THREE.TorusGeometry(0.06, 0.016, 8, 20, Math.PI), M('#2c3b6b')); h.position.set(0, 0.64, 0); s.add(h);
+    for (const x of [-0.14, 0.14]) sph(0.035, '#23262f', x, 0.06, 0, s); rbox(0.12, 0.08, 0.01, 0.02, '#ffffff', 0.08, 0.48, 0.105, s); reg('suitcase', s); }
+  { const c = G(); const bw = new THREE.Mesh(new THREE.SphereGeometry(0.2, 32, 16, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), M('#e2463c', 0.45)); bw.material.side = THREE.DoubleSide; bw.position.y = 0.2; shd(bw); c.add(bw);
+    const soup = cyl(0.19, 0.19, 0.01, '#f2c27a', 0, 0.185, 0, c); sph(0.05, '#ffffff', 0.07, 0.2, 0.02, c, 1, 0.4, 1); sph(0.045, '#ffd23a', 0.07, 0.215, 0.02, c, 1, 0.4, 1);
+    rbox(0.09, 0.006, 0.07, 0.003, '#20301f', -0.08, 0.195, -0.05, c).rotation.x = -0.6; for (const x of [-0.02, 0.0]) { const h = caps(0.006, 0.36, '#c98f4a', x, 0.33, 0.04, c); h.rotation.z = 0.5; }
+    const sm = new THREE.MeshStandardMaterial({ color: '#ffffff', transparent: true, opacity: 0.7, roughness: 1 }); c.userData.steam = [0, 1, 2].map(i => sph(0.04, sm, (i - 1) * 0.06, 0.3, 0, c)); void soup; reg('bowl', c); }
+  { const f = G(); f.userData.items = []; rbox(1.3, 0.6, 0.6, 0.04, '#d9dde3', 0, 0.3, 0, f);
+    for (let i = 0; i < 3; i++) { const r = rbox(0.44, 0.12, 0.62, 0.02, '#5aa9ff', -0.44 + i * 0.44, 0.66, 0, f); r.rotation.z = 0.25; }
+    for (let i = 0; i < 4; i++) rbox(0.18, 0.14, 0.01, 0.02, '#2b3340', -0.45 + i * 0.3, 0.32, 0.305, f);
+    for (const x of [0.38, 0.56]) cyl(0.06, 0.07, 0.5, '#9aa3ad', x, 0.95, -0.1, f);
+    const sm = M('#ffffff', 1); for (let i = 0; i < 4; i++) f.userData.items.push(sph(0.07, sm, 0.47, 1.25, -0.1, f)); reg('factory', f); }
+
   const hero = toyGuy({ seed: 0.2 }), hero2 = toyGuy({ top: '#ff6b5a', hair: '#23262f', pocket: '#ffe1dc', bun: true, seed: 0.55 });
   scene.add(hero, hero2);
   const camera = cam(38), pv = new THREE.Vector3();
