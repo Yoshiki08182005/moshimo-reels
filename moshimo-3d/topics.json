@@ -279,6 +279,18 @@
    ],
    "arm": "B",
    "used": "ep26_kushami_fly"
+  },
+  {
+   "slug": "sumaho_x2",
+   "word": "スマホを見る時間",
+   "tail": "が毎年2倍になったら？",
+   "angles": [
+    "1年目5.5h→4年目44h",
+    "親指が1年578km",
+    "首に27kg"
+   ],
+   "arm": "A",
+   "used": "ep27_sumaho_x2"
   }
  ]
 }
