@@ -1,0 +1,278 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep26_kushami_fly_voice/hook.mp3",
+   "dur": 2.148,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.769,
+     "text": "くしゃみで"
+    },
+    {
+     "t": 1.165,
+     "text": "空を[飛べたら]？"
+    }
+   ]
+  },
+  "speed": {
+   "file": "ep26_kushami_fly_voice/speed.mp3",
+   "dur": 4.385,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "くしゃみの速さは、"
+    },
+    {
+     "t": 1.846,
+     "text": "[秒速4.5m]。"
+    },
+    {
+     "t": 3.0,
+     "text": "自転車くらい。"
+    }
+   ]
+  },
+  "air": {
+   "file": "ep26_kushami_fly_voice/air.mp3",
+   "dur": 5.156,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1回に出る空気は"
+    },
+    {
+     "t": 1.793,
+     "text": "[約1.5L]。"
+    },
+    {
+     "t": 2.69,
+     "text": "大きいペットボトル1本。"
+    }
+   ]
+  },
+  "coin": {
+   "file": "ep26_kushami_fly_voice/coin.mp3",
+   "dur": 3.148,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1回のくしゃみで、"
+    },
+    {
+     "t": 1.574,
+     "text": "[1円玉]が"
+    },
+    {
+     "t": 2.361,
+     "text": "1秒浮く。"
+    }
+   ]
+  },
+  "oni": {
+   "file": "ep26_kushami_fly_voice/oni.mp3",
+   "dur": 4.224,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "120人で"
+    },
+    {
+     "t": 0.96,
+     "text": "一斉にハクション。"
+    },
+    {
+     "t": 2.496,
+     "text": "[おにぎり]1個が"
+    },
+    {
+     "t": 3.84,
+     "text": "浮く。"
+    }
+   ]
+  },
+  "you": {
+   "file": "ep26_kushami_fly_voice/you.mp3",
+   "dur": 2.767,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "あなたが浮くには、"
+    },
+    {
+     "t": 1.581,
+     "text": "1秒に[6万回]。"
+    }
+   ]
+  },
+  "stadium": {
+   "file": "ep26_kushami_fly_voice/stadium.mp3",
+   "dur": 3.2,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "満員のスタジアム、"
+    },
+    {
+     "t": 1.506,
+     "text": "[6万人]で、"
+    },
+    {
+     "t": 2.259,
+     "text": "やっと1人。"
+    }
+   ]
+  },
+  "japan": {
+   "file": "ep26_kushami_fly_voice/japan.mp3",
+   "dur": 3.67,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "日本人全員で"
+    },
+    {
+     "t": 1.223,
+     "text": "ハクション。"
+    },
+    {
+     "t": 2.243,
+     "text": "[電車3両]が浮く。"
+    }
+   ]
+  },
+  "world": {
+   "file": "ep26_kushami_fly_voice/world.mp3",
+   "dur": 4.455,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "世界中なら"
+    },
+    {
+     "t": 1.237,
+     "text": "[6800トン]。"
+    },
+    {
+     "t": 2.722,
+     "text": "旅客機[17機]分。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep26_kushami_fly_voice/but.mp3",
+   "dur": 1.453,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.456,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "room": {
+   "file": "ep26_kushami_fly_voice/room.mp3",
+   "dur": 4.851,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1秒に6万回だと、"
+    },
+    {
+     "t": 1.617,
+     "text": "6畳の部屋の空気が、"
+    },
+    {
+     "t": 3.436,
+     "text": "[0.3秒]で空っぽ。"
+    }
+   ]
+  },
+  "breath": {
+   "file": "ep26_kushami_fly_voice/breath.mp3",
+   "dur": 2.781,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "吸う空気は、"
+    },
+    {
+     "t": 1.07,
+     "text": "ふだんの[72万倍]。"
+    }
+   ]
+  },
+  "eyes": {
+   "file": "ep26_kushami_fly_voice/eyes.mp3",
+   "dur": 3.762,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "くしゃみの間は、"
+    },
+    {
+     "t": 1.217,
+     "text": "目をつぶる。"
+    },
+    {
+     "t": 2.625,
+     "text": "ずっと[前が見えない]。"
+    }
+   ]
+  },
+  "cap": {
+   "file": "ep26_kushami_fly_voice/cap.mp3",
+   "dur": 4.76,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "しかも、"
+    },
+    {
+     "t": 0.68,
+     "text": "息より速くは飛べない。"
+    },
+    {
+     "t": 2.947,
+     "text": "最高[時速16km]。"
+    }
+   ]
+  },
+  "bike": {
+   "file": "ep26_kushami_fly_voice/bike.mp3",
+   "dur": 1.251,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "自転車に"
+    },
+    {
+     "t": 0.706,
+     "text": "[抜かれる]。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep26_kushami_fly_voice/cta.mp3",
+   "dur": 1.898,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.883,
+     "text": "くしゃみで[飛びたい]？"
+    }
+   ]
+  }
+ }
+}
