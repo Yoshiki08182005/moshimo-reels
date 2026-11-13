@@ -258,6 +258,14 @@
    ],
    "arm": "C",
    "used": "ep22_endaka50"
+  },
+  {
+   "slug": "kami_nobiru",
+   "arm": "A",
+   "word": "髪の伸びる速さ",
+   "tail": "がどんどん速くなったら？",
+   "angles": "1日0.3mm×10万本、×1万で一晩1m、×10万で3000km、材料のたんぱく質と散髪代",
+   "used": "ep25_kami_nobiru"
   }
  ]
 }
