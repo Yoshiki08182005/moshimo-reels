@@ -1,0 +1,244 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep28_jikan_chokin_voice/hook.mp3",
+   "dur": 2.79,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.8,
+     "text": "スマホを見た時間を"
+    },
+    {
+     "t": 1.831,
+     "text": "[貯金]できたら？"
+    }
+   ]
+  },
+  "rule": {
+   "file": "ep28_jikan_chokin_voice/rule.mp3",
+   "dur": 4.73,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "見た時間のぶん、"
+    },
+    {
+     "t": 1.238,
+     "text": "あとで[引き出せる]。"
+    },
+    {
+     "t": 2.917,
+     "text": "そのあいだ、"
+    },
+    {
+     "t": 3.812,
+     "text": "まわりは止まる。"
+    }
+   ]
+  },
+  "day": {
+   "file": "ep28_jikan_chokin_voice/day.mp3",
+   "dur": 3.812,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "日本人のスマホ時間は、"
+    },
+    {
+     "t": 2.382,
+     "text": "1日[165分]。"
+    }
+   ]
+  },
+  "week": {
+   "file": "ep28_jikan_chokin_voice/week.mp3",
+   "dur": 4.019,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1週間で"
+    },
+    {
+     "t": 1.237,
+     "text": "[19時間]。"
+    },
+    {
+     "t": 2.474,
+     "text": "ほぼ丸1日。"
+    }
+   ]
+  },
+  "year": {
+   "file": "ep28_jikan_chokin_voice/year.mp3",
+   "dur": 4.714,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1年で[42日]分。"
+    },
+    {
+     "t": 1.941,
+     "text": "まるまる[6週間]休める。"
+    }
+   ]
+  },
+  "sleep": {
+   "file": "ep28_jikan_chokin_voice/sleep.mp3",
+   "dur": 2.541,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "寝だめなら、"
+    },
+    {
+     "t": 0.977,
+     "text": "[125晩]ぐっすり。"
+    }
+   ]
+  },
+  "money": {
+   "file": "ep28_jikan_chokin_voice/money.mp3",
+   "dur": 3.418,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "時給に直すと、"
+    },
+    {
+     "t": 1.367,
+     "text": "1年で[112万円]分。"
+    }
+   ]
+  },
+  "life": {
+   "file": "ep28_jikan_chokin_voice/life.mp3",
+   "dur": 3.178,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "81歳まで貯めると、"
+    },
+    {
+     "t": 1.907,
+     "text": "なんと[7年半]。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep28_jikan_chokin_voice/but.mp3",
+   "dur": 1.453,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.456,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "alone": {
+   "file": "ep28_jikan_chokin_voice/alone.mp3",
+   "dur": 3.176,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "引き出した42日間、"
+    },
+    {
+     "t": 1.682,
+     "text": "だれとも[話せない]。"
+    }
+   ]
+  },
+  "shop": {
+   "file": "ep28_jikan_chokin_voice/shop.mp3",
+   "dur": 2.638,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "お店の人も止まるから、"
+    },
+    {
+     "t": 1.623,
+     "text": "[買い物]もできない。"
+    }
+   ]
+  },
+  "net": {
+   "file": "ep28_jikan_chokin_voice/net.mp3",
+   "dur": 3.909,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "ネットも止まる。"
+    },
+    {
+     "t": 1.76,
+     "text": "貯めた時間で、"
+    },
+    {
+     "t": 2.812,
+     "text": "[スマホは使えない]。"
+    }
+   ]
+  },
+  "save": {
+   "file": "ep28_jikan_chokin_voice/save.mp3",
+   "dur": 4.692,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "しかも貯めるには、"
+    },
+    {
+     "t": 1.564,
+     "text": "毎日[2時間45分]、"
+    },
+    {
+     "t": 3.128,
+     "text": "スマホを見続ける。"
+    }
+   ]
+  },
+  "age": {
+   "file": "ep28_jikan_chokin_voice/age.mp3",
+   "dur": 5.52,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "体はちゃんと年をとる。"
+    },
+    {
+     "t": 2.3,
+     "text": "友だちより[7歳半]、"
+    },
+    {
+     "t": 4.14,
+     "text": "先におとなに。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep28_jikan_chokin_voice/cta.mp3",
+   "dur": 2.105,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.863,
+     "text": "時間を[貯金したい？]"
+    }
+   ]
+  }
+ }
+}
