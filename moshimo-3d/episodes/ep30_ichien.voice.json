@@ -1,0 +1,284 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep30_ichien_voice/hook.mp3",
+   "dur": 3.226,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.569,
+     "text": "日本人全員が"
+    },
+    {
+     "t": 1.708,
+     "text": "[1円]ずつくれたら？"
+    }
+   ]
+  },
+  "total": {
+   "file": "ep30_ichien_voice/total.mp3",
+   "dur": 5.164,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1億2千万人から"
+    },
+    {
+     "t": 2.066,
+     "text": "1円ずつ。"
+    },
+    {
+     "t": 3.098,
+     "text": "合計[1億2千万円]。"
+    }
+   ]
+  },
+  "daily": {
+   "file": "ep30_ichien_voice/daily.mp3",
+   "dur": 3.139,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "毎日[1万円]"
+    },
+    {
+     "t": 1.121,
+     "text": "使っても、"
+    },
+    {
+     "t": 2.018,
+     "text": "[33年]もつ。"
+    }
+   ]
+  },
+  "weight": {
+   "file": "ep30_ichien_voice/weight.mp3",
+   "dur": 4.824,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1円玉は"
+    },
+    {
+     "t": 1.072,
+     "text": "1枚[1グラム]。"
+    },
+    {
+     "t": 2.68,
+     "text": "全部で[123トン]。"
+    }
+   ]
+  },
+  "truck": {
+   "file": "ep30_ichien_voice/truck.mp3",
+   "dur": 2.124,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "大型トラック"
+    },
+    {
+     "t": 1.274,
+     "text": "[12台]分。"
+    }
+   ]
+  },
+  "stack": {
+   "file": "ep30_ichien_voice/stack.mp3",
+   "dur": 3.895,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "積み上げると"
+    },
+    {
+     "t": 1.375,
+     "text": "[185キロ]。"
+    },
+    {
+     "t": 2.52,
+     "text": "宇宙まで届く。"
+    }
+   ]
+  },
+  "line": {
+   "file": "ep30_ichien_voice/line.mp3",
+   "dur": 5.638,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "並べると"
+    },
+    {
+     "t": 1.128,
+     "text": "[2464キロ]。"
+    },
+    {
+     "t": 2.819,
+     "text": "東京から那覇の"
+    },
+    {
+     "t": 4.793,
+     "text": "[1.6倍]。"
+    }
+   ]
+  },
+  "count": {
+   "file": "ep30_ichien_voice/count.mp3",
+   "dur": 3.821,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1秒に1枚"
+    },
+    {
+     "t": 1.061,
+     "text": "数えても、"
+    },
+    {
+     "t": 1.91,
+     "text": "寝ずに[3年11か月]。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep30_ichien_voice/but.mp3",
+   "dur": 1.453,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.456,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "floor": {
+   "file": "ep30_ichien_voice/floor.mp3",
+   "dur": 3.683,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "家の床は"
+    },
+    {
+     "t": 0.867,
+     "text": "1平方メートル"
+    },
+    {
+     "t": 2.166,
+     "text": "[180キロ]まで。"
+    }
+   ]
+  },
+  "floor2": {
+   "file": "ep30_ichien_voice/floor2.mp3",
+   "dur": 2.267,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "123トンで、"
+    },
+    {
+     "t": 1.236,
+     "text": "床が[抜ける]。"
+    }
+   ]
+  },
+  "shop": {
+   "file": "ep30_ichien_voice/shop.mp3",
+   "dur": 3.16,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "お店で出せる1円玉は、"
+    },
+    {
+     "t": 1.859,
+     "text": "1回[20枚]まで。"
+    }
+   ]
+  },
+  "shop2": {
+   "file": "ep30_ichien_voice/shop2.mp3",
+   "dur": 3.268,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "使い切るには"
+    },
+    {
+     "t": 1.226,
+     "text": "[616万回]の"
+    },
+    {
+     "t": 2.451,
+     "text": "お買い物。"
+    }
+   ]
+  },
+  "bank": {
+   "file": "ep30_ichien_voice/bank.mp3",
+   "dur": 3.77,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "銀行に預けると、"
+    },
+    {
+     "t": 1.65,
+     "text": "手数料[1億3千万円]。"
+    }
+   ]
+  },
+  "bank2": {
+   "file": "ep30_ichien_voice/bank2.mp3",
+   "dur": 1.8,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "[1200万円]の赤字。"
+    }
+   ]
+  },
+  "tax": {
+   "file": "ep30_ichien_voice/tax.mp3",
+   "dur": 2.623,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "さらに贈与税で、"
+    },
+    {
+     "t": 1.311,
+     "text": "約[半分]が消える。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep30_ichien_voice/cta.mp3",
+   "dur": 2.636,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.811,
+     "text": "全員から"
+    },
+    {
+     "t": 1.622,
+     "text": "[1円]ほしい？"
+    }
+   ]
+  }
+ }
+}

@@ -384,6 +384,14 @@
    "src": "https://soundeffect-lab.info/sound/battle/ (magic-quake1.mp3)",
    "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
    "url": "https://soundeffect-lab.info/sound/battle/mp3/magic-quake1.mp3"
+  },
+  "coin_toss": {
+   "file": "files/coin_toss.mp3",
+   "desc": "コインを弾く・チャリン",
+   "dur": 1.17,
+   "src": "https://soundeffect-lab.info/sound/various/ (coin-toss1.mp3)",
+   "url": "https://soundeffect-lab.info/sound/various/mp3/coin-toss1.mp3",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止"
   }
  }
 }
