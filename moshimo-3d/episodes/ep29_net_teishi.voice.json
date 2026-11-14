@@ -1,0 +1,290 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep29_net_teishi_voice/hook.mp3",
+   "dur": 2.43,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.758,
+     "text": "ネットが"
+    },
+    {
+     "t": 1.133,
+     "text": "[丸1日]"
+    },
+    {
+     "t": 1.727,
+     "text": "止まったら？"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep29_net_teishi_voice/news.mp3",
+   "dur": 2.844,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "今週、"
+    },
+    {
+     "t": 0.81,
+     "text": "メールやチャットが"
+    },
+    {
+     "t": 1.602,
+     "text": "止まる"
+    },
+    {
+     "t": 1.946,
+     "text": "[大規模障害]。"
+    }
+   ]
+  },
+  "users": {
+   "file": "ep29_net_teishi_voice/users.mp3",
+   "dur": 3.37,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "日本では、"
+    },
+    {
+     "t": 1.008,
+     "text": "[86%]の人が"
+    },
+    {
+     "t": 2.529,
+     "text": "ネットを使う。"
+    }
+   ]
+  },
+  "mail": {
+   "file": "ep29_net_teishi_voice/mail.mp3",
+   "dur": 4.627,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "世界のメールは"
+    },
+    {
+     "t": 1.029,
+     "text": "1秒に[420万通]。"
+    },
+    {
+     "t": 3.625,
+     "text": "ぜんぶ、"
+    },
+    {
+     "t": 4.167,
+     "text": "止まる。"
+    }
+   ]
+  },
+  "shop": {
+   "file": "ep29_net_teishi_voice/shop.mp3",
+   "dur": 4.591,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "ネット通販は"
+    },
+    {
+     "t": 1.175,
+     "text": "1秒に[83万円]。"
+    },
+    {
+     "t": 3.604,
+     "text": "カートが"
+    },
+    {
+     "t": 3.958,
+     "text": "動かない。"
+    }
+   ]
+  },
+  "plane": {
+   "file": "ep29_net_teishi_voice/plane.mp3",
+   "dur": 5.319,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "大阪の友だちに"
+    },
+    {
+     "t": 1.619,
+     "text": "[紙飛行機]で連絡。"
+    },
+    {
+     "t": 3.238,
+     "text": "着くのは"
+    },
+    {
+     "t": 4.163,
+     "text": "[22時間後]。"
+    }
+   ]
+  },
+  "good": {
+   "file": "ep29_net_teishi_voice/good.mp3",
+   "dur": 5.169,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース。"
+    },
+    {
+     "t": 1.124,
+     "text": "スマホの時間、"
+    },
+    {
+     "t": 2.472,
+     "text": "1日[165分]が"
+    },
+    {
+     "t": 4.046,
+     "text": "戻ってくる。"
+    }
+   ]
+  },
+  "movie": {
+   "file": "ep29_net_teishi_voice/movie.mp3",
+   "dur": 3.619,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "映画なら"
+    },
+    {
+     "t": 0.965,
+     "text": "[1本半]。"
+    },
+    {
+     "t": 1.689,
+     "text": "昼寝なら"
+    },
+    {
+     "t": 2.654,
+     "text": "たっぷり。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep29_net_teishi_voice/but.mp3",
+   "dur": 1.453,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.456,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "pay": {
+   "file": "ep29_net_teishi_voice/pay.mp3",
+   "dur": 5.043,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "支払いの[4割]は"
+    },
+    {
+     "t": 1.681,
+     "text": "キャッシュレス。"
+    },
+    {
+     "t": 3.362,
+     "text": "財布に現金、"
+    },
+    {
+     "t": 4.563,
+     "text": "ある？"
+    }
+   ]
+  },
+  "week": {
+   "file": "ep29_net_teishi_voice/week.mp3",
+   "dur": 3.771,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1週間止まると、"
+    },
+    {
+     "t": 1.466,
+     "text": "通販だけで"
+    },
+    {
+     "t": 2.514,
+     "text": "[5,000億円]。"
+    }
+   ]
+  },
+  "letter": {
+   "file": "ep29_net_teishi_voice/letter.mp3",
+   "dur": 5.365,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "連絡は"
+    },
+    {
+     "t": 0.805,
+     "text": "ぜんぶ[はがき]。"
+    },
+    {
+     "t": 2.414,
+     "text": "友だち10人で"
+    },
+    {
+     "t": 4.292,
+     "text": "[850円]。"
+    }
+   ]
+  },
+  "bad": {
+   "file": "ep29_net_teishi_voice/bad.mp3",
+   "dur": 3.154,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "そして、"
+    },
+    {
+     "t": 0.821,
+     "text": "ネットが戻ると、"
+    },
+    {
+     "t": 1.935,
+     "text": "通知が[一気に]来る。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep29_net_teishi_voice/cta.mp3",
+   "dur": 2.395,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.904,
+     "text": "ネットのない日、"
+    },
+    {
+     "t": 1.883,
+     "text": "[ほしい？]"
+    }
+   ]
+  }
+ }
+}
