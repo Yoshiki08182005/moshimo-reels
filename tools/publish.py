@@ -140,7 +140,7 @@ def fallback_next():
         l1, l2 = (re.sub(r"[\[\]]", "", x) for x in pop.groups())
         title = l1 + l2; cover = [1.5, l1 + "||", l2, ""]
     cap = (title + "\n科学で考えると…どうなると思う？\n\n🧪 試算の前提\n" + "\n".join("・" + h for h in head)
-           + "\n\n※プログラムで作った3DCGの空想科学シミュレーションです\n\n#空想科学 #雑学 #シュミレーション #シミュレーション #もしもシリーズ #もしも #科学 #3DCG")
+           + "\n\n※プログラムで作った3DCGの空想科学シミュレーションです\n\n#空想科学 #雑学 #シミュレーション #もしもシリーズ #もしも #科学 #3DCG")
     print("fallback next.json for", ep)
     return {"ep": ep, "topic": title, "arm": (re.search(r"アーム([ABC])", src) or [None, ""])[1], "hypothesis": "",
             "caption": cap, "cover": cover}
