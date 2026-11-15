@@ -1,0 +1,240 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep32_suimin1h_voice/hook.mp3",
+   "dur": 2.883,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.541,
+     "text": "睡眠が1日"
+    },
+    {
+     "t": 1.441,
+     "text": "[1時間]で済んだら？"
+    }
+   ]
+  },
+  "first": {
+   "file": "ep32_suimin1h_voice/first.mp3",
+   "dur": 3.78,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "ふつうは"
+    },
+    {
+     "t": 0.889,
+     "text": "[8時間]。"
+    },
+    {
+     "t": 1.557,
+     "text": "あなたは"
+    },
+    {
+     "t": 2.446,
+     "text": "[1時間]で元気。"
+    }
+   ]
+  },
+  "b1": {
+   "file": "ep32_suimin1h_voice/b1.mp3",
+   "dur": 2.632,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "毎日"
+    },
+    {
+     "t": 0.376,
+     "text": "[7時間]、"
+    },
+    {
+     "t": 0.94,
+     "text": "自由な時間がふえる。"
+    }
+   ]
+  },
+  "b2": {
+   "file": "ep32_suimin1h_voice/b2.mp3",
+   "dur": 4.272,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1年で"
+    },
+    {
+     "t": 0.712,
+     "text": "[2555時間]。"
+    },
+    {
+     "t": 2.136,
+     "text": "まるまる[106日]分。"
+    }
+   ]
+  },
+  "book": {
+   "file": "ep32_suimin1h_voice/book.mp3",
+   "dur": 2.941,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "本なら、"
+    },
+    {
+     "t": 0.679,
+     "text": "1年で"
+    },
+    {
+     "t": 1.357,
+     "text": "[638冊]読める。"
+    }
+   ]
+  },
+  "job": {
+   "file": "ep32_suimin1h_voice/job.mp3",
+   "dur": 3.377,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "バイトなら、"
+    },
+    {
+     "t": 0.993,
+     "text": "1年で"
+    },
+    {
+     "t": 1.589,
+     "text": "[286万円]かせげる。"
+    }
+   ]
+  },
+  "life": {
+   "file": "ep32_suimin1h_voice/life.mp3",
+   "dur": 2.882,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "一生だと、"
+    },
+    {
+     "t": 0.64,
+     "text": "起きている時間が"
+    },
+    {
+     "t": 1.921,
+     "text": "[23年]ふえる。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep32_suimin1h_voice/but.mp3",
+   "dur": 1.454,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.456,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "alone": {
+   "file": "ep32_suimin1h_voice/alone.mp3",
+   "dur": 2.537,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "夜中の7時間、"
+    },
+    {
+     "t": 0.951,
+     "text": "友だちは"
+    },
+    {
+     "t": 1.586,
+     "text": "みんな[寝てる]。"
+    }
+   ]
+  },
+  "food": {
+   "file": "ep32_suimin1h_voice/food.mp3",
+   "dur": 3.818,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "起きてる分、"
+    },
+    {
+     "t": 1.005,
+     "text": "おなかも減る。"
+    },
+    {
+     "t": 2.21,
+     "text": "毎晩[おにぎり1個]。"
+    }
+   ]
+  },
+  "good": {
+   "file": "ep32_suimin1h_voice/good.mp3",
+   "dur": 4.016,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース。"
+    },
+    {
+     "t": 1.181,
+     "text": "練習[1万時間]も、"
+    },
+    {
+     "t": 2.835,
+     "text": "4年で届く。"
+    }
+   ]
+  },
+  "bad": {
+   "file": "ep32_suimin1h_voice/bad.mp3",
+   "dur": 3.645,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "悪いニュース。"
+    },
+    {
+     "t": 1.139,
+     "text": "結局スマホが"
+    },
+    {
+     "t": 2.506,
+     "text": "[1日9時間]。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep32_suimin1h_voice/cta.mp3",
+   "dur": 2.602,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.867,
+     "text": "[1時間睡眠]"
+    },
+    {
+     "t": 1.951,
+     "text": "ほしい？"
+    }
+   ]
+  }
+ }
+}
