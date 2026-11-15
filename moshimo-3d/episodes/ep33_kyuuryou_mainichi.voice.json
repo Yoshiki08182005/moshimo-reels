@@ -1,0 +1,226 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep33_kyuuryou_mainichi_voice/hook.mp3",
+   "dur": 2.684,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.537,
+     "text": "給料が"
+    },
+    {
+     "t": 1.074,
+     "text": "[毎日払い]になったら？"
+    }
+   ]
+  },
+  "first": {
+   "file": "ep33_kyuuryou_mainichi_voice/first.mp3",
+   "dur": 3.488,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "ふつうは"
+    },
+    {
+     "t": 0.996,
+     "text": "月に[1回]。"
+    },
+    {
+     "t": 1.993,
+     "text": "あなたは"
+    },
+    {
+     "t": 2.989,
+     "text": "[毎日]。"
+    }
+   ]
+  },
+  "day": {
+   "file": "ep33_kyuuryou_mainichi_voice/day.mp3",
+   "dur": 3.574,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "月給34万円なら、"
+    },
+    {
+     "t": 1.906,
+     "text": "毎朝"
+    },
+    {
+     "t": 2.383,
+     "text": "[1万1千円]。"
+    }
+   ]
+  },
+  "payday": {
+   "file": "ep33_kyuuryou_mainichi_voice/payday.mp3",
+   "dur": 4.589,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "給料日が"
+    },
+    {
+     "t": 1.02,
+     "text": "1年に[365回]。"
+    },
+    {
+     "t": 2.805,
+     "text": "ふつうの[30倍]。"
+    }
+   ]
+  },
+  "oni": {
+   "file": "ep33_kyuuryou_mainichi_voice/oni.mp3",
+   "dur": 2.567,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "おにぎりなら、"
+    },
+    {
+     "t": 1.1,
+     "text": "毎日[75個]"
+    },
+    {
+     "t": 2.017,
+     "text": "買える。"
+    }
+   ]
+  },
+  "broke": {
+   "file": "ep33_kyuuryou_mainichi_voice/broke.mp3",
+   "dur": 2.806,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "給料日前の[金欠]が、"
+    },
+    {
+     "t": 1.403,
+     "text": "この世から消える。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep33_kyuuryou_mainichi_voice/but.mp3",
+   "dur": 1.454,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.456,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "rent": {
+   "file": "ep33_kyuuryou_mainichi_voice/rent.mp3",
+   "dur": 3.822,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "家賃は"
+    },
+    {
+     "t": 0.675,
+     "text": "月に1回。"
+    },
+    {
+     "t": 1.574,
+     "text": "[6日分]が"
+    },
+    {
+     "t": 2.473,
+     "text": "一瞬で消える。"
+    }
+   ]
+  },
+  "fee": {
+   "file": "ep33_kyuuryou_mainichi_voice/fee.mp3",
+   "dur": 5.302,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "会社は振込が"
+    },
+    {
+     "t": 1.446,
+     "text": "1人[365回]。"
+    },
+    {
+     "t": 2.892,
+     "text": "手数料は"
+    },
+    {
+     "t": 3.856,
+     "text": "[年5万円]超え。"
+    }
+   ]
+  },
+  "good": {
+   "file": "ep33_kyuuryou_mainichi_voice/good.mp3",
+   "dur": 3.261,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース。"
+    },
+    {
+     "t": 1.165,
+     "text": "毎朝が"
+    },
+    {
+     "t": 1.864,
+     "text": "[給料日]の気分。"
+    }
+   ]
+  },
+  "bad": {
+   "file": "ep33_kyuuryou_mainichi_voice/bad.mp3",
+   "dur": 4.475,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "悪いニュース。"
+    },
+    {
+     "t": 1.119,
+     "text": "毎日ごほうびで、"
+    },
+    {
+     "t": 2.685,
+     "text": "年[18万円]消える。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep33_kyuuryou_mainichi_voice/cta.mp3",
+   "dur": 2.368,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.861,
+     "text": "[毎日払い]"
+    },
+    {
+     "t": 1.722,
+     "text": "ほしい？"
+    }
+   ]
+  }
+ }
+}
