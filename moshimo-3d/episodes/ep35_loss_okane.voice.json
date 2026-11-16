@@ -1,0 +1,204 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep35_loss_okane_voice/hook.mp3",
+   "dur": 3.036,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.536,
+     "text": "捨てた食べ物が"
+    },
+    {
+     "t": 1.786,
+     "text": "[お金]に"
+    },
+    {
+     "t": 2.321,
+     "text": "戻ったら？"
+    }
+   ]
+  },
+  "real": {
+   "file": "ep35_loss_okane_voice/real.mp3",
+   "dur": 4.47,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "食品ロスは"
+    },
+    {
+     "t": 1.117,
+     "text": "1人1日[100g]。"
+    },
+    {
+     "t": 2.905,
+     "text": "おにぎり[1個]分。"
+    }
+   ]
+  },
+  "yen": {
+   "file": "ep35_loss_okane_voice/yen.mp3",
+   "dur": 3.895,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "お金にすると"
+    },
+    {
+     "t": 1.375,
+     "text": "1日[87円]、"
+    },
+    {
+     "t": 2.52,
+     "text": "年[3万2千円]。"
+    }
+   ]
+  },
+  "japan": {
+   "file": "ep35_loss_okane_voice/japan.mp3",
+   "dur": 4.287,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "日本で1日[110億円]。"
+    },
+    {
+     "t": 2.522,
+     "text": "札束で[110m]。"
+    }
+   ]
+  },
+  "year": {
+   "file": "ep35_loss_okane_voice/year.mp3",
+   "dur": 4.086,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1年で[4兆円]。"
+    },
+    {
+     "t": 1.634,
+     "text": "札束[40km]、"
+    },
+    {
+     "t": 3.268,
+     "text": "雲の上。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep35_loss_okane_voice/but.mp3",
+   "dur": 1.528,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.339,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "eat": {
+   "file": "ep35_loss_okane_voice/eat.mp3",
+   "dur": 4.362,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "お金は戻るけど、"
+    },
+    {
+     "t": 1.328,
+     "text": "食べ物は[戻らない]。"
+    },
+    {
+     "t": 2.845,
+     "text": "おなかは[ぺこぺこ]。"
+    }
+   ]
+  },
+  "co2": {
+   "file": "ep35_loss_okane_voice/co2.mp3",
+   "dur": 3.718,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "CO2も戻らない。"
+    },
+    {
+     "t": 1.983,
+     "text": "1人[年84kg]。"
+    }
+   ]
+  },
+  "good": {
+   "file": "ep35_loss_okane_voice/good.mp3",
+   "dur": 2.938,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース。"
+    },
+    {
+     "t": 1.13,
+     "text": "捨てても"
+    },
+    {
+     "t": 2.034,
+     "text": "[損しない]。"
+    }
+   ]
+  },
+  "bad": {
+   "file": "ep35_loss_okane_voice/bad.mp3",
+   "dur": 3.951,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "悪いニュース。"
+    },
+    {
+     "t": 1.04,
+     "text": "87円じゃ"
+    },
+    {
+     "t": 2.08,
+     "text": "おにぎりも"
+    },
+    {
+     "t": 3.12,
+     "text": "買えない。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep35_loss_okane_voice/cta.mp3",
+   "dur": 3.765,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "あなたなら、"
+    },
+    {
+     "t": 1.046,
+     "text": "[食べきる]？"
+    },
+    {
+     "t": 1.883,
+     "text": "それとも"
+    },
+    {
+     "t": 2.719,
+     "text": "[お金に戻す]？"
+    }
+   ]
+  }
+ }
+}
