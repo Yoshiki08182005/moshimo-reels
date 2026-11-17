@@ -1,0 +1,218 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep39_genkin_zero_voice/hook.mp3",
+   "dur": 2.875,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.479,
+     "text": "[現金]が明日から"
+    },
+    {
+     "t": 1.597,
+     "text": "全部なくなったら？"
+    }
+   ]
+  },
+  "now": {
+   "file": "ep39_genkin_zero_voice/now.mp3",
+   "dur": 3.063,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "買い物の[58%]は、"
+    },
+    {
+     "t": 1.441,
+     "text": "もうキャッシュレス。"
+    }
+   ]
+  },
+  "cash": {
+   "file": "ep39_genkin_zero_voice/cash.mp3",
+   "dur": 2.198,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でもお札は"
+    },
+    {
+     "t": 0.916,
+     "text": "まだ[116兆円]。"
+    }
+   ]
+  },
+  "tower": {
+   "file": "ep39_genkin_zero_voice/tower.mp3",
+   "dur": 5.033,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1万円札で積むと"
+    },
+    {
+     "t": 1.83,
+     "text": "[1,160キロ]。"
+    },
+    {
+     "t": 3.203,
+     "text": "それが明日、"
+    },
+    {
+     "t": 4.347,
+     "text": "[消える]。"
+    }
+   ]
+  },
+  "wallet": {
+   "file": "ep39_genkin_zero_voice/wallet.mp3",
+   "dur": 2.698,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "財布は、"
+    },
+    {
+     "t": 0.54,
+     "text": "小銭のぶん"
+    },
+    {
+     "t": 1.439,
+     "text": "[50グラム]軽く。"
+    }
+   ]
+  },
+  "reji": {
+   "file": "ep39_genkin_zero_voice/reji.mp3",
+   "dur": 5.093,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "会計が[10秒]速いと、"
+    },
+    {
+     "t": 1.581,
+     "text": "日本中で毎日"
+    },
+    {
+     "t": 2.635,
+     "text": "[117年分]の"
+    },
+    {
+     "t": 3.688,
+     "text": "待ち時間が消える。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep39_genkin_zero_voice/but.mp3",
+   "dur": 1.453,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.456,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "teiden": {
+   "file": "ep39_genkin_zero_voice/teiden.mp3",
+   "dur": 4.403,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "停電の日。"
+    },
+    {
+     "t": 0.881,
+     "text": "スマホが[0%]なら、"
+    },
+    {
+     "t": 2.642,
+     "text": "水1本も買えない。"
+    }
+   ]
+  },
+  "warikan": {
+   "file": "ep39_genkin_zero_voice/warikan.mp3",
+   "dur": 4.947,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "3人で1,000円の割り勘。"
+    },
+    {
+     "t": 2.581,
+     "text": "[333円]ずつで、"
+    },
+    {
+     "t": 4.087,
+     "text": "[1円]余る。"
+    }
+   ]
+  },
+  "saisen": {
+   "file": "ep39_genkin_zero_voice/saisen.mp3",
+   "dur": 3.221,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "お賽銭の[5円玉]も、"
+    },
+    {
+     "t": 1.516,
+     "text": "ご縁ごと"
+    },
+    {
+     "t": 2.274,
+     "text": "QRコードに。"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep39_genkin_zero_voice/news.mp3",
+   "dur": 3.626,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "預金は[減らない]。"
+    },
+    {
+     "t": 1.493,
+     "text": "でも、"
+    },
+    {
+     "t": 1.92,
+     "text": "[使った感]が消える。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep39_genkin_zero_voice/cta.mp3",
+   "dur": 2.055,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.747,
+     "text": "現金[ゼロ]が"
+    },
+    {
+     "t": 1.682,
+     "text": "いい？"
+    }
+   ]
+  }
+ }
+}
