@@ -1,0 +1,190 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep37_shuukyuu3_voice/hook.mp3",
+   "dur": 3.373,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.533,
+     "text": "週休[3日]が"
+    },
+    {
+     "t": 1.42,
+     "text": "全員の"
+    },
+    {
+     "t": 1.953,
+     "text": "決まりになったら？"
+    }
+   ]
+  },
+  "real": {
+   "file": "ep37_shuukyuu3_voice/real.mp3",
+   "dur": 5.283,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いまの休みは"
+    },
+    {
+     "t": 1.668,
+     "text": "年[117日]。"
+    },
+    {
+     "t": 3.058,
+     "text": "それが"
+    },
+    {
+     "t": 3.893,
+     "text": "[169日]に。"
+    }
+   ]
+  },
+  "renkyu": {
+   "file": "ep37_shuukyuu3_voice/renkyu.mp3",
+   "dur": 3.477,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "3連休が"
+    },
+    {
+     "t": 1.159,
+     "text": "毎週。"
+    },
+    {
+     "t": 1.739,
+     "text": "1年で[52回]。"
+    }
+   ]
+  },
+  "movie": {
+   "file": "ep37_shuukyuu3_voice/movie.mp3",
+   "dur": 3.05,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "増えた休みで、"
+    },
+    {
+     "t": 1.144,
+     "text": "映画[416本]"
+    },
+    {
+     "t": 2.287,
+     "text": "見られる。"
+    }
+   ]
+  },
+  "life": {
+   "file": "ep37_shuukyuu3_voice/life.mp3",
+   "dur": 3.258,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "43年働くと、"
+    },
+    {
+     "t": 1.303,
+     "text": "休みが"
+    },
+    {
+     "t": 1.955,
+     "text": "[6年分]増える。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep37_shuukyuu3_voice/but.mp3",
+   "dur": 1.536,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.341,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "ten": {
+   "file": "ep37_shuukyuu3_voice/ten.mp3",
+   "dur": 2.906,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "給料そのままなら、"
+    },
+    {
+     "t": 1.453,
+     "text": "1日[10時間]労働。"
+    }
+   ]
+  },
+  "cut": {
+   "file": "ep37_shuukyuu3_voice/cut.mp3",
+   "dur": 3.677,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "時間を減らすと、"
+    },
+    {
+     "t": 1.43,
+     "text": "給料は"
+    },
+    {
+     "t": 2.043,
+     "text": "月[6万8千円]減る。"
+    }
+   ]
+  },
+  "shop": {
+   "file": "ep37_shuukyuu3_voice/shop.mp3",
+   "dur": 4.26,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "お店は毎日開く。"
+    },
+    {
+     "t": 1.864,
+     "text": "人手が"
+    },
+    {
+     "t": 2.663,
+     "text": "[1.25倍]必要。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep37_shuukyuu3_voice/cta.mp3",
+   "dur": 3.671,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.979,
+     "text": "週休3日"
+    },
+    {
+     "t": 1.958,
+     "text": "[ほしい？]"
+    },
+    {
+     "t": 2.692,
+     "text": "[いらない？]"
+    }
+   ]
+  }
+ }
+}
