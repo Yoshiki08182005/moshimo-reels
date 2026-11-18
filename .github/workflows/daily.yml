@@ -8,7 +8,7 @@ on:
   schedule:
     - cron: '0 22 * * *'   # 07:00 JST (slot 0)
     - cron: '0 3 * * *'    # 12:00 JST (slot 1)
-    - cron: '0 13 * * *'   # 22:00 JST (slot 2) — 2026-11-18 one-day test (usually 20:00 JST, '0 11 * * *'); revert on 2026-11-19
+    - cron: '0 11 * * *'   # 20:00 JST (slot 2)
   workflow_dispatch:
     inputs:
       mode:
