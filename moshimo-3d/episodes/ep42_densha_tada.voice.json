@@ -1,0 +1,224 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep42_densha_tada_voice/hook.mp3",
+   "dur": 2.471,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.494,
+     "text": "電車が"
+    },
+    {
+     "t": 0.988,
+     "text": "全部[タダ]に"
+    },
+    {
+     "t": 1.812,
+     "text": "なったら？"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep42_densha_tada_voice/news.mp3",
+   "dur": 4.013,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "この春、"
+    },
+    {
+     "t": 0.708,
+     "text": "JRの運賃は"
+    },
+    {
+     "t": 2.124,
+     "text": "平均[7.1%]"
+    },
+    {
+     "t": 3.305,
+     "text": "値上げ。"
+    }
+   ]
+  },
+  "teiki": {
+   "file": "ep42_densha_tada_voice/teiki.mp3",
+   "dur": 3.194,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "通勤の定期代、"
+    },
+    {
+     "t": 1.278,
+     "text": "年[18万円]が"
+    },
+    {
+     "t": 2.555,
+     "text": "[0円]に。"
+    }
+   ]
+  },
+  "life": {
+   "file": "ep42_densha_tada_voice/life.mp3",
+   "dur": 3.956,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "40年で"
+    },
+    {
+     "t": 0.989,
+     "text": "[720万円]。"
+    },
+    {
+     "t": 2.225,
+     "text": "車が"
+    },
+    {
+     "t": 2.72,
+     "text": "2台買える。"
+    }
+   ]
+  },
+  "trip": {
+   "file": "ep42_densha_tada_voice/trip.mp3",
+   "dur": 3.286,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "家族4人の"
+    },
+    {
+     "t": 0.967,
+     "text": "日帰り旅行、"
+    },
+    {
+     "t": 1.933,
+     "text": "[1万6千円]"
+    },
+    {
+     "t": 2.9,
+     "text": "浮く。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep42_densha_tada_voice/but.mp3",
+   "dur": 1.531,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.34,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "crowd": {
+   "file": "ep42_densha_tada_voice/crowd.mp3",
+   "dur": 4.069,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "タダなら"
+    },
+    {
+     "t": 0.957,
+     "text": "みんな乗る。"
+    },
+    {
+     "t": 2.154,
+     "text": "朝の混雑、"
+    },
+    {
+     "t": 3.112,
+     "text": "[300%]。"
+    }
+   ]
+  },
+  "tax": {
+   "file": "ep42_densha_tada_voice/tax.mp3",
+   "dur": 3.96,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "運賃の分は"
+    },
+    {
+     "t": 1.237,
+     "text": "[税金]へ。"
+    },
+    {
+     "t": 1.98,
+     "text": "1人"
+    },
+    {
+     "t": 2.475,
+     "text": "年[5万6千円]。"
+    }
+   ]
+  },
+  "good": {
+   "file": "ep42_densha_tada_voice/good.mp3",
+   "dur": 3.3,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース。"
+    },
+    {
+     "t": 1.031,
+     "text": "休みの日は"
+    },
+    {
+     "t": 2.063,
+     "text": "どこでも[0円]。"
+    }
+   ]
+  },
+  "bad": {
+   "file": "ep42_densha_tada_voice/bad.mp3",
+   "dur": 3.38,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "悪いニュース。"
+    },
+    {
+     "t": 1.056,
+     "text": "みんな来るから"
+    },
+    {
+     "t": 2.535,
+     "text": "行列[2倍]。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep42_densha_tada_voice/cta.mp3",
+   "dur": 2.044,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.681,
+     "text": "電車は"
+    },
+    {
+     "t": 1.192,
+     "text": "[タダ]がいい？"
+    }
+   ]
+  }
+ }
+}
