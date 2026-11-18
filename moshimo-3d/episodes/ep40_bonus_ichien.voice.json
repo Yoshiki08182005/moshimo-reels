@@ -1,0 +1,208 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep40_bonus_ichien_voice/hook.mp3",
+   "dur": 3.1,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.517,
+     "text": "冬の[ボーナス]が"
+    },
+    {
+     "t": 1.55,
+     "text": "全部[1円玉]だったら？"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep40_bonus_ichien_voice/news.mp3",
+   "dur": 2.842,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "冬のボーナスは"
+    },
+    {
+     "t": 1.003,
+     "text": "[6年連続]で"
+    },
+    {
+     "t": 1.839,
+     "text": "増える見込み。"
+    }
+   ]
+  },
+  "count": {
+   "file": "ep40_bonus_ichien_voice/count.mp3",
+   "dur": 3.214,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "45万円なら、"
+    },
+    {
+     "t": 1.377,
+     "text": "1円玉が"
+    },
+    {
+     "t": 2.296,
+     "text": "[45万枚]。"
+    }
+   ]
+  },
+  "weight": {
+   "file": "ep40_bonus_ichien_voice/weight.mp3",
+   "dur": 3.843,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "重さは[450キロ]。"
+    },
+    {
+     "t": 1.921,
+     "text": "お相撲さん"
+    },
+    {
+     "t": 3.122,
+     "text": "[3人分]。"
+    }
+   ]
+  },
+  "tower": {
+   "file": "ep40_bonus_ichien_voice/tower.mp3",
+   "dur": 3.929,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "積み上げると"
+    },
+    {
+     "t": 1.241,
+     "text": "[675メートル]。"
+    },
+    {
+     "t": 2.481,
+     "text": "スカイツリー[超え]。"
+    }
+   ]
+  },
+  "nihon": {
+   "file": "ep40_bonus_ichien_voice/nihon.mp3",
+   "dur": 3.49,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "日本中の分を"
+    },
+    {
+     "t": 1.163,
+     "text": "並べると、"
+    },
+    {
+     "t": 1.939,
+     "text": "太陽までの[2.7倍]。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep40_bonus_ichien_voice/but.mp3",
+   "dur": 1.453,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.456,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "densha": {
+   "file": "ep40_bonus_ichien_voice/densha.mp3",
+   "dur": 4.332,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "電車の荷物は"
+    },
+    {
+     "t": 1.238,
+     "text": "[30キロ]まで。"
+    },
+    {
+     "t": 2.476,
+     "text": "持ち帰りに"
+    },
+    {
+     "t": 3.507,
+     "text": "[15往復]。"
+    }
+   ]
+  },
+  "mise": {
+   "file": "ep40_bonus_ichien_voice/mise.mp3",
+   "dur": 3.37,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "お店は、"
+    },
+    {
+     "t": 0.595,
+     "text": "同じ硬貨の"
+    },
+    {
+     "t": 1.586,
+     "text": "[21枚目]から"
+    },
+    {
+     "t": 2.775,
+     "text": "断れる。"
+    }
+   ]
+  },
+  "ginkou": {
+   "file": "ep40_bonus_ichien_voice/ginkou.mp3",
+   "dur": 5.322,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "銀行に預けると、"
+    },
+    {
+     "t": 1.62,
+     "text": "手数料[49万5千円]。"
+    },
+    {
+     "t": 3.702,
+     "text": "ボーナスより[高い]。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep40_bonus_ichien_voice/cta.mp3",
+   "dur": 2.74,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.843,
+     "text": "1円玉ボーナス、"
+    },
+    {
+     "t": 2.108,
+     "text": "ほしい？"
+    }
+   ]
+  }
+ }
+}
