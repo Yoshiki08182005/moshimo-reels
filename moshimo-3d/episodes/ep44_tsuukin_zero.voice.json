@@ -1,0 +1,214 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep44_tsuukin_zero_voice/hook.mp3",
+   "dur": 2.714,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.543,
+     "text": "[通勤]が全員"
+    },
+    {
+     "t": 1.447,
+     "text": "ゼロになったら？"
+    }
+   ]
+  },
+  "now": {
+   "file": "ep44_tsuukin_zero_voice/now.mp3",
+   "dur": 3.283,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "通勤と通学は、"
+    },
+    {
+     "t": 1.407,
+     "text": "往復[1時間19分]。"
+    }
+   ]
+  },
+  "zero": {
+   "file": "ep44_tsuukin_zero_voice/zero.mp3",
+   "dur": 1.787,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それが明日、"
+    },
+    {
+     "t": 1.117,
+     "text": "[0分]に。"
+    }
+   ]
+  },
+  "year": {
+   "file": "ep44_tsuukin_zero_voice/year.mp3",
+   "dur": 4.193,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1年で[327時間]。"
+    },
+    {
+     "t": 2.097,
+     "text": "まるまる[2週間]分。"
+    }
+   ]
+  },
+  "money": {
+   "file": "ep44_tsuukin_zero_voice/money.mp3",
+   "dur": 3.199,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "時給に直すと、"
+    },
+    {
+     "t": 1.371,
+     "text": "1年で[37万円]分。"
+    }
+   ]
+  },
+  "nation": {
+   "file": "ep44_tsuukin_zero_voice/nation.mp3",
+   "dur": 3.542,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "日本中では、"
+    },
+    {
+     "t": 0.886,
+     "text": "毎日[1万年分]の"
+    },
+    {
+     "t": 2.125,
+     "text": "時間が戻ってくる。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep44_tsuukin_zero_voice/but.mp3",
+   "dur": 1.528,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.339,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "aruki": {
+   "file": "ep44_tsuukin_zero_voice/aruki.mp3",
+   "dur": 3.344,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "駅まで歩かないと、"
+    },
+    {
+     "t": 1.486,
+     "text": "1年で[2キロ]"
+    },
+    {
+     "t": 2.601,
+     "text": "太る計算。"
+    }
+   ]
+  },
+  "denki": {
+   "file": "ep44_tsuukin_zero_voice/denki.mp3",
+   "dur": 4.748,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "家のエアコンは"
+    },
+    {
+     "t": 1.445,
+     "text": "1日[8時間]。"
+    },
+    {
+     "t": 2.477,
+     "text": "電気代が"
+    },
+    {
+     "t": 3.303,
+     "text": "年[3万円]増える。"
+    }
+   ]
+  },
+  "chikoku": {
+   "file": "ep44_tsuukin_zero_voice/chikoku.mp3",
+   "dur": 2.969,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "「電車が遅れて」の"
+    },
+    {
+     "t": 1.223,
+     "text": "[言い訳]も、"
+    },
+    {
+     "t": 1.921,
+     "text": "もう使えない。"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep44_tsuukin_zero_voice/news.mp3",
+   "dur": 4.732,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース、"
+    },
+    {
+     "t": 1.029,
+     "text": "寝坊できる。"
+    },
+    {
+     "t": 2.057,
+     "text": "悪いニュース、"
+    },
+    {
+     "t": 3.086,
+     "text": "[仕事]が"
+    },
+    {
+     "t": 3.703,
+     "text": "寝室に来る。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep44_tsuukin_zero_voice/cta.mp3",
+   "dur": 2.058,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.748,
+     "text": "通勤[ゼロ]が"
+    },
+    {
+     "t": 1.684,
+     "text": "いい？"
+    }
+   ]
+  }
+ }
+}
