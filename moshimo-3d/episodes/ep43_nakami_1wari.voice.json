@@ -1,0 +1,222 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep43_nakami_1wari_voice/hook.mp3",
+   "dur": 3.19,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.479,
+     "text": "お菓子の中身が"
+    },
+    {
+     "t": 1.595,
+     "text": "毎日[1割]ずつ"
+    },
+    {
+     "t": 2.552,
+     "text": "減ったら？"
+    }
+   ]
+  },
+  "real": {
+   "file": "ep43_nakami_1wari_voice/real.mp3",
+   "dur": 4.75,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "今年の値上げ、"
+    },
+    {
+     "t": 1.296,
+     "text": "[2万品目]超え。"
+    },
+    {
+     "t": 2.591,
+     "text": "中身へりも[9割]が実感。"
+    }
+   ]
+  },
+  "rule": {
+   "file": "ep43_nakami_1wari_voice/rule.mp3",
+   "dur": 3.204,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "値段そのまま。"
+    },
+    {
+     "t": 1.201,
+     "text": "ポテチ[60グラム]から。"
+    }
+   ]
+  },
+  "d7": {
+   "file": "ep43_nakami_1wari_voice/d7.mp3",
+   "dur": 4.187,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "7日目。"
+    },
+    {
+     "t": 0.897,
+     "text": "中身は[半分]。"
+    },
+    {
+     "t": 2.393,
+     "text": "袋はパンパン。"
+    }
+   ]
+  },
+  "d22": {
+   "file": "ep43_nakami_1wari_voice/d22.mp3",
+   "dur": 3.586,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "22日目。"
+    },
+    {
+     "t": 1.195,
+     "text": "1袋に、"
+    },
+    {
+     "t": 2.092,
+     "text": "ポテチ[4枚]。"
+    }
+   ]
+  },
+  "d35": {
+   "file": "ep43_nakami_1wari_voice/d35.mp3",
+   "dur": 3.371,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "35日目。"
+    },
+    {
+     "t": 1.124,
+     "text": "開けたら、"
+    },
+    {
+     "t": 2.247,
+     "text": "[1枚]だけ。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep43_nakami_1wari_voice/but.mp3",
+   "dur": 1.53,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.34,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "buy": {
+   "file": "ep43_nakami_1wari_voice/buy.mp3",
+   "dur": 4.606,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "前と同じだけ"
+    },
+    {
+     "t": 1.316,
+     "text": "食べるには、"
+    },
+    {
+     "t": 2.413,
+     "text": "毎日[40袋]。"
+    },
+    {
+     "t": 3.509,
+     "text": "[6,000円]。"
+    }
+   ]
+  },
+  "trash": {
+   "file": "ep43_nakami_1wari_voice/trash.mp3",
+   "dur": 2.312,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "中身より、"
+    },
+    {
+     "t": 0.711,
+     "text": "[袋]のほうが"
+    },
+    {
+     "t": 1.601,
+     "text": "重くなる。"
+    }
+   ]
+  },
+  "good": {
+   "file": "ep43_nakami_1wari_voice/good.mp3",
+   "dur": 3.803,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース。"
+    },
+    {
+     "t": 1.358,
+     "text": "カロリーは"
+    },
+    {
+     "t": 2.445,
+     "text": "[97%]オフ。"
+    }
+   ]
+  },
+  "bad": {
+   "file": "ep43_nakami_1wari_voice/bad.mp3",
+   "dur": 4.347,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "悪いニュース。"
+    },
+    {
+     "t": 1.358,
+     "text": "130日目、"
+    },
+    {
+     "t": 2.717,
+     "text": "中身は[塩1粒]。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep43_nakami_1wari_voice/cta.mp3",
+   "dur": 3.137,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "値上げと、"
+    },
+    {
+     "t": 0.896,
+     "text": "中身へり。"
+    },
+    {
+     "t": 1.793,
+     "text": "どっちが[マシ]？"
+    }
+   ]
+  }
+ }
+}
