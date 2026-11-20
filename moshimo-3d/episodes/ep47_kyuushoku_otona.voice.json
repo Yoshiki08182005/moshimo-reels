@@ -1,0 +1,244 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep47_kyuushoku_otona_voice/hook.mp3",
+   "dur": 2.608,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.522,
+     "text": "大人にも[給食]が"
+    },
+    {
+     "t": 1.739,
+     "text": "毎日出たら？"
+    }
+   ]
+  },
+  "price": {
+   "file": "ep47_kyuushoku_otona_voice/price.mp3",
+   "dur": 2.367,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "給食は、"
+    },
+    {
+     "t": 0.71,
+     "text": "1食[約300円]。"
+    }
+   ]
+  },
+  "lunch": {
+   "file": "ep47_kyuushoku_otona_voice/lunch.mp3",
+   "dur": 2.667,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "大人のランチは、"
+    },
+    {
+     "t": 1.334,
+     "text": "平均[約700円]。"
+    }
+   ]
+  },
+  "save": {
+   "file": "ep47_kyuushoku_otona_voice/save.mp3",
+   "dur": 3.314,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "毎日[400円]浮いて、"
+    },
+    {
+     "t": 1.754,
+     "text": "1年で[約10万円]。"
+    }
+   ]
+  },
+  "milk": {
+   "file": "ep47_kyuushoku_otona_voice/milk.mp3",
+   "dur": 3.982,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "大人全員の牛乳、"
+    },
+    {
+     "t": 1.394,
+     "text": "1日分で"
+    },
+    {
+     "t": 2.19,
+     "text": "[ビル8階]の"
+    },
+    {
+     "t": 3.186,
+     "text": "高さの箱。"
+    }
+   ]
+  },
+  "curry": {
+   "file": "ep47_kyuushoku_otona_voice/curry.mp3",
+   "dur": 3.542,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "カレーの日は、"
+    },
+    {
+     "t": 1.265,
+     "text": "全国で"
+    },
+    {
+     "t": 2.024,
+     "text": "[6,781万皿]。"
+    }
+   ]
+  },
+  "time": {
+   "file": "ep47_kyuushoku_otona_voice/time.mp3",
+   "dur": 3.981,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "店選びも"
+    },
+    {
+     "t": 0.995,
+     "text": "行列もゼロ。"
+    },
+    {
+     "t": 2.239,
+     "text": "1年で[62時間]。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep47_kyuushoku_otona_voice/but.mp3",
+   "dur": 1.528,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.339,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "menu": {
+   "file": "ep47_kyuushoku_otona_voice/menu.mp3",
+   "dur": 4.654,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "メニューは"
+    },
+    {
+     "t": 0.886,
+     "text": "選べない。"
+    },
+    {
+     "t": 1.773,
+     "text": "1年[248食]、"
+    },
+    {
+     "t": 3.103,
+     "text": "全部決まってる。"
+    }
+   ]
+  },
+  "shop": {
+   "file": "ep47_kyuushoku_otona_voice/shop.mp3",
+   "dur": 2.985,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "ランチの店から、"
+    },
+    {
+     "t": 1.229,
+     "text": "1年で[12兆円]"
+    },
+    {
+     "t": 2.458,
+     "text": "消える。"
+    }
+   ]
+  },
+  "touban": {
+   "file": "ep47_kyuushoku_otona_voice/touban.mp3",
+   "dur": 3.818,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "30人の職場なら、"
+    },
+    {
+     "t": 1.797,
+     "text": "[6日に1回]、"
+    },
+    {
+     "t": 2.92,
+     "text": "給食当番。"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep47_kyuushoku_otona_voice/news.mp3",
+   "dur": 5.862,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース、"
+    },
+    {
+     "t": 0.862,
+     "text": "栄養バランス[満点]。"
+    },
+    {
+     "t": 2.241,
+     "text": "悪いニュース、"
+    },
+    {
+     "t": 3.103,
+     "text": "[部長]と"
+    },
+    {
+     "t": 3.62,
+     "text": "向かい合わせで"
+    },
+    {
+     "t": 4.827,
+     "text": "いただきます。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep47_kyuushoku_otona_voice/cta.mp3",
+   "dur": 2.238,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.746,
+     "text": "大人の[給食]"
+    },
+    {
+     "t": 1.678,
+     "text": "ほしい？"
+    }
+   ]
+  }
+ }
+}
