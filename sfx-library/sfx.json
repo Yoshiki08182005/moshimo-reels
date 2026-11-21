@@ -392,6 +392,22 @@
    "src": "https://soundeffect-lab.info/sound/various/ (coin-toss1.mp3)",
    "url": "https://soundeffect-lab.info/sound/various/mp3/coin-toss1.mp3",
    "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止"
+  },
+  "zap_small": {
+   "file": "files/zap_small.mp3",
+   "desc": "ビリッ（雷魔法2）",
+   "dur": 1.5,
+   "src": "https://soundeffect-lab.info/sound/battle/ (magic-electron2.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/battle/mp3/magic-electron2.mp3"
+  },
+  "zap_big": {
+   "file": "files/zap_big.mp3",
+   "desc": "バリバリッ（雷魔法1）",
+   "dur": 1.27,
+   "src": "https://soundeffect-lab.info/sound/battle/ (magic-electron1.mp3)",
+   "license": "効果音ラボ: 商用OK・クレジット不要・素材ファイルの再配布は禁止",
+   "url": "https://soundeffect-lab.info/sound/battle/mp3/magic-electron1.mp3"
   }
  }
 }
