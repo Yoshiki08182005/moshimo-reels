@@ -1,0 +1,218 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep54_fuyu_yoru10_voice/hook.mp3",
+   "dur": 3.113,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.519,
+     "text": "冬の夜が毎日"
+    },
+    {
+     "t": 1.556,
+     "text": "[10分]長くなったら？"
+    }
+   ]
+  },
+  "today": {
+   "file": "ep54_fuyu_yoru10_voice/today.mp3",
+   "dur": 2.389,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "今日の東京、"
+    },
+    {
+     "t": 0.995,
+     "text": "昼は[約10時間]。"
+    }
+   ]
+  },
+  "speed": {
+   "file": "ep54_fuyu_yoru10_voice/speed.mp3",
+   "dur": 3.863,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "ふつうは1日"
+    },
+    {
+     "t": 1.159,
+     "text": "[1分]も縮まない。"
+    },
+    {
+     "t": 2.511,
+     "text": "あなたは[10分]。"
+    }
+   ]
+  },
+  "month": {
+   "file": "ep54_fuyu_yoru10_voice/month.mp3",
+   "dur": 3.564,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1か月で、"
+    },
+    {
+     "t": 0.95,
+     "text": "昼は[5時間]。"
+    },
+    {
+     "t": 2.138,
+     "text": "日の出は[9時]。"
+    }
+   ]
+  },
+  "stars": {
+   "file": "ep54_fuyu_yoru10_voice/stars.mp3",
+   "dur": 2.349,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "星を見る時間は、"
+    },
+    {
+     "t": 1.37,
+     "text": "[19時間]に。"
+    }
+   ]
+  },
+  "zero": {
+   "file": "ep54_fuyu_yoru10_voice/zero.mp3",
+   "dur": 3.836,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "2か月で、"
+    },
+    {
+     "t": 0.903,
+     "text": "昼が[ゼロ]。"
+    },
+    {
+     "t": 1.805,
+     "text": "お昼ごはんも"
+    },
+    {
+     "t": 3.159,
+     "text": "[夜]の中。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep54_fuyu_yoru10_voice/but.mp3",
+   "dur": 1.528,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.339,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "light": {
+   "file": "ep54_fuyu_yoru10_voice/light.mp3",
+   "dur": 2.606,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "明かりをつける時間、"
+    },
+    {
+     "t": 1.379,
+     "text": "1日[5時間]増える。"
+    }
+   ]
+  },
+  "solar": {
+   "file": "ep54_fuyu_yoru10_voice/solar.mp3",
+   "dur": 2.938,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "太陽光発電は、"
+    },
+    {
+     "t": 1.356,
+     "text": "1か月で[約半分]。"
+    }
+   ]
+  },
+  "clock": {
+   "file": "ep54_fuyu_yoru10_voice/clock.mp3",
+   "dur": 2.958,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "朝の光がないと、"
+    },
+    {
+     "t": 1.218,
+     "text": "体内時計が"
+    },
+    {
+     "t": 2.088,
+     "text": "[ずれていく]。"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep54_fuyu_yoru10_voice/news.mp3",
+   "dur": 5.965,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース、"
+    },
+    {
+     "t": 1.028,
+     "text": "イルミネーションは"
+    },
+    {
+     "t": 2.674,
+     "text": "[一日中]。"
+    },
+    {
+     "t": 3.291,
+     "text": "悪いニュース、"
+    },
+    {
+     "t": 4.319,
+     "text": "洗濯物も"
+    },
+    {
+     "t": 5.142,
+     "text": "[乾かない]。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep54_fuyu_yoru10_voice/cta.mp3",
+   "dur": 1.919,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.768,
+     "text": "長い夜"
+    },
+    {
+     "t": 1.343,
+     "text": "ほしい？"
+    }
+   ]
+  }
+ }
+}
