@@ -1,0 +1,224 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep55_denki_yoru_tada_voice/hook.mp3",
+   "dur": 2.908,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.485,
+     "text": "夜の電気代が"
+    },
+    {
+     "t": 1.454,
+     "text": "全部[タダ]になったら？"
+    }
+   ]
+  },
+  "rule": {
+   "file": "ep55_denki_yoru_tada_voice/rule.mp3",
+   "dur": 3.054,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "夜10時から"
+    },
+    {
+     "t": 1.145,
+     "text": "朝8時まで、"
+    },
+    {
+     "t": 2.1,
+     "text": "電気代[0円]。"
+    }
+   ]
+  },
+  "bill": {
+   "file": "ep55_denki_yoru_tada_voice/bill.mp3",
+   "dur": 3.658,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "2人暮らしの電気代、"
+    },
+    {
+     "t": 2.058,
+     "text": "月[12,144円]。"
+    }
+   ]
+  },
+  "heater": {
+   "file": "ep55_denki_yoru_tada_voice/heater.mp3",
+   "dur": 3.947,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "暖房つけっぱなし、"
+    },
+    {
+     "t": 1.754,
+     "text": "ひと冬で[16,740円]。"
+    }
+   ]
+  },
+  "ev": {
+   "file": "ep55_denki_yoru_tada_voice/ev.mp3",
+   "dur": 3.303,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "電気自動車を"
+    },
+    {
+     "t": 1.101,
+     "text": "毎晩満タン、"
+    },
+    {
+     "t": 2.019,
+     "text": "1年で[地球2周]。"
+    }
+   ]
+  },
+  "year": {
+   "file": "ep55_denki_yoru_tada_voice/year.mp3",
+   "dur": 3.678,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "夜の分を[4割]とすると、"
+    },
+    {
+     "t": 2.043,
+     "text": "1年で[約5.8万円]。"
+    }
+   ]
+  },
+  "japan": {
+   "file": "ep55_denki_yoru_tada_voice/japan.mp3",
+   "dur": 2.708,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "全国では1年、"
+    },
+    {
+     "t": 1.161,
+     "text": "[約3兆円]が"
+    },
+    {
+     "t": 2.128,
+     "text": "タダに。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep55_denki_yoru_tada_voice/but.mp3",
+   "dur": 1.531,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.34,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "peak": {
+   "file": "ep55_denki_yoru_tada_voice/peak.mp3",
+   "dur": 4.448,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "夜10時、"
+    },
+    {
+     "t": 0.89,
+     "text": "全員がスイッチオン。"
+    },
+    {
+     "t": 2.891,
+     "text": "発電所[56基分]。"
+    }
+   ]
+  },
+  "noise": {
+   "file": "ep55_denki_yoru_tada_voice/noise.mp3",
+   "dur": 2.625,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "夜中の洗濯機、"
+    },
+    {
+     "t": 1.05,
+     "text": "お隣さんと[気まずい]。"
+    }
+   ]
+  },
+  "day": {
+   "file": "ep55_denki_yoru_tada_voice/day.mp3",
+   "dur": 2.827,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "その分、"
+    },
+    {
+     "t": 0.652,
+     "text": "昼の電気代が"
+    },
+    {
+     "t": 1.957,
+     "text": "[1.7倍]に。"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep55_denki_yoru_tada_voice/news.mp3",
+   "dur": 4.655,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース、"
+    },
+    {
+     "t": 1.012,
+     "text": "夜ふかし[タダ]。"
+    },
+    {
+     "t": 2.226,
+     "text": "悪いニュース、"
+    },
+    {
+     "t": 3.238,
+     "text": "朝は[いつも通り]。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep55_denki_yoru_tada_voice/cta.mp3",
+   "dur": 2.381,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.733,
+     "text": "夜の電気[タダ]"
+    },
+    {
+     "t": 1.832,
+     "text": "ほしい？"
+    }
+   ]
+  }
+ }
+}
