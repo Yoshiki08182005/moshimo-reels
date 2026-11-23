@@ -1,0 +1,236 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep53_hiruyasumi_2h_voice/hook.mp3",
+   "dur": 3.044,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.537,
+     "text": "昼休みが全員"
+    },
+    {
+     "t": 1.612,
+     "text": "[2時間]になったら？"
+    }
+   ]
+  },
+  "rule": {
+   "file": "ep53_hiruyasumi_2h_voice/rule.mp3",
+   "dur": 2.336,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "今の昼休みは、"
+    },
+    {
+     "t": 1.168,
+     "text": "ふつう[1時間]。"
+    }
+   ]
+  },
+  "year": {
+   "file": "ep53_hiruyasumi_2h_voice/year.mp3",
+   "dur": 3.626,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1日[1時間]増えて、"
+    },
+    {
+     "t": 1.813,
+     "text": "1年で[248時間]。"
+    }
+   ]
+  },
+  "movie": {
+   "file": "ep53_hiruyasumi_2h_voice/movie.mp3",
+   "dur": 3.146,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "2時間の映画なら、"
+    },
+    {
+     "t": 1.678,
+     "text": "1年で[124本]。"
+    }
+   ]
+  },
+  "nap": {
+   "file": "ep53_hiruyasumi_2h_voice/nap.mp3",
+   "dur": 3.341,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "毎日[30分]"
+    },
+    {
+     "t": 0.983,
+     "text": "昼寝しても、"
+    },
+    {
+     "t": 1.965,
+     "text": "まだ[30分]"
+    },
+    {
+     "t": 2.948,
+     "text": "長い。"
+    }
+   ]
+  },
+  "walk": {
+   "file": "ep53_hiruyasumi_2h_voice/walk.mp3",
+   "dur": 3.006,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "歩いて行ける"
+    },
+    {
+     "t": 1.061,
+     "text": "ランチの店、"
+    },
+    {
+     "t": 1.945,
+     "text": "範囲が[約7倍]。"
+    }
+   ]
+  },
+  "japan": {
+   "file": "ep53_hiruyasumi_2h_voice/japan.mp3",
+   "dur": 4.095,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "全国では、"
+    },
+    {
+     "t": 0.91,
+     "text": "1日[6,185万時間]の"
+    },
+    {
+     "t": 3.185,
+     "text": "自由時間。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep53_hiruyasumi_2h_voice/but.mp3",
+   "dur": 1.528,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.339,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "late": {
+   "file": "ep53_hiruyasumi_2h_voice/late.mp3",
+   "dur": 2.321,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "帰りは毎日、"
+    },
+    {
+     "t": 0.967,
+     "text": "[1時間]"
+    },
+    {
+     "t": 1.548,
+     "text": "遅くなる。"
+    }
+   ]
+  },
+  "career": {
+   "file": "ep53_hiruyasumi_2h_voice/career.mp3",
+   "dur": 5.933,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "40年で[9,920時間]。"
+    },
+    {
+     "t": 2.282,
+     "text": "会社にいる時間が、"
+    },
+    {
+     "t": 4.108,
+     "text": "[1年分以上]増える。"
+    }
+   ]
+  },
+  "nap2": {
+   "file": "ep53_hiruyasumi_2h_voice/nap2.mp3",
+   "dur": 2.935,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "昼寝は[30分]を"
+    },
+    {
+     "t": 1.208,
+     "text": "超えると、"
+    },
+    {
+     "t": 1.899,
+     "text": "逆に[ぼんやり]。"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep53_hiruyasumi_2h_voice/news.mp3",
+   "dur": 5.218,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース、"
+    },
+    {
+     "t": 1.004,
+     "text": "ランチは[ゆっくり]。"
+    },
+    {
+     "t": 2.609,
+     "text": "悪いニュース、"
+    },
+    {
+     "t": 3.613,
+     "text": "部長の話も"
+    },
+    {
+     "t": 4.616,
+     "text": "[2時間]。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep53_hiruyasumi_2h_voice/cta.mp3",
+   "dur": 2.399,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.738,
+     "text": "昼休み[2時間]"
+    },
+    {
+     "t": 1.845,
+     "text": "ほしい？"
+    }
+   ]
+  }
+ }
+}
