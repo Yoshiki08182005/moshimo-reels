@@ -1,0 +1,224 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep57_conveni_teika_voice/hook.mp3",
+   "dur": 3.53,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.504,
+     "text": "コンビニの値段が"
+    },
+    {
+     "t": 1.849,
+     "text": "毎週[10%]"
+    },
+    {
+     "t": 2.689,
+     "text": "上がったら？"
+    }
+   ]
+  },
+  "now": {
+   "file": "ep57_conveni_teika_voice/now.mp3",
+   "dur": 3.987,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "今は"
+    },
+    {
+     "t": 0.469,
+     "text": "おにぎり[200円]。"
+    },
+    {
+     "t": 2.346,
+     "text": "来週は[220円]。"
+    }
+   ]
+  },
+  "w8": {
+   "file": "ep57_conveni_teika_voice/w8.mp3",
+   "dur": 3.926,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "2か月後、"
+    },
+    {
+     "t": 1.122,
+     "text": "[429円]。"
+    },
+    {
+     "t": 2.243,
+     "text": "もう[2倍]超え。"
+    }
+   ]
+  },
+  "w19": {
+   "file": "ep57_conveni_teika_voice/w19.mp3",
+   "dur": 4.426,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "19週目、"
+    },
+    {
+     "t": 1.18,
+     "text": "[1,223円]。"
+    },
+    {
+     "t": 2.656,
+     "text": "時給より"
+    },
+    {
+     "t": 3.836,
+     "text": "高い。"
+    }
+   ]
+  },
+  "w52": {
+   "file": "ep57_conveni_teika_voice/w52.mp3",
+   "dur": 4.624,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1年後、"
+    },
+    {
+     "t": 0.73,
+     "text": "1個[2万8千円]。"
+    },
+    {
+     "t": 2.434,
+     "text": "1円玉なら"
+    },
+    {
+     "t": 3.651,
+     "text": "[28キロ]。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep57_conveni_teika_voice/but.mp3",
+   "dur": 1.538,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.342,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "salary": {
+   "file": "ep57_conveni_teika_voice/salary.mp3",
+   "dur": 3.154,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "給料は"
+    },
+    {
+     "t": 0.728,
+     "text": "そのまま。"
+    },
+    {
+     "t": 1.698,
+     "text": "月給で[12個]。"
+    }
+   ]
+  },
+  "label": {
+   "file": "ep57_conveni_teika_voice/label.mp3",
+   "dur": 2.262,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "値札は"
+    },
+    {
+     "t": 0.485,
+     "text": "毎週[3,000枚]"
+    },
+    {
+     "t": 1.616,
+     "text": "貼りかえ。"
+    }
+   ]
+  },
+  "expiry": {
+   "file": "ep57_conveni_teika_voice/expiry.mp3",
+   "dur": 2.828,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "買いだめしても、"
+    },
+    {
+     "t": 1.042,
+     "text": "おにぎりは"
+    },
+    {
+     "t": 1.786,
+     "text": "[1日]で期限切れ。"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep57_conveni_teika_voice/news.mp3",
+   "dur": 5.411,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース、"
+    },
+    {
+     "t": 1.082,
+     "text": "手作りは"
+    },
+    {
+     "t": 1.948,
+     "text": "[60円]のまま。"
+    },
+    {
+     "t": 3.247,
+     "text": "悪いニュース、"
+    },
+    {
+     "t": 4.329,
+     "text": "毎朝[早起き]。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep57_conveni_teika_voice/cta.mp3",
+   "dur": 2.488,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.664,
+     "text": "コンビニの"
+    },
+    {
+     "t": 1.493,
+     "text": "おにぎり、"
+    },
+    {
+     "t": 2.157,
+     "text": "[買う]？"
+    }
+   ]
+  }
+ }
+}
