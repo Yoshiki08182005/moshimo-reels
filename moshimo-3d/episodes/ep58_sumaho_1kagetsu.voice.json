@@ -1,0 +1,224 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep58_sumaho_1kagetsu_voice/hook.mp3",
+   "dur": 2.781,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.464,
+     "text": "スマホが[1か月]"
+    },
+    {
+     "t": 1.545,
+     "text": "使えなくなったら？"
+    }
+   ]
+  },
+  "rule": {
+   "file": "ep58_sumaho_1kagetsu_voice/rule.mp3",
+   "dur": 3.366,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "スマホを見る時間は、"
+    },
+    {
+     "t": 1.782,
+     "text": "1日[2時間45分]。"
+    }
+   ]
+  },
+  "month": {
+   "file": "ep58_sumaho_1kagetsu_voice/month.mp3",
+   "dur": 2.908,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1か月で、"
+    },
+    {
+     "t": 0.775,
+     "text": "[83時間]が"
+    },
+    {
+     "t": 1.745,
+     "text": "まるごと浮く。"
+    }
+   ]
+  },
+  "book": {
+   "file": "ep58_sumaho_1kagetsu_voice/book.mp3",
+   "dur": 2.155,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "本なら、"
+    },
+    {
+     "t": 0.646,
+     "text": "1か月で[20冊]。"
+    }
+   ]
+  },
+  "walk": {
+   "file": "ep58_sumaho_1kagetsu_voice/walk.mp3",
+   "dur": 4.802,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "歩けば1日[13キロ]。"
+    },
+    {
+     "t": 2.058,
+     "text": "1か月で、"
+    },
+    {
+     "t": 2.973,
+     "text": "東京から[大阪]まで。"
+    }
+   ]
+  },
+  "neck": {
+   "file": "ep58_sumaho_1kagetsu_voice/neck.mp3",
+   "dur": 3.081,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "うつむく首の重さ、"
+    },
+    {
+     "t": 1.541,
+     "text": "[27キロ]から"
+    },
+    {
+     "t": 2.696,
+     "text": "解放。"
+    }
+   ]
+  },
+  "year": {
+   "file": "ep58_sumaho_1kagetsu_voice/year.mp3",
+   "dur": 2.882,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1年だと、"
+    },
+    {
+     "t": 0.72,
+     "text": "[42日]ぶん"
+    },
+    {
+     "t": 1.621,
+     "text": "スマホを見てる。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep58_sumaho_1kagetsu_voice/but.mp3",
+   "dur": 1.528,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.339,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "tools": {
+   "file": "ep58_sumaho_1kagetsu_voice/tools.mp3",
+   "dur": 3.211,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1台に入っていた"
+    },
+    {
+     "t": 1.223,
+     "text": "[12個]の道具が、"
+    },
+    {
+     "t": 2.293,
+     "text": "ぜんぶ消える。"
+    }
+   ]
+  },
+  "pay": {
+   "file": "ep58_sumaho_1kagetsu_voice/pay.mp3",
+   "dur": 3.22,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "スマホ払いが止まって、"
+    },
+    {
+     "t": 1.894,
+     "text": "1か月[1.4兆円]。"
+    }
+   ]
+  },
+  "call": {
+   "file": "ep58_sumaho_1kagetsu_voice/call.mp3",
+   "dur": 2.221,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "友だちへの連絡は、"
+    },
+    {
+     "t": 1.615,
+     "text": "[糸電話]。"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep58_sumaho_1kagetsu_voice/news.mp3",
+   "dur": 4.905,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース、"
+    },
+    {
+     "t": 0.981,
+     "text": "夜は[ぐっすり]。"
+    },
+    {
+     "t": 2.158,
+     "text": "悪いニュース、"
+    },
+    {
+     "t": 3.139,
+     "text": "朝の目覚ましも[ない]。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep58_sumaho_1kagetsu_voice/cta.mp3",
+   "dur": 2.772,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.693,
+     "text": "スマホなしの[1か月]、"
+    },
+    {
+     "t": 2.252,
+     "text": "いける？"
+    }
+   ]
+  }
+ }
+}
