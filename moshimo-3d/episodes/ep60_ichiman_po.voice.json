@@ -1,0 +1,230 @@
+{
+ "voice": "ja-JP-NanamiNeural",
+ "rate": "+20%",
+ "lines": {
+  "hook": {
+   "file": "ep60_ichiman_po_voice/hook.mp3",
+   "dur": 3.638,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "もしも、"
+    },
+    {
+     "t": 0.52,
+     "text": "全員が毎日"
+    },
+    {
+     "t": 1.386,
+     "text": "[1万歩]歩く"
+    },
+    {
+     "t": 2.252,
+     "text": "決まりになったら？"
+    }
+   ]
+  },
+  "now": {
+   "file": "ep60_ichiman_po_voice/now.mp3",
+   "dur": 5.15,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "今の平均は"
+    },
+    {
+     "t": 1.515,
+     "text": "[6278歩]。"
+    },
+    {
+     "t": 3.029,
+     "text": "あと[3722歩]。"
+    }
+   ]
+  },
+  "time": {
+   "file": "ep60_ichiman_po_voice/time.mp3",
+   "dur": 3.674,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1日[37分]、"
+    },
+    {
+     "t": 1.225,
+     "text": "[2.6キロ]"
+    },
+    {
+     "t": 2.205,
+     "text": "よけいに歩く。"
+    }
+   ]
+  },
+  "year": {
+   "file": "ep60_ichiman_po_voice/year.mp3",
+   "dur": 4.141,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1年で[950キロ]。"
+    },
+    {
+     "t": 1.84,
+     "text": "東京から"
+    },
+    {
+     "t": 2.761,
+     "text": "福岡より遠い。"
+    }
+   ]
+  },
+  "kcal": {
+   "file": "ep60_ichiman_po_voice/kcal.mp3",
+   "dur": 3.781,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "1日[100キロカロリー]。"
+    },
+    {
+     "t": 1.99,
+     "text": "1年で"
+    },
+    {
+     "t": 2.587,
+     "text": "脂肪[5キロ]分。"
+    }
+   ]
+  },
+  "sun": {
+   "file": "ep60_ichiman_po_voice/sun.mp3",
+   "dur": 3.344,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "日本じゅうの歩きを"
+    },
+    {
+     "t": 1.433,
+     "text": "足すと、"
+    },
+    {
+     "t": 1.911,
+     "text": "1日で[太陽]まで"
+    },
+    {
+     "t": 3.025,
+     "text": "届く。"
+    }
+   ]
+  },
+  "but": {
+   "file": "ep60_ichiman_po_voice/but.mp3",
+   "dur": 1.528,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "でも、"
+    },
+    {
+     "t": 0.34,
+     "text": "[落とし穴]がある。"
+    }
+   ]
+  },
+  "shoes": {
+   "file": "ep60_ichiman_po_voice/shoes.mp3",
+   "dur": 2.45,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "スニーカーは"
+    },
+    {
+     "t": 0.7,
+     "text": "1年で[4足]"
+    },
+    {
+     "t": 1.575,
+     "text": "はきつぶす。"
+    }
+   ]
+  },
+  "hours": {
+   "file": "ep60_ichiman_po_voice/hours.mp3",
+   "dur": 4.499,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "歩く時間は"
+    },
+    {
+     "t": 1.25,
+     "text": "1年で[226時間]。"
+    },
+    {
+     "t": 3.25,
+     "text": "まる[9日]分。"
+    }
+   ]
+  },
+  "elder": {
+   "file": "ep60_ichiman_po_voice/elder.mp3",
+   "dur": 3.338,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "65歳以上は、"
+    },
+    {
+     "t": 1.178,
+     "text": "今のほぼ[2倍]"
+    },
+    {
+     "t": 2.356,
+     "text": "歩くことに。"
+    }
+   ]
+  },
+  "news": {
+   "file": "ep60_ichiman_po_voice/news.mp3",
+   "dur": 4.588,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "いいニュース、"
+    },
+    {
+     "t": 1.043,
+     "text": "体は[ぽかぽか]。"
+    },
+    {
+     "t": 2.294,
+     "text": "悪いニュース、"
+    },
+    {
+     "t": 3.337,
+     "text": "[おなか]がすく。"
+    }
+   ]
+  },
+  "cta": {
+   "file": "ep60_ichiman_po_voice/cta.mp3",
+   "dur": 2.606,
+   "chunks": [
+    {
+     "t": 0.0,
+     "text": "それでも、"
+    },
+    {
+     "t": 0.869,
+     "text": "毎日1万歩、"
+    },
+    {
+     "t": 1.955,
+     "text": "[歩ける？]"
+    }
+   ]
+  }
+ }
+}
