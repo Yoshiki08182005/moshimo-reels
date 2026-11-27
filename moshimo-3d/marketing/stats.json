@@ -1,138 +1,155 @@
 {
- "fetched_at": "2026-11-27T03:55+00:00",
+ "fetched_at": "2026-11-27T11:55+00:00",
  "account": {
   "id": "17841440951283782",
   "biography": "＼「もしも」を3Dで本気で試算／\n🎬 もしも〇〇だったら？を毎日投稿\n📊 数字は試算と実データ（出典はキャプション）\n💬 見たい「もしも」はコメントへ",
   "followers_count": 29,
   "follows_count": 0,
-  "media_count": 65,
+  "media_count": 66,
   "name": "もしもシミュレーション｜もしも〇〇だったら？",
   "username": "moshimo.simulation"
  },
  "posts": [
   {
+   "id": "18014720813770804",
+   "posted": "2026-11-27T04:25:21+0000",
+   "hours": 7.5,
+   "url": "https://www.instagram.com/reel/DgO0NDTqeNj/",
+   "type": "REELS",
+   "title": "もしもブラックフライデーの値引きが毎日2倍になったら？",
+   "likes": 0,
+   "comments": 0,
+   "views": 154,
+   "reach": 129,
+   "shares": 0,
+   "saved": 0,
+   "total_interactions": 0,
+   "ig_reels_avg_watch_time": 11699,
+   "ig_reels_video_view_total_time": 1520927
+  },
+  {
    "id": "18112945462924932",
    "posted": "2026-11-26T20:37:47+0000",
-   "hours": 7.3,
+   "hours": 15.3,
    "url": "https://www.instagram.com/reel/DgN-rDAuNF9/",
    "type": "REELS",
    "title": "もしも歯みがきが法律で1回10分になったら？",
    "likes": 8,
    "comments": 0,
-   "views": 1365,
-   "reach": 1091,
+   "views": 1395,
+   "reach": 1110,
    "shares": 0,
    "saved": 0,
    "total_interactions": 8,
-   "ig_reels_avg_watch_time": 22916,
-   "ig_reels_video_view_total_time": 24658420
+   "ig_reels_avg_watch_time": 22701,
+   "ig_reels_video_view_total_time": 24880827
   },
   {
    "id": "18139223458730954",
    "posted": "2026-11-26T12:50:34+0000",
-   "hours": 15.1,
+   "hours": 23.1,
    "url": "https://www.instagram.com/reel/DgNJMZ2vFRU/",
    "type": "REELS",
    "title": "もしも食べ物の消費税がゼロになったら？",
-   "likes": 4,
+   "likes": 12,
    "comments": 0,
-   "views": 574,
-   "reach": 473,
+   "views": 1283,
+   "reach": 1076,
    "shares": 0,
    "saved": 0,
-   "total_interactions": 4,
-   "ig_reels_avg_watch_time": 29463,
-   "ig_reels_video_view_total_time": 13847692
+   "total_interactions": 12,
+   "ig_reels_avg_watch_time": 24673,
+   "ig_reels_video_view_total_time": 26153900
   },
   {
    "id": "18058707008587168",
    "posted": "2026-11-26T04:18:46+0000",
-   "hours": 23.6,
+   "hours": 31.6,
    "url": "https://www.instagram.com/reel/DgMOqvLghqH/",
    "type": "REELS",
    "title": "もしもスマホが夜9時から使えない決まりになったら？",
    "likes": 11,
    "comments": 0,
-   "views": 1272,
-   "reach": 996,
+   "views": 1277,
+   "reach": 1003,
    "shares": 1,
    "saved": 2,
    "total_interactions": 14,
-   "ig_reels_avg_watch_time": 19333,
-   "ig_reels_video_view_total_time": 19604059
+   "ig_reels_avg_watch_time": 19264,
+   "ig_reels_video_view_total_time": 19611425
   },
   {
    "id": "18119266448113346",
    "posted": "2026-11-25T21:02:29+0000",
-   "hours": 30.9,
+   "hours": 38.9,
    "url": "https://www.instagram.com/reel/DgLcuoUhkbm/",
    "type": "REELS",
    "title": "もしも布団から出るのが毎朝2倍おそくなったら？",
    "likes": 13,
    "comments": 0,
-   "views": 1474,
-   "reach": 1150,
+   "views": 1478,
+   "reach": 1154,
    "shares": 1,
    "saved": 0,
    "total_interactions": 15,
-   "ig_reels_avg_watch_time": 23571,
-   "ig_reels_video_view_total_time": 26753227
+   "ig_reels_avg_watch_time": 23515,
+   "ig_reels_video_view_total_time": 26760719
   },
   {
    "id": "18104945681370385",
    "posted": "2026-11-25T12:50:10+0000",
-   "hours": 39.1,
+   "hours": 47.1,
    "url": "https://www.instagram.com/reel/DgKkY57ME9T/",
    "type": "REELS",
    "title": "もしも全員が毎日1万歩歩く決まりになったら？",
    "likes": 0,
    "comments": 0,
-   "views": 150,
-   "reach": 134,
+   "views": 152,
+   "reach": 135,
    "shares": 0,
    "saved": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 11655,
-   "ig_reels_video_view_total_time": 1550228
+   "ig_reels_avg_watch_time": 11930,
+   "ig_reels_video_view_total_time": 1598749
   },
   {
    "id": "17973272489963412",
    "posted": "2026-11-25T05:04:46+0000",
-   "hours": 46.8,
+   "hours": 54.8,
    "url": "https://www.instagram.com/reel/DgJvIxsSbma/",
    "type": "REELS",
    "title": "もしも声が毎回2倍大きくなったら？",
    "likes": 0,
    "comments": 0,
-   "views": 183,
-   "reach": 157,
+   "views": 184,
+   "reach": 158,
    "shares": 0,
    "saved": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 11600,
-   "ig_reels_video_view_total_time": 1844527
+   "ig_reels_avg_watch_time": 11547,
+   "ig_reels_video_view_total_time": 1847628
   },
   {
    "id": "17926315368224291",
    "posted": "2026-11-24T21:28:22+0000",
-   "hours": 54.4,
+   "hours": 62.5,
    "url": "https://www.instagram.com/reel/DgI65AlpPyr/",
    "type": "REELS",
    "title": "もしもスマホが1か月使えなくなったら？",
    "likes": 2,
    "comments": 0,
-   "views": 577,
-   "reach": 470,
+   "views": 579,
+   "reach": 471,
    "shares": 0,
    "saved": 0,
    "total_interactions": 2,
-   "ig_reels_avg_watch_time": 21270,
-   "ig_reels_video_view_total_time": 9805617
+   "ig_reels_avg_watch_time": 21236,
+   "ig_reels_video_view_total_time": 9811393
   },
   {
    "id": "18119562542603456",
    "posted": "2026-11-24T14:04:11+0000",
-   "hours": 61.9,
+   "hours": 69.9,
    "url": "https://www.instagram.com/reel/DgIICAdsLt0/",
    "type": "REELS",
    "title": "もしもコンビニの値段が毎週10%上がったら？",
@@ -149,7 +166,7 @@
   {
    "id": "18103249133423120",
    "posted": "2026-11-23T23:25:14+0000",
-   "hours": 76.5,
+   "hours": 84.5,
    "url": "https://www.instagram.com/reel/DgGjbBQhw0t/",
    "type": "REELS",
    "title": "もしも夜の電気代が全部タダになったら？",
@@ -166,7 +183,7 @@
   {
    "id": "18118071413040815",
    "posted": "2026-11-23T12:25:17+0000",
-   "hours": 87.5,
+   "hours": 95.5,
    "url": "https://www.instagram.com/reel/DgFX9WJOV4a/",
    "type": "REELS",
    "title": "もしも冬の夜が毎日10分長くなったら？",
@@ -183,7 +200,7 @@
   {
    "id": "17875142349642537",
    "posted": "2026-11-23T02:48:37+0000",
-   "hours": 97.1,
+   "hours": 105.1,
    "url": "https://www.instagram.com/reel/DgEV7QoTn6b/",
    "type": "REELS",
    "title": "もしも昼休みが全員2時間になったら？",
@@ -200,13 +217,13 @@
   {
    "id": "18045832001840125",
    "posted": "2026-11-22T18:54:44+0000",
-   "hours": 105.0,
+   "hours": 113.0,
    "url": "https://www.instagram.com/reel/DgDfudBKrZA/",
    "type": "REELS",
    "title": "もしもこたつのみかんが毎日2倍に増えたら？",
    "likes": 4,
    "comments": 0,
-   "views": 540,
+   "views": 541,
    "reach": 459,
    "shares": 0,
    "saved": 0,
@@ -217,7 +234,7 @@
   {
    "id": "18104728598058350",
    "posted": "2026-11-22T02:12:10+0000",
-   "hours": 121.7,
+   "hours": 129.7,
    "url": "https://www.instagram.com/reel/DgBtAAnN4pp/",
    "type": "REELS",
    "title": "もしもお餅が引っぱるたびに2倍伸びたら？",
@@ -234,7 +251,7 @@
   {
    "id": "18090711053322786",
    "posted": "2026-11-21T18:27:32+0000",
-   "hours": 129.5,
+   "hours": 137.5,
    "url": "https://www.instagram.com/reel/DgA301rRt-I/",
    "type": "REELS",
    "title": "もしも日本人全員が毎晩鍋を食べたら？",
@@ -251,7 +268,7 @@
   {
    "id": "18098267249672205",
    "posted": "2026-11-21T11:25:37+0000",
-   "hours": 136.5,
+   "hours": 144.5,
    "url": "https://www.instagram.com/reel/DgAHf8ah_p4/",
    "type": "REELS",
    "title": "もしも静電気が毎回2倍強くなったら？",
@@ -268,7 +285,7 @@
   {
    "id": "18138647287676551",
    "posted": "2026-11-21T03:34:03+0000",
-   "hours": 144.4,
+   "hours": 152.4,
    "url": "https://www.instagram.com/reel/Df_RkBFOquP/",
    "type": "REELS",
    "title": "もしも雪が毎日2倍積もったら？",
@@ -285,7 +302,7 @@
   {
    "id": "18110226986309891",
    "posted": "2026-11-20T20:59:23+0000",
-   "hours": 150.9,
+   "hours": 158.9,
    "url": "https://www.instagram.com/reel/Df-kZQwx62_/",
    "type": "REELS",
    "title": "もしも大人にも給食が毎日出たら？",
@@ -302,7 +319,7 @@
   {
    "id": "17925822420450297",
    "posted": "2026-11-20T11:51:48+0000",
-   "hours": 160.1,
+   "hours": 168.1,
    "url": "https://www.instagram.com/reel/Df9lrZuqVbT/",
    "type": "REELS",
    "title": "もしも冬が毎日1℃ずつ寒くなったら？",
@@ -319,7 +336,7 @@
   {
    "id": "17937367227148233",
    "posted": "2026-11-20T03:31:25+0000",
-   "hours": 168.4,
+   "hours": 176.4,
    "url": "https://www.instagram.com/reel/Df8sezPym8F/",
    "type": "REELS",
    "title": "もしも残業が法律で完全ゼロになったら？",
@@ -336,7 +353,7 @@
   {
    "id": "17964739029000164",
    "posted": "2026-11-19T19:53:38+0000",
-   "hours": 176.0,
+   "hours": 184.0,
    "url": "https://www.instagram.com/reel/Df74FGoJ2Wm/",
    "type": "REELS",
    "title": "もしも家賃が毎年2倍になったら？",
@@ -353,7 +370,7 @@
   {
    "id": "17883134889547184",
    "posted": "2026-11-19T11:45:52+0000",
-   "hours": 184.2,
+   "hours": 192.2,
    "url": "https://www.instagram.com/reel/Df7AQzZMO7E/",
    "type": "REELS",
    "title": "もしも通勤が全員ゼロになったら？",
@@ -370,7 +387,7 @@
   {
    "id": "17980747197139321",
    "posted": "2026-11-19T03:37:47+0000",
-   "hours": 192.3,
+   "hours": 200.3,
    "url": "https://www.instagram.com/reel/Df6IZZoRMlG/",
    "type": "REELS",
    "title": "もしもお菓子の中身が毎日1割ずつ減ったら？（値段はそのまま）",
@@ -387,7 +404,7 @@
   {
    "id": "17899710117611850",
    "posted": "2026-11-18T21:32:20+0000",
-   "hours": 198.4,
+   "hours": 206.4,
    "url": "https://www.instagram.com/reel/Df5elrGPChN/",
    "type": "REELS",
    "title": "もしも電車が全部タダになったら？",
@@ -404,7 +421,7 @@
   {
    "id": "18131653060934439",
    "posted": "2026-11-18T11:54:23+0000",
-   "hours": 208.0,
+   "hours": 216.0,
    "url": "https://www.instagram.com/reel/Df4ccjdOuGT/",
    "type": "REELS",
    "title": "もしもお米の値段が毎日2倍になったら？",
@@ -421,7 +438,7 @@
   {
    "id": "18080994575724412",
    "posted": "2026-11-18T03:54:09+0000",
-   "hours": 216.0,
+   "hours": 224.0,
    "url": "https://www.instagram.com/reel/Df3lfVKPNSY/",
    "type": "REELS",
    "title": "もしも冬のボーナスが全部1円玉だったら？",
@@ -438,7 +455,7 @@
   {
    "id": "17940422511393542",
    "posted": "2026-11-17T20:13:04+0000",
-   "hours": 223.7,
+   "hours": 231.7,
    "url": "https://www.instagram.com/reel/Df2wt8lNBWU/",
    "type": "REELS",
    "title": "もしも現金が明日から全部なくなったら？",
@@ -455,7 +472,7 @@
   {
    "id": "17997075147047951",
    "posted": "2026-11-17T12:04:21+0000",
-   "hours": 231.9,
+   "hours": 239.9,
    "url": "https://www.instagram.com/reel/Df14yrMxRtu/",
    "type": "REELS",
    "title": "もしも全員が毎日1,000円多く使ったら？",
@@ -472,7 +489,7 @@
   {
    "id": "18015072389969163",
    "posted": "2026-11-17T04:47:07+0000",
-   "hours": 239.1,
+   "hours": 247.1,
    "url": "https://www.instagram.com/reel/Df1GweouYrl/",
    "type": "REELS",
    "title": "もしも週休3日が全員の決まりになったら？",
@@ -489,7 +506,7 @@
   {
    "id": "17920872192462349",
    "posted": "2026-11-16T21:30:57+0000",
-   "hours": 246.4,
+   "hours": 254.4,
    "url": "https://www.instagram.com/reel/Df0UzNmhPxY/",
    "type": "REELS",
    "title": "もしも電気代が毎月2倍になったら？",
@@ -506,7 +523,7 @@
   {
    "id": "17913688611312472",
    "posted": "2026-11-16T11:32:48+0000",
-   "hours": 256.4,
+   "hours": 264.4,
    "url": "https://www.instagram.com/reel/DfzQWMOzmWq/",
    "type": "REELS",
    "title": "もしも捨てた食べ物がお金に戻ったら？",
@@ -523,7 +540,7 @@
   {
    "id": "18125456012295968",
    "posted": "2026-11-16T02:11:34+0000",
-   "hours": 265.7,
+   "hours": 273.7,
    "url": "https://www.instagram.com/reel/DfyQFSHPbq5/",
    "type": "REELS",
    "title": "もしも物価が毎日1%ずつ上がったら？",
@@ -540,7 +557,7 @@
   {
    "id": "18654684043023929",
    "posted": "2026-11-15T18:23:24+0000",
-   "hours": 273.5,
+   "hours": 281.5,
    "url": "https://www.instagram.com/reel/DfxahwKhXxS/",
    "type": "REELS",
    "title": "もしも給料が毎日払いになったら？",
@@ -557,7 +574,7 @@
   {
    "id": "18151543024562707",
    "posted": "2026-11-15T11:13:31+0000",
-   "hours": 280.7,
+   "hours": 288.7,
    "url": "https://www.instagram.com/reel/DfwpVCPKSmH/",
    "type": "REELS",
    "title": "もしも睡眠が1日1時間で済んだら？",
@@ -574,7 +591,7 @@
   {
    "id": "18107364929368250",
    "posted": "2026-11-15T02:24:52+0000",
-   "hours": 289.5,
+   "hours": 297.5,
    "url": "https://www.instagram.com/reel/Dfvs2TZMRd4/",
    "type": "REELS",
    "title": "もしもシュートが毎回2倍速くなったら？",
@@ -591,7 +608,7 @@
   {
    "id": "18506997481103451",
    "posted": "2026-11-14T17:53:42+0000",
-   "hours": 298.0,
+   "hours": 306.0,
    "url": "https://www.instagram.com/reel/DfuyUvbuPWX/",
    "type": "REELS",
    "title": "もしも日本人全員が1円ずつくれたら？",
@@ -608,7 +625,7 @@
   {
    "id": "17914710873483019",
    "posted": "2026-11-14T10:36:35+0000",
-   "hours": 305.3,
+   "hours": 313.3,
    "url": "https://www.instagram.com/reel/DfuAUkCpIQD/",
    "type": "REELS",
    "title": "もしもネットが丸1日止まったら？",
@@ -625,7 +642,7 @@
   {
    "id": "18377068576212562",
    "posted": "2026-11-14T02:47:33+0000",
-   "hours": 313.1,
+   "hours": 321.1,
    "url": "https://www.instagram.com/reel/DftKoFxiBIZ/",
    "type": "REELS",
    "title": "もしもスマホを見た時間を貯金できたら？",
@@ -642,7 +659,7 @@
   {
    "id": "18106220456573623",
    "posted": "2026-11-13T19:17:47+0000",
-   "hours": 320.6,
+   "hours": 328.6,
    "url": "https://www.instagram.com/reel/DfsXLZFAnPl/",
    "type": "REELS",
    "title": "もしもスマホを見る時間が、毎年2倍になったら？",
@@ -659,24 +676,24 @@
   {
    "id": "18111826736218506",
    "posted": "2026-11-13T11:40:36+0000",
-   "hours": 328.2,
+   "hours": 336.2,
    "url": "https://www.instagram.com/reel/Dfri03iJZ36/",
    "type": "REELS",
    "title": "もしも、くしゃみで空を飛べたら？",
    "likes": 3,
    "comments": 0,
-   "views": 394,
-   "reach": 326,
+   "views": 396,
+   "reach": 327,
    "shares": 0,
    "saved": 1,
    "total_interactions": 4,
-   "ig_reels_avg_watch_time": 17079,
-   "ig_reels_video_view_total_time": 5670440
+   "ig_reels_avg_watch_time": 17031,
+   "ig_reels_video_view_total_time": 5671358
   },
   {
    "id": "17968499786978919",
    "posted": "2026-11-13T03:15:13+0000",
-   "hours": 336.7,
+   "hours": 344.7,
    "url": "https://www.instagram.com/reel/Dfqo_KzJFOy/",
    "type": "REELS",
    "title": "もしも髪の伸びる速さが、どんどん速くなったら？",
@@ -693,7 +710,7 @@
   {
    "id": "18468441364190000",
    "posted": "2026-11-12T23:37:42+0000",
-   "hours": 340.3,
+   "hours": 348.3,
    "url": "https://www.instagram.com/reel/DfqQEeRJYLX/",
    "type": "REELS",
    "title": "もしもゲップが毎回2倍強くなったら？",
@@ -710,7 +727,7 @@
   {
    "id": "18103256531451803",
    "posted": "2026-11-12T19:28:25+0000",
-   "hours": 344.4,
+   "hours": 352.5,
    "url": "https://www.instagram.com/reel/Dfpzj1kB6VW/",
    "type": "REELS",
    "title": "もしも消費税が0%になったら？",
@@ -727,7 +744,7 @@
   {
    "id": "17874047730645371",
    "posted": "2026-11-12T11:34:26+0000",
-   "hours": 352.3,
+   "hours": 360.4,
    "url": "https://www.instagram.com/reel/Dfo9WN_tI1W/",
    "type": "REELS",
    "title": "もしも重力が2倍になったら？",
@@ -744,7 +761,7 @@
   {
    "id": "17958309765296888",
    "posted": "2026-11-12T03:24:21+0000",
-   "hours": 360.5,
+   "hours": 368.5,
    "url": "https://www.instagram.com/reel/DfoFRW0sHZr/",
    "type": "REELS",
    "title": "もしも1ドルが50円になったら？",
@@ -761,7 +778,7 @@
   {
    "id": "17997135147110934",
    "posted": "2026-11-11T23:57:51+0000",
-   "hours": 364.0,
+   "hours": 372.0,
    "url": "https://www.instagram.com/reel/DfntowKBQlR/",
    "type": "REELS",
    "title": "もしも反応速度が10倍になったら？",
@@ -778,7 +795,7 @@
   {
    "id": "18415677718088629",
    "posted": "2026-11-11T19:33:53+0000",
-   "hours": 368.4,
+   "hours": 376.4,
    "url": "https://www.instagram.com/reel/DfnPbcGAyl8/",
    "type": "REELS",
    "title": "もしも体の熱で発電できたら？",
@@ -795,7 +812,7 @@
   {
    "id": "17960641938254753",
    "posted": "2026-11-11T02:11:36+0000",
-   "hours": 385.7,
+   "hours": 393.7,
    "url": "https://www.instagram.com/reel/DflYKWSBgfr/",
    "type": "REELS",
    "title": "もしも雷をためて使えたら？",
@@ -812,7 +829,7 @@
   {
    "id": "17912274303595992",
    "posted": "2026-11-11T00:07:34+0000",
-   "hours": 387.8,
+   "hours": 395.8,
    "url": "https://www.instagram.com/reel/DflJ-scRDa-/",
    "type": "REELS",
    "title": "もしも雨の量が10倍になったら？",
@@ -829,7 +846,7 @@
   {
    "id": "17900010249407817",
    "posted": "2026-11-11T00:02:42+0000",
-   "hours": 387.9,
+   "hours": 395.9,
    "url": "https://www.instagram.com/reel/DflJbhbCpCd/",
    "type": "REELS",
    "title": "もしも太陽のエネルギーを全部使えたら？",
@@ -846,7 +863,7 @@
   {
    "id": "18029407682702471",
    "posted": "2026-11-10T05:02:03+0000",
-   "hours": 406.9,
+   "hours": 414.9,
    "url": "https://www.instagram.com/reel/DfjG5k-BiK6/",
    "type": "REELS",
    "title": "もしも地球の自転が2倍速くなったら？",
@@ -863,7 +880,7 @@
   {
    "id": "17956713243289256",
    "posted": "2026-11-10T02:32:48+0000",
-   "hours": 409.4,
+   "hours": 417.4,
    "url": "https://www.instagram.com/reel/Dfi10EtT-BE/",
    "type": "REELS",
    "title": "もしも流れ星が燃え尽きずに落ちてきたら？",
@@ -880,7 +897,7 @@
   {
    "id": "18110349779253253",
    "posted": "2026-11-09T13:51:48+0000",
-   "hours": 422.1,
+   "hours": 430.1,
    "url": "https://www.instagram.com/reel/DfheuwygM1-/",
    "type": "REELS",
    "title": "もしもAIを連打して津波を止めたら？",
@@ -897,7 +914,7 @@
   {
    "id": "18172403605462808",
    "posted": "2026-11-09T12:48:22+0000",
-   "hours": 423.1,
+   "hours": 431.1,
    "url": "https://www.instagram.com/reel/DfhXdaNAF_W/",
    "type": "REELS",
    "title": "もしもAIで津波を干上がらせたら？",
@@ -914,7 +931,7 @@
   {
    "id": "18120546553999667",
    "posted": "2026-11-09T12:24:41+0000",
-   "hours": 423.5,
+   "hours": 431.5,
    "url": "https://www.instagram.com/reel/DfhUvukjXU8/",
    "type": "REELS",
    "title": "もしも散らかった部屋が勝手に片付いたら？",
@@ -931,7 +948,7 @@
   {
    "id": "17953371735341519",
    "posted": "2026-11-09T12:18:05+0000",
-   "hours": 423.6,
+   "hours": 431.6,
    "url": "https://www.instagram.com/reel/DfhUAZ-AfF2/",
    "type": "REELS",
    "title": "もしもAIの電気が100倍になったら？",
@@ -948,24 +965,24 @@
   {
    "id": "18128484748922682",
    "posted": "2026-11-09T04:35:05+0000",
-   "hours": 431.3,
+   "hours": 439.3,
    "url": "https://www.instagram.com/reel/DfgfBcZOUIQ/",
    "type": "REELS",
    "title": "もしも体が10cmに縮んだら？",
    "likes": 12,
    "comments": 0,
-   "views": 1857,
-   "reach": 1593,
+   "views": 1859,
+   "reach": 1594,
    "shares": 0,
    "saved": 0,
    "total_interactions": 12,
-   "ig_reels_avg_watch_time": 17790,
-   "ig_reels_video_view_total_time": 28500203
+   "ig_reels_avg_watch_time": 17801,
+   "ig_reels_video_view_total_time": 28536181
   },
   {
    "id": "18119317354807215",
    "posted": "2026-11-09T04:06:16+0000",
-   "hours": 431.8,
+   "hours": 439.8,
    "url": "https://www.instagram.com/reel/DfgbuXcuj_x/",
    "type": "REELS",
    "title": "もしも100mを1秒で走れたら？",
@@ -982,7 +999,7 @@
   {
    "id": "17913027171306658",
    "posted": "2026-11-09T04:04:04+0000",
-   "hours": 431.9,
+   "hours": 439.9,
    "url": "https://www.instagram.com/reel/DfgbcWrubyG/",
    "type": "REELS",
    "title": "もしも透明人間になったら？",
@@ -999,7 +1016,7 @@
   {
    "id": "18124410475938834",
    "posted": "2026-11-09T03:44:07+0000",
-   "hours": 432.2,
+   "hours": 440.2,
    "url": "https://www.instagram.com/reel/DfgZL3zO2-2/",
    "type": "REELS",
    "title": "もしも身長40mのヒーローがいたら？",
@@ -1012,36 +1029,19 @@
    "total_interactions": 8,
    "ig_reels_avg_watch_time": 16233,
    "ig_reels_video_view_total_time": 33328166
-  },
-  {
-   "id": "18033511811681344",
-   "posted": "2026-11-09T03:15:06+0000",
-   "hours": 432.7,
-   "url": "https://www.instagram.com/reel/DfgV1qEuM0N/",
-   "type": "REELS",
-   "title": "もしもゴミ収集が止まったら？",
-   "likes": 1,
-   "comments": 1,
-   "views": 174,
-   "reach": 155,
-   "shares": 0,
-   "saved": 0,
-   "total_interactions": 2,
-   "ig_reels_avg_watch_time": 17834,
-   "ig_reels_video_view_total_time": 2996236
   }
  ],
  "benchmarks": [
   {
    "username": "moshimo_no__tonari",
-   "followers": 1371,
+   "followers": 1377,
    "media_count": 39,
    "recent": [
     {
      "timestamp": "2026-11-10T12:22:00+0000",
      "like_count": 27,
      "comments_count": 2,
-     "view_count": 2921,
+     "view_count": 2922,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/Dfj5HUvMr5q/",
      "title": "もしも毎日が40度だったら？"
@@ -1050,7 +1050,7 @@
      "timestamp": "2026-11-10T06:31:02+0000",
      "like_count": 71,
      "comments_count": 0,
-     "view_count": 3489,
+     "view_count": 3513,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfjO2G4M7Yn/",
      "title": "もしも子どもの頃のお母さんの1日が見てたら？"
@@ -1059,7 +1059,7 @@
      "timestamp": "2026-11-06T12:01:16+0000",
      "like_count": 21,
      "comments_count": 1,
-     "view_count": 2971,
+     "view_count": 2980,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfZjoifMUct/",
      "title": "もしも街にクマが出たら？"
@@ -1068,7 +1068,7 @@
      "timestamp": "2026-11-06T11:56:33+0000",
      "like_count": 43,
      "comments_count": 0,
-     "view_count": 4682,
+     "view_count": 4690,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfZjHJIyTS-/",
      "title": "もしも宝くじで10億円当たったら？"
@@ -1077,7 +1077,7 @@
      "timestamp": "2026-11-05T22:43:02+0000",
      "like_count": 40,
      "comments_count": 1,
-     "view_count": 3569,
+     "view_count": 3572,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfYISehSWzN/",
      "title": "もしも冬が来なかったら？"
@@ -1086,7 +1086,7 @@
      "timestamp": "2026-11-05T22:29:50+0000",
      "like_count": 30,
      "comments_count": 0,
-     "view_count": 4122,
+     "view_count": 4124,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfYGxdkyauN/",
      "title": "もしも大量発生中のカメムシがいなくなったら？"
@@ -1095,7 +1095,7 @@
      "timestamp": "2026-11-05T13:58:22+0000",
      "like_count": 33,
      "comments_count": 0,
-     "view_count": 3512,
+     "view_count": 3516,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfXMPYoyWwV/",
      "title": "もしもコンビニが消えたら？"
@@ -1104,7 +1104,7 @@
      "timestamp": "2026-11-05T13:48:02+0000",
      "like_count": 210,
      "comments_count": 13,
-     "view_count": 33721,
+     "view_count": 33729,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfXLA8RSwU0/",
      "title": "もしも土日がなくなったら？"
@@ -1113,7 +1113,7 @@
      "timestamp": "2026-11-05T11:08:32+0000",
      "like_count": 26,
      "comments_count": 2,
-     "view_count": 4542,
+     "view_count": 4545,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfW4z8TSL8c/",
      "title": "もしも月がなくなったら？"
@@ -1122,7 +1122,7 @@
      "timestamp": "2026-11-04T09:30:04+0000",
      "like_count": 72,
      "comments_count": 5,
-     "view_count": 4113,
+     "view_count": 4116,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfUIxC3skHS/",
      "title": "もしも音楽が消えたら？"
@@ -1131,7 +1131,7 @@
      "timestamp": "2026-11-04T09:24:58+0000",
      "like_count": 20,
      "comments_count": 0,
-     "view_count": 3592,
+     "view_count": 3594,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfUIL39sT1g/",
      "title": "もしもデジタル機器がなくなったら？"
@@ -1140,7 +1140,7 @@
      "timestamp": "2026-11-04T07:52:47+0000",
      "like_count": 70,
      "comments_count": 0,
-     "view_count": 6614,
+     "view_count": 6616,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfT9Xz_sHNM/",
      "title": "もしも大人が消えたら？"
@@ -1149,7 +1149,7 @@
      "timestamp": "2026-11-04T07:52:26+0000",
      "like_count": 82,
      "comments_count": 4,
-     "view_count": 9416,
+     "view_count": 9418,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfT9LbXMJNS/",
      "title": "もしも子どもが消えたら？"
@@ -1158,16 +1158,16 @@
      "timestamp": "2026-11-04T07:39:36+0000",
      "like_count": 19,
      "comments_count": 1,
-     "view_count": 4195,
+     "view_count": 4196,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfT8AZjswFJ/",
      "title": "もしも石油がなくなったら？"
     },
     {
      "timestamp": "2026-11-04T05:45:46+0000",
-     "like_count": 509,
+     "like_count": 510,
      "comments_count": 1,
-     "view_count": 47330,
+     "view_count": 47365,
      "media_product_type": "REELS",
      "permalink": "https://www.instagram.com/reel/DfTvDOosV50/",
      "title": "もしも恋愛がなくなったら？"
